@@ -41,25 +41,30 @@
             <h2 class="w3-margin w3-container" style="text-shadow:1px 1px 0 #444; height: 8%;">Modifica base di dati</h2>
         </div>
 
-        <a href="modificaCategoria.php"><div class="w3-card w3-padding w3-margin w3-hover-shadow w3cardPadre">
-            <div style = "height: 30%; width: 20%;" class="w3-center w3-display-container w3-margin-left w3-padding w3cardFiglio">
+        <a href="modificaUtente.php"><div class="w3-card w3-padding w3-margin w3-hover-shadow w3cardPadre">
+            <div style = "height: 15%; width: 10%;" class="w3-center w3-display-container w3-margin-left w3-padding w3cardFiglio">
                 <img style = "height: 100%; width: 100%;" src = "newUser3.png" alt = "modifica utente" >
             </div>
-            <h5 style="font-family: 'myFont'; font-size: xx-large;" class="w3cardFiglio w3-margin-left">Modifica dati <i>utente</i></h5>
+            <h5 style="font-family: 'myFont'; font-size: x-large;" class="w3cardFiglio w3-margin-left">Modifica dati <i>utente</i></h5>
         </div></a>
         <hr>
         <a href="modificaCategoria.php"><div class="w3-card w3-padding w3-margin w3-hover-shadow w3cardPadre">
-            <div style = "height: 30%; width: 20%;" class="w3-center w3-display-container w3-margin-left w3-padding w3cardFiglio" >
+            <div style = "height: 15%; width: 10%;" class="w3-center w3-display-container w3-margin-left w3-padding w3cardFiglio" >
                 <img style = "height: 100%; width: 100%;" src = "categoria.jpg" alt = "modifica categoria" >
             </div >
-            <h5 style="font-family: 'myFont'; font-size: xx-large;" class="w3cardFiglio w3-margin-left">Modifica dati <i>categoria</i></h5>
+            <h5 style="font-family: 'myFont'; font-size: x-large;" class="w3cardFiglio w3-margin-left">Modifica dati <i>categoria</i></h5>
+        </div></a>
+        <hr>
+        <a href="modificaSocieta.php"><div class="w3-card w3-padding w3-margin w3-hover-shadow w3cardPadre">
+                <div style = "height: 15%; width: 10%;" class="w3-center w3-display-container w3-margin-left w3-padding w3cardFiglio" >
+                    <img class="w3-round-xxlarge" style = "height: 100%; width: 100%;" src = "societa4.jpg" alt = "modifica societa" >
+                </div >
+                <h5 style="font-family: 'myFont'; font-size: x-large;" class="w3cardFiglio w3-margin-left">Modifica dati <i>societ&agrave</i></h5>
         </div></a>
 
 
         <!-- Footer -->
-        <footer class="w3-container w3-dark-grey w3-bottom" style="padding:15px">
-            <p class="w3-center">Realizzato da StefanoGenetti©2019 tutti i diritti sono riservati</p>
-        </footer>
+        <?php include("footerLayout.php");?>
 
     </body>
 
