@@ -28,6 +28,34 @@
         .w3TestoFiglio {
             display: inline-block;
         }
+
+        /**Colonna immagine*/
+        .tdImg {
+            width: 30%;
+            height: 100%;
+            text-align: left;
+            vertical-align: bottom;
+            position: relative;
+        }
+
+        /**Colonna testo*/
+        .tdLabel {
+            width: 80%;
+            height: 100%;
+            text-align: left;
+            vertical-align: bottom;
+            position: relative;
+        }
+
+        /**Immagine*/
+        .avatarIcon {
+            width: 90%;
+            height: auto;
+            display: inline-block;
+            margin-right: 5px;
+            position: absolute;
+            top: 0;
+        }
     </style>
 
 <body>
@@ -40,8 +68,7 @@
         $query = "SELECT utente.nome AS nome_utente, utente.cognome AS cognome_utente, utente.sesso AS sesso_utente, utente.data_nascita AS data_nascita_utente, utente.n_pettorina AS pettorina_utente, utente.ID, utente.id_categoria, categoria.nome AS nome_categoria, categoria.ID, classifica.id_utente, SUM(classifica.punteggio) AS punteggio FROM categoria, utente LEFT OUTER JOIN classifica ON utente.ID = classifica.id_utente WHERE utente.id_categoria = categoria.ID AND utente.ID=".$_GET["userID"]." GROUP BY utente.ID;";
         $ris = $conn->query($query);
 
-        while($outUtente = $ris->fetch_assoc()){
-            echo "<p>".$outUtente["nome_utente"]."</p>";
+        while($outUtente = $ris->fetch_assoc()) {
             /*
             echo "
                     <tr href='profiloUtente.php'>
@@ -60,27 +87,70 @@
             }
             echo "</tr>";
             */
+
+
+            echo "
+                <div style=\"width:50%; height: fit-content; margin-left: 5%;\" class=\"w3-card-4 w3-white w3-border\">
+                    <table style=\"width: 80%;\">
+                        <tr>
+                ";
+
+            if($outUtente["sesso_utente"] == M){    //utente maschio --> icona avatar maschile; else icona avatar femminile
+                echo "
+                            <td class=\"tdImg\">
+                                <img src=\"man.png\" class=\"w3-circle avatarIcon w3-margin w3-bottombar w3-border\" alt=\"Avatar\">
+                            </td>
+                 ";
+            }else{
+                echo "
+                            <td class=\"tdImg\">
+                                <img src=\"woman.png\" class=\"w3-circle avatarIcon w3-margin w3-bottombar w3-border\" alt=\"Avatar\">
+                            </td>
+                 ";
+            }
+
+            echo "
+                            <td>
+                            <div class=\"tdLabel\">
+                                <h3 style=\"margin-left: 25%\" ><b>".$outUtente["nome_utente"]." ".$outUtente["cognome_utente"]."</b></h3><br>
+                                <h5 style=\"margin-left: 20%\"><b>Data di nascita:</b>  ".$outUtente["data_nascita_utente"]."</h5>
+                                <h5 style=\"margin-left: 20%\"><b>Sesso:</b>  ".$outUtente["sesso_utente"]."</h5>
+                                <h5 style=\"margin-left: 20%\"><b>Categoria:</b>  ".$outUtente["nome_categoria"]."</h5>
+                                <h5 style=\"margin-left: 20%\"><b>Pettorina:</b>  ".$outUtente["pettorina_utente"]."</h5>
+                            </div>
+                            </td>
+                        </tr>
+                    </table>
+            ";
         }
     ?>
 
-    <div style="width:40%; height: fit-content;" class="w3-card-4 w3-margin w3-round w3-white w3CardPadre">
-        <div style = "height: 30%; width: 30%;" class="w3-center w3-display-container w3-margin w3-padding w3TestoFiglio">
-                <img src="man.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar">
-        </div>
-        <div class="w3TestoFiglio">
-        <h4 class="w3-margin-left">My Profile</h4>
-        <h5 class="w3-margin-left">CIAO</h5>
-        <h5 class="w3-margin-left">CIAO</h5>
-        <h5 class="w3-margin-left">CIAO</h5>
-        <h5 class="w3-margin-left">CIAO</h5>
-        <h5 class="w3-margin-left">CIAO</h5>
-        <h5 class="w3-margin-left">CIAO</h5>
-        <h5 class="w3-margin-left">CIAO</h5>
-        </div>
+    <!--La tabella e' finita ma la card continua (riusultati delle gare)-->
+    <hr style="width: 60%; margin-left: 20%; border: 10px solid green;">
+    <h4 style="margin-left: 5%" ><i>RISULTATI GARE</i></h4><br>
     </div>
 
-</body>
+    <!--
+    echo "<div class=\"w3-card\" style='margin-bottom: 20px; width: 50%;'>
+        <img src='".$rig["immagine"]."' style='float: left;'>
+        <div style='margin-left: 300px; padding: 50px;'>
+            <p><b>Tipo: </b>".$rig["nomeComune"]."</p>
+            <p><b>Codice Anagrafico: </b>".$rig["codiceAnagrafico"]."</p>
+            <p><b>Sesso: </b>".$rig["sesso"]."</p>
+            <p><b>Data nascita: </b>".$rig["dataNascita"]."</p>
+            <p><b>Luogo nascita: </b>".$rig["luogoNascita"]."</p>
+            <br><br>
 
+            <p><b>Prezzo: ".$rig["prezzo"]."</b></p>
+
+            <button class='w3-btn w3-section w3-teal w3-ripple' id='addToChart' onclick='aggiungiAlCarrello(".$rig["id"].")'>Aggiungi al carrello</button>
+        </div>
+    </div>";
+    -->
+
+    <!-- Footer -->
+    <?php include("footerLayout.php");?>
+</body>
 </html>
 
 <?php
