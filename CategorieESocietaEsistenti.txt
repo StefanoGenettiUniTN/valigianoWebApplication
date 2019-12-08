@@ -1,9 +1,9 @@
 CATEGORIE ESISTENTI
 
-Pulcini f
-Pulcini m
-Cuccioli m
-Cuccioli f
+Pulcini f 50
+Pulcini m 50
+Cuccioli m 50
+Cuccioli f 50
 Esordienti m
 Esordienti f
 Ragazzi

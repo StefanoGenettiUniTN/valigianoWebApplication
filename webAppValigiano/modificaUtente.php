@@ -35,13 +35,14 @@
             <th>Cognome</th>
             <th>Sesso</th>
             <th>Data di nascita</th>
+            <th>Societ&agrave</th>
             <th>Categoria</th>
             <th>Pettorina</th>
             <th>Punteggio</th>
         </tr>
 
         <?php
-        $query = "SELECT utente.nome AS nome_utente, utente.cognome AS cognome_utente, utente.sesso AS sesso_utente, utente.data_nascita AS data_nascita_utente, utente.n_pettorina AS pettorina_utente, utente.ID AS userID, utente.id_categoria, categoria.nome AS nome_categoria, categoria.ID, classifica.id_utente, SUM(classifica.punteggio) AS punteggio FROM categoria, utente LEFT OUTER JOIN classifica ON utente.ID = classifica.id_utente WHERE utente.id_categoria = categoria.ID GROUP BY utente.ID;";
+        $query = "SELECT utente.nome AS nome_utente, utente.cognome AS cognome_utente, utente.sesso AS sesso_utente, utente.data_nascita AS data_nascita_utente, utente.n_pettorina AS pettorina_utente, utente.ID AS userID, utente.id_categoria, categoria.nome AS nome_categoria, categoria.ID, classifica.id_utente, societa.nome AS nome_societa, societa.ID, SUM(classifica.punteggio) AS punteggio FROM societa, categoria, utente LEFT OUTER JOIN classifica ON utente.ID = classifica.id_utente WHERE utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID GROUP BY utente.ID;";
         //$queryUtenti = "SELECT * FROM utente LEFT OUTER JOIN categoria AS cat ON utente.id_categoria = cat.ID UNION SELECT * FROM utente LEFT OUTER JOIN classifica AS cla ON utente.ID = cla.ID;";
         //$queryPunteggio = "SELECT * FROM utente, classifica WHERE utente.ID = classifica.id_utente;";
         //$queryCategoria = "SELECT * FROM utente, categoria WHERE utente.id_categoria = categoria.ID;";
@@ -58,6 +59,7 @@
                     <td>".$outUtenti["cognome_utente"]."</td>
                     <td>".$outUtenti["sesso_utente"]."</td>
                     <td>".$outUtenti["data_nascita_utente"]."</td>
+                    <td>".$outUtenti["nome_societa"]."</td>
                     <td>".$outUtenti["nome_categoria"]."</td>
                     <td>".$outUtenti["pettorina_utente"]."</td>
                     ";

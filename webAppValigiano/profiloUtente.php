@@ -65,7 +65,8 @@
     </div>
 
     <?php
-        $query = "SELECT utente.nome AS nome_utente, utente.cognome AS cognome_utente, utente.sesso AS sesso_utente, utente.data_nascita AS data_nascita_utente, utente.n_pettorina AS pettorina_utente, utente.ID, utente.id_categoria, categoria.nome AS nome_categoria, categoria.ID, classifica.id_utente, SUM(classifica.punteggio) AS punteggio FROM categoria, utente LEFT OUTER JOIN classifica ON utente.ID = classifica.id_utente WHERE utente.id_categoria = categoria.ID AND utente.ID=".$_GET["userID"]." GROUP BY utente.ID;";
+        $query = "SELECT utente.nome AS nome_utente, utente.cognome AS cognome_utente, utente.sesso AS sesso_utente, utente.data_nascita AS data_nascita_utente, utente.n_pettorina AS pettorina_utente, utente.ID, utente.id_categoria, categoria.nome AS nome_categoria, categoria.ID, classifica.id_utente, societa.nome AS nome_societa, societa.ID, SUM(classifica.punteggio) AS punteggio FROM societa, categoria, utente LEFT OUTER JOIN classifica ON utente.ID = classifica.id_utente WHERE utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND utente.ID=".$_GET["userID"]." GROUP BY utente.ID;";
+        $queryGare = "SELECT gara.ID, gara.luogo AS gara_luogo, gara.data AS gara_data, utente.ID, classifica.id_utente, classifica.id_gara, classifica.punteggio FROM utente, gara, classifica WHERE utente.ID = classifica.id_utente AND gara.ID = classifica.id_gara AND utente.ID=".$_GET["userID"].";";
         $ris = $conn->query($query);
 
         while($outUtente = $ris->fetch_assoc()) {
@@ -117,6 +118,7 @@
                                 <h5 style=\"margin-left: 20%\"><b>Sesso:</b>  ".$outUtente["sesso_utente"]."</h5>
                                 <h5 style=\"margin-left: 20%\"><b>Categoria:</b>  ".$outUtente["nome_categoria"]."</h5>
                                 <h5 style=\"margin-left: 20%\"><b>Pettorina:</b>  ".$outUtente["pettorina_utente"]."</h5>
+                                <h5 style=\"margin-left: 20%\"><b>Societ&agrave:</b>  ".$outUtente["nome_societa"]."</h5>
                             </div>
                             </td>
                         </tr>
@@ -128,8 +130,29 @@
     <!--La tabella e' finita ma la card continua (riusultati delle gare)-->
     <hr style="width: 60%; margin-left: 20%; border: 10px solid green;">
     <h4 style="margin-left: 5%" ><i>RISULTATI GARE</i></h4><br>
-    </div>
 
+    <table>
+        <tr>
+            <th></th>
+            <th></th>
+            <th>Punteggio</th>
+        </tr>
+
+    <?php
+
+    $ris_queryGare = $conn->query($queryGare);
+
+    while($outGare = $ris_queryGare->fetch_assoc()) {
+        echo "            
+                <tr>
+                    <td>".$outGare["gara_luogo"]."</td>
+                    <td>".$outGare["gara_data"]."</td>
+                    <td>".$outGare["punteggio"]."</td>
+                </tr>
+        ";
+    }
+    ?>
+    </table>
     <!--
     echo "<div class=\"w3-card\" style='margin-bottom: 20px; width: 50%;'>
         <img src='".$rig["immagine"]."' style='float: left;'>
@@ -149,7 +172,7 @@
     -->
 
     <!-- Footer -->
-    <?php include("footerLayout.php");?>
+    <?php //include("footerLayout.php"); #TODO aggiungere footer?>
 </body>
 </html>
 
