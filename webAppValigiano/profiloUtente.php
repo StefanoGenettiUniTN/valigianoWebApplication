@@ -131,7 +131,7 @@
     <hr style="width: 60%; margin-left: 20%; border: 10px solid green;">
     <h4 style="margin-left: 5%" ><i>RISULTATI GARE</i></h4><br>
 
-    <table>
+    <table class="w3-table">
         <tr>
             <th></th>
             <th></th>
@@ -141,8 +141,10 @@
     <?php
 
     $ris_queryGare = $conn->query($queryGare);
+    $punteggioTotale = 0;   //somma tutti punteggi delle gare; #TODO aggiungere con SUM alla query "$queryGare"
 
     while($outGare = $ris_queryGare->fetch_assoc()) {
+        $punteggioTotale+=$outGare["punteggio"];
         echo "            
                 <tr>
                     <td>".$outGare["gara_luogo"]."</td>
@@ -153,6 +155,10 @@
     }
     ?>
     </table>
+
+    <hr>
+    <h6 style="margin-left: 5%" ><i>PUNTEGGIO TOTALE: </i><?php echo $punteggioTotale;?></h6><br>
+
     <!--
     echo "<div class=\"w3-card\" style='margin-bottom: 20px; width: 50%;'>
         <img src='".$rig["immagine"]."' style='float: left;'>

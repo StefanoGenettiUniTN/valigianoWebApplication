@@ -53,7 +53,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="root:dbvaligiano@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@1896852" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@207bbd26" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
             </expand>
             <select />
@@ -87,7 +87,8 @@
       <workItem from="1575580964116" duration="1675000" />
       <workItem from="1575736893473" duration="1004000" />
       <workItem from="1575753707607" duration="1364000" />
-      <workItem from="1575839524733" duration="1865000" />
+      <workItem from="1575839524733" duration="2176000" />
+      <workItem from="1577135155525" duration="2073000" />
     </task>
     <servers />
   </component>
@@ -95,6 +96,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="508" y="322" width="399" height="149" key="NewPhpFileDialog" timestamp="1577136823167">
+      <screen x="59" y="27" width="1307" height="741" />
+    </state>
+    <state x="508" y="322" width="399" height="149" key="NewPhpFileDialog/59.27.1307.741@59.27.1307.741" timestamp="1577136823167" />
     <state x="376" y="175" key="run.anything.popup" timestamp="1575754538814">
       <screen x="59" y="27" width="1307" height="741" />
     </state>

@@ -15,7 +15,7 @@
     <script>
         /*Script per collegamento ipertestuale click sulla riga della tabella*/
         $(document).ready(function(){
-            $('table tr').click(function(){
+            $('.riga').click(function(){
                 window.location = $(this).attr('href');
                 return false;
             });
@@ -27,6 +27,8 @@
     <div class="w3-card w3-margin w3-round">
         <h2 class="w3-margin w3-container" style="text-shadow:1px 1px 0 #444; height: 8%;">Pagina di modifica utente</h2>
     </div>
+
+    <a href="aggiungiUtente.php" class="w3-ripple w3-teal w3-button w3-block w3-centered" style="margin: auto; width: 90%;" >AGGIUNGI UTENTE</a><br>
 
     <div class="w3-responsive"><!--Scroll bar se schermata troppo piccola-->
     <table align="center" style="width: 90%;" class="w3-table w3-striped w3-centered w3-large w3-hoverable w3-border">
@@ -54,7 +56,7 @@
 
         while($outUtenti = $ris->fetch_assoc()){
             echo "
-                <tr href='profiloUtente.php?userID=".$outUtenti['userID']."'>
+                <tr class='riga' href='profiloUtente.php?userID=".$outUtenti['userID']."'>
                     <td>".$outUtenti["nome_utente"]."</td>
                     <td>".$outUtenti["cognome_utente"]."</td>
                     <td>".$outUtenti["sesso_utente"]."</td>
