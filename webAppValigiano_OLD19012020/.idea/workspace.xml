@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a49b9522-9ec1-478b-b47f-86350bdfaf6b" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="ProjectId" id="1Tl9f10DD4Qol1nSP4FhbI93cQR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:dbvaligiano@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:dbvaligiano@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@207bbd26" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a49b9522-9ec1-478b-b47f-86350bdfaf6b" name="Default Changelist" comment="" />
+      <created>1574023914254</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1574023914254</updated>
+      <workItem from="1574023915700" duration="2601000" />
+      <workItem from="1574027068648" duration="1911000" />
+      <workItem from="1574198216589" duration="2165000" />
+      <workItem from="1574460368731" duration="1783000" />
+      <workItem from="1574625124110" duration="1840000" />
+      <workItem from="1574626986067" duration="2254000" />
+      <workItem from="1574718357497" duration="867000" />
+      <workItem from="1574890012422" duration="2121000" />
+      <workItem from="1575149346644" duration="3479000" />
+      <workItem from="1575232551294" duration="4185000" />
+      <workItem from="1575407372022" duration="2293000" />
+      <workItem from="1575495698930" duration="884000" />
+      <workItem from="1575580964116" duration="1675000" />
+      <workItem from="1575736893473" duration="1004000" />
+      <workItem from="1575753707607" duration="1364000" />
+      <workItem from="1575839524733" duration="2176000" />
+      <workItem from="1577135155525" duration="2073000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="508" y="322" width="399" height="149" key="NewPhpFileDialog" timestamp="1577136823167">
+      <screen x="59" y="27" width="1307" height="741" />
+    </state>
+    <state x="508" y="322" width="399" height="149" key="NewPhpFileDialog/59.27.1307.741@59.27.1307.741" timestamp="1577136823167" />
+    <state x="376" y="175" key="run.anything.popup" timestamp="1575754538814">
+      <screen x="59" y="27" width="1307" height="741" />
+    </state>
+    <state x="376" y="175" key="run.anything.popup/59.27.1307.741@59.27.1307.741" timestamp="1575754538814" />
+  </component>
+</project>

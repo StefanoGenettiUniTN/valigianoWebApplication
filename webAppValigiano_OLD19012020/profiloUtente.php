@@ -91,12 +91,12 @@
 
 
             echo "
-                <div style=\"width:70%; height: fit-content; margin-left: 5%;\" class=\"w3-card-4 w3-white w3-border\">
+                <div style=\"width:50%; height: fit-content; margin-left: 5%;\" class=\"w3-card-4 w3-white w3-border\">
                     <table style=\"width: 80%;\">
                         <tr>
                 ";
 
-            if($outUtente["sesso_utente"] == "M"){    //utente maschio --> icona avatar maschile; else icona avatar femminile
+            if($outUtente["sesso_utente"] == M){    //utente maschio --> icona avatar maschile; else icona avatar femminile
                 echo "
                             <td class=\"tdImg\">
                                 <img src=\"man.png\" class=\"w3-circle avatarIcon w3-margin w3-bottombar w3-border\" alt=\"Avatar\">
