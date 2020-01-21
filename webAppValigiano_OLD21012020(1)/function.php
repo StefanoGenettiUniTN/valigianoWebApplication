@@ -23,10 +23,3 @@ function societaExists($_nome){
     if(($conn->query($sql))->num_rows>=1) return true;
     else return false;
 }
-
-function garaExists($_luogo, $_data){
-    global $conn;
-    $sql = "SELECT * FROM gara WHERE luogo = '$_luogo' AND data = '$_data';";
-    if(($conn->query($sql))->num_rows>=1) return true;
-    else return false;
-}
