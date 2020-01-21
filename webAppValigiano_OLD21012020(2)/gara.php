@@ -79,8 +79,8 @@ require_once("DBconfig.php");
                 while($outGare = $ris->fetch_assoc()){
                     echo "
                 <tr>
-                    <td class='riga' href='profiloGara.php?garaID=".$outGare["ID"]."' onclick='infoGara(".$outGare["ID"].");'>".$outGare["luogo"]."</td>
-                    <td class='riga' href='profiloGara.php?garaID=".$outGare["ID"]."' onclick='infoGara(".$outGare["ID"].");'>".$outGare["data"]."</td>
+                    <td class='riga' href='profiloGara.php?garaID=".$outGare["ID"]."' onclick='infoUser(".$outGare["ID"].");'>".$outGare["luogo"]."</td>
+                    <td class='riga' href='profiloGara.php?garaID=".$outGare["ID"]."' onclick='infoUser(".$outGare["ID"].");'>".$outGare["data"]."</td>
                     ";
 
                     echo "
