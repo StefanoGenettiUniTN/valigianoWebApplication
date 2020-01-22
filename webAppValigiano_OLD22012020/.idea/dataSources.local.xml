@@ -9,7 +9,6 @@
       <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>stefanogenetti</user-name>
-      <introspection-schemas>*:</introspection-schemas>
     </data-source>
     <data-source name="dbvaligiano@localhost [2]" uuid="cc74e035-c4db-4fb9-a069-cea75da4a841">
       <database-info product="MySQL" version="5.5.5-10.1.35-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e )" dbms="MARIADB" exact-version="10.1.35" exact-driver-version="5.1">

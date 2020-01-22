@@ -28,30 +28,30 @@ if(isset($_POST["id"]) && isset($_POST["place"]) && isset($_POST["date"])){
 
     while($outGare = $ris->fetch_assoc()){
         echo "
-        <tr>
-            <td class='riga' href='profiloGara.php?garaID=".$outGare["ID"]."' onclick='infoUser(".$outGare["ID"].");'>".$outGare["luogo"]."</td>
-            <td class='riga' href='profiloGara.php?garaID=".$outGare["ID"]."' onclick='infoUser(".$outGare["ID"].");'>".$outGare["data"]."</td>
-            ";
+                <tr>
+                    <td class='riga' href='profiloGara.php?garaID=".$outGare["ID"]."' onclick='infoGara(".$outGare["ID"].");'>".$outGare["luogo"]."</td>
+                    <td class='riga' href='profiloGara.php?garaID=".$outGare["ID"]."' onclick='infoGara(".$outGare["ID"].");'>".$outGare["data"]."</td>
+                    ";
 
         echo "
-        <td><button onclick='animazioneModificaGara(".$outGare["ID"].");' class=\"w3-btn w3-ripple\"><img src='round_create_black_18dp.png'></button></td>
-        <td><button onclick='rimuoviGara(\"".$outGare["luogo"]."\",".$outGare["ID"].");' class=\"w3-btn w3-ripple\"><img src='baseline_delete_black_18dp.png'></button></td>
-        ";
+                    <td><button onclick='animazioneModificaGara(".$outGare["ID"].");' class=\"w3-btn w3-ripple\"><img src='round_create_black_18dp.png'></button></td>
+                    <td><button onclick='rimuoviGara(\"".$outGare["luogo"]."\",".$outGare["ID"].");' class=\"w3-btn w3-ripple\"><img src='baseline_delete_black_18dp.png'></button></td>
+                    ";
 
         echo "</tr>";
 
         /*HIDDEN --> slideDown click su matita modifica gara*/
         echo "
-        <div method='post' action='gara.php'>
-        <tr style='display: none;' id='".$outGare["ID"]."'>
-                <td><input id='".$outGare["ID"]."luogo' class=\"w3-input w3-border w3-round\" type=\"text\" name=\"nome\"  value=".$outGare["luogo"]."></td>
-                <td><input id='".$outGare["ID"]."data' class=\"w3-input w3-border w3-round\" type=\"date\" name=\"data\"  value=".$outGare["data"]."></td>";
+                    <div method='post' action='gara.php'>
+                    <tr style='display: none;' id='".$outGare["ID"]."'>
+                            <td><input id='".$outGare["ID"]."luogo' class=\"w3-input w3-border w3-round\" type=\"text\" name=\"nome\"  value=".$outGare["luogo"]."></td>
+                            <td><input id='".$outGare["ID"]."data' class=\"w3-input w3-border w3-round\" type=\"date\" name=\"data\"  value=".$outGare["data"]."></td>";
 
         echo "
-        <td><button class='w3-button w3-teal' onclick=\"modificaGara(".$outGare['ID'].", document.getElementById('".$outGare['ID']."luogo').value, document.getElementById('".$outGare['ID']."data').value);\">MODIFICA</button></td>
-        </tr>        
-        </div>
-    ";
+                    <td><button class='w3-button w3-teal' onclick=\"modificaGara(".$outGare['ID'].", document.getElementById('".$outGare['ID']."luogo').value, document.getElementById('".$outGare['ID']."data').value);\">MODIFICA</button></td>
+                    </tr>        
+                    </div>
+                ";
     }
 
     echo "

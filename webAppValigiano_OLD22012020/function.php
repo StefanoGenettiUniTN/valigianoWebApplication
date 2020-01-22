@@ -30,16 +30,3 @@ function garaExists($_luogo, $_data){
     if(($conn->query($sql))->num_rows>=1) return true;
     else return false;
 }
-
-/**Funzione usata in agggiungi iscritto gara
-
- * Controlla se nell'array passato in input l'ID è contenuto
-
- */
-function isRegistered($_arrayIscritti, $_userId){
-    foreach ($_arrayIscritti as $utente) {
-        if($utente == $_userId)
-            return true;
-    }
-    return false;
-}
