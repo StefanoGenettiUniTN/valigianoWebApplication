@@ -70,8 +70,8 @@ if(isset($_GET["garaID"])) {
             }
             ?>
         </select>
+
     </div>
-    <a href="aggiungiRisultati.php?garaID=<?php echo"$garaID";?>" class="w3-button w3-margin-top w3-margin-left w3-round-large w3-centered w3-deep-orange" style="width: 20%;" >INSERISCI RISULTATI</a><br>
     <hr style="margin:auto; margin-top: 2%; width: 95%;">
 
     <a href="aggiungiIscrittoGara.php?garaID=<?php echo"$garaID";?>" class="w3-ripple w3-teal w3-button w3-block w3-centered" style="margin:auto; margin-top: 3%; width: 90%;" >AGGIUNGI ISCRITTI</a><br>
