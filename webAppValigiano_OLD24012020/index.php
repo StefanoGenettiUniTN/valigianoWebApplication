@@ -48,21 +48,21 @@
 
         <div class="row w3-margin w3-margin-top w3-center" >
                 <div style = "height: 350px; width: 33%;" class="w3-hover-shadow w3-center w3-display-container column" >
-                    <a href = "modificaDati.php" ><img style = "height: 100%; width: 100%;" src = "modifica.jpg" class="w3-round-medium" alt = "modifica" >
+                    <a href = "modificaDati.php" ><img style = "height: 100%; width: 100%;" src = "modifica.jpg" alt = "modifica" >
                         <div class="w3-panel w3-blue-grey" >
                             <h2 class="w3-display-middle" style = "background-color: LightGray; width: 90%; color: white; text-shadow:1px 1px 0 #444;" > MODIFICA DATI </h2 ></a >
                         </div >
                 </div >
 
                 <div style = "height: 350px; width: 33%;" class="w3-hover-shadow w3-center w3-display-container column" >
-                    <a href = "gara.php" ><img style = "height: 100%; width: 100%;" src = "gara.jpg" class="w3-round-medium" alt = "gara" >
+                    <a href = "gara.php" ><img style = "height: 100%; width: 100%;" src = "gara.jpg" alt = "gara" >
                         <div class="w3-panel w3-blue-grey" >
                             <h2 class="w3-display-middle" style = "background-color: LightGray; width: 90%; color: white; text-shadow:1px 1px 0 #444;" > GARA </h2 ></a >
                          </div >
                 </div >
 
                 <div style = "height: 350px; width: 33%;" class="w3-hover-shadow w3-center w3-display-container column" >
-                    <a href = "classifica.php" ><img style = "height: 100%; width: 100%;" src = "classifica.jpg" class="w3-round-medium" alt = "classifica" >
+                    <a href = "classifica.php" ><img style = "height: 100%; width: 100%;" src = "classifica.jpg" alt = "classifica" >
                         <div class="w3-panel w3-blue-grey" >
                             <h2 class="w3-display-middle" style = "background-color: LightGray; width: 90%; color: white; text-shadow:1px 1px 0 #444;" > CLASSIFICA </h2 ></a >
                         </div >
