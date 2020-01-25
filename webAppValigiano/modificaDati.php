@@ -43,21 +43,21 @@
 
         <a href="modificaUtente.php"><div class="w3-card w3-padding w3-margin w3-hover-shadow w3cardPadre">
             <div style = "height: 15%; width: 15%;" class="w3-center w3-display-container w3-margin-left w3-padding w3cardFiglio">
-                <img style = "height: 100%; width: 100%;" src = "newUser3.png" alt = "modifica utente" >
+                <img style = "height: 100%; width: 100%;" src = "immagini/computer-1331579_1280.png" alt = "modifica utente" >
             </div>
             <h5 style="font-family: 'myFont'; font-size: x-large;" class="w3cardFiglio w3-margin-left">Modifica dati <i>utente</i></h5>
         </div></a>
         <hr>
         <a href="modificaCategoria.php"><div class="w3-card w3-padding w3-margin w3-hover-shadow w3cardPadre">
             <div style = "height: 15%; width: 15%;" class="w3-center w3-display-container w3-margin-left w3-padding w3cardFiglio" >
-                <img style = "height: 100%; width: 100%;" src = "categoria.jpg" alt = "modifica categoria" >
+                <img style = "height: 100%; width: 100%;" src = "immagini/hierarchy-35795_1280.png" alt = "modifica categoria" >
             </div >
             <h5 style="font-family: 'myFont'; font-size: x-large;" class="w3cardFiglio w3-margin-left">Modifica dati <i>categoria</i></h5>
         </div></a>
         <hr>
         <a href="modificaSocieta.php"><div class="w3-card w3-padding w3-margin w3-hover-shadow w3cardPadre">
                 <div style = "height: 15%; width: 15%;" class="w3-center w3-display-container w3-margin-left w3-padding w3cardFiglio" >
-                    <img class="w3-round-xxlarge" style = "height: 100%; width: 100%;" src = "societa4.jpg" alt = "modifica societa" >
+                    <img class="w3-round-xxlarge" style = "height: 100%; width: 100%;" src = "immagini/hand-1917895_1920.png" alt = "modifica societa" >
                 </div >
                 <h5 style="font-family: 'myFont'; font-size: x-large;" class="w3cardFiglio w3-margin-left">Modifica dati <i>societ&agrave</i></h5>
         </div></a>

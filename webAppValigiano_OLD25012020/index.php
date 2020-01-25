@@ -13,7 +13,7 @@
 
             font-family: "Open Sans";
 
-            background-image: url("immagini/jogging-2343558_1920.jpg");
+            background-image: url("background3.jpg");
             background-repeat: no-repeat;
             background-attachment: scroll;
             background-position: center;
@@ -48,21 +48,21 @@
 
         <div class="row w3-margin w3-margin-top w3-center" >
                 <div style = "height: 350px; width: 33%;" class="w3-hover-shadow w3-center w3-display-container column" >
-                    <a href = "modificaDati.php" ><img style = "height: 100%; width: 100%;" src = "immagini/social-media-2786261_1920.jpg" class="w3-round-medium" alt = "modifica" >
+                    <a href = "modificaDati.php" ><img style = "height: 100%; width: 100%;" src = "modifica.jpg" class="w3-round-medium" alt = "modifica" >
                         <div class="w3-panel w3-blue-grey" >
                             <h2 class="w3-display-middle" style = "background-color: LightGray; width: 90%; color: white; text-shadow:1px 1px 0 #444;" > MODIFICA DATI </h2 ></a >
                         </div >
                 </div >
 
                 <div style = "height: 350px; width: 33%;" class="w3-hover-shadow w3-center w3-display-container column" >
-                    <a href = "gara.php" ><img style = "height: 100%; width: 100%;" src = "immagini/relay-race-655353_1920.jpg" class="w3-round-medium" alt = "gara" >
+                    <a href = "gara.php" ><img style = "height: 100%; width: 100%;" src = "gara.jpg" class="w3-round-medium" alt = "gara" >
                         <div class="w3-panel w3-blue-grey" >
                             <h2 class="w3-display-middle" style = "background-color: LightGray; width: 90%; color: white; text-shadow:1px 1px 0 #444;" > GARA </h2 ></a >
                          </div >
                 </div >
 
                 <div style = "height: 350px; width: 33%;" class="w3-hover-shadow w3-center w3-display-container column" >
-                    <a href = "classifica.php" ><img style = "height: 100%; width: 100%;" src = "immagini/trophy-1674911_1280.png" class="w3-round-medium" alt = "classifica" >
+                    <a href = "classifica.php" ><img style = "height: 100%; width: 100%;" src = "classifica.jpg" class="w3-round-medium" alt = "classifica" >
                         <div class="w3-panel w3-blue-grey" >
                             <h2 class="w3-display-middle" style = "background-color: LightGray; width: 90%; color: white; text-shadow:1px 1px 0 #444;" > CLASSIFICA </h2 ></a >
                         </div >
