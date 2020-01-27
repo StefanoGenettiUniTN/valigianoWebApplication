@@ -42,7 +42,7 @@ echo "<div class=\"w3-responsive\"><!--Scroll bar se schermata troppo piccola-->
             echo "
                     <div method='post' action='modificaCategoria.php'>
                     <tr style='display: none;' id='".$outCategoria["ID"]."'>
-                            <td><input id='".$outCategoria["ID"]."nome' class=\"w3-input w3-border w3-round\" type=\"text\" name=\"nome\"  value=".$outCategoria["nome"]."></td>";
+                            <td><input id='".$outCategoria["ID"]."nome' class=\"w3-input w3-border w3-round\" type=\"text\" name=\"nome\"  value=\"".$outCategoria["nome"]."\"></td>";
             echo "
                     <td><button class='w3-button w3-teal' onclick=\"modificaCategoria(".$outCategoria['ID'].", document.getElementById('".$outCategoria['ID']."nome').value);\">MODIFICA</button></td>
                     </tr>        

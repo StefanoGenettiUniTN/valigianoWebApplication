@@ -43,8 +43,8 @@ if(isset($_POST["id"]) && isset($_POST["name"]) && isset($_POST["location"])){
         echo "
                     <div method='post' action='modificaSocieta.php'>
                     <tr style='display: none;' id='".$outSocieta["ID"]."'>
-                            <td><input id='".$outSocieta["ID"]."nome' class=\"w3-input w3-border w3-round\" type=\"text\" name=\"nome\"  value=".$outSocieta["nome"]."></td>
-                            <td><input id='".$outSocieta["ID"]."sede' class=\"w3-input w3-border w3-round\" type=\"text\" name=\"sede\"  value=".$outSocieta["sede"]."></td>";
+                            <td><input id='".$outSocieta["ID"]."nome' class=\"w3-input w3-border w3-round\" type=\"text\" name=\"nome\"  value=\"".$outSocieta["nome"]."\"></td>
+                            <td><input id='".$outSocieta["ID"]."sede' class=\"w3-input w3-border w3-round\" type=\"text\" name=\"sede\"  value=\"".$outSocieta["sede"]."\"></td>";
         echo "
                     <td><button class='w3-button w3-teal' onclick=\"modificaSocieta(".$outSocieta['ID'].", document.getElementById('".$outSocieta['ID']."nome').value, document.getElementById('".$outSocieta['ID']."sede').value);\">MODIFICA</button></td>
                     </tr>        

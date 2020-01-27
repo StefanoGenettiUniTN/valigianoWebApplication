@@ -42,7 +42,7 @@ while($outGare = $ris->fetch_assoc()){
     echo "
         <div method='post' action='gara.php'>
         <tr style='display: none;' id='".$outGare["ID"]."'>
-                <td><input id='".$outGare["ID"]."luogo' class=\"w3-input w3-border w3-round\" type=\"text\" name=\"nome\"  value=".$outGare["luogo"]."></td>
+                <td><input id='".$outGare["ID"]."luogo' class=\"w3-input w3-border w3-round\" type=\"text\" name=\"nome\"  value=\"".$outGare["luogo"]."\"></td>
                 <td><input id='".$outGare["ID"]."data' class=\"w3-input w3-border w3-round\" type=\"date\" name=\"data\"  value=".$outGare["data"]."></td>";
 
     echo "

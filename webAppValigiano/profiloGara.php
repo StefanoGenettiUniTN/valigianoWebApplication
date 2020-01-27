@@ -124,6 +124,7 @@ if(isset($_GET["garaID"])) {
 
 <?php
     }else{
-        echo "Error!";  //#TODO Error page
+        echo "<script>alert(')-: Errore. Contattare l\'amministratore di sistema.');</script>";  //#TODO Error page
+        header("location: errorPage.php");
     }
 ?>

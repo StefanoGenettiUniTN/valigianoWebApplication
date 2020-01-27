@@ -114,6 +114,7 @@ if(isset($_POST["catID"]) && isset($_POST["raceID"]) && isset($_POST["resultsArr
         echo "</div>";
     }else{
         echo "<script>alert(')-: Errore. Contattare l\'amministratore di sistema.');</script>"; //TODO Error page
+        header("location: errorPage.php");
     }
 }
 ?>
