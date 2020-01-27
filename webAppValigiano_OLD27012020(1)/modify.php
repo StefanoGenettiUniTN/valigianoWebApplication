@@ -1,36 +1,49 @@
 <?php
-    session_start();
-    require_once("DBconfig.php");
+session_start();
+require_once("DBconfig.php");
+require_once("function.php");
 ?>
 
 <?php
-if(isset($_GET["type"]) && isset($_GET["catID"]) && isset($_GET["userID"])){
-?>
 
-<?php
+    /*
+     * Vengono passati in GET anche catID (categoria selezionata) e type (raggruppamento selezionato) che non devono cambiare nell'aggiornamento dinamico
+    */
+    if(isset($_POST["id"]) && isset($_POST["name"]) && isset($_POST["surname"]) && isset($_POST["sex"]) && isset($_POST["date"]) && isset($_POST["society"]) && isset($_POST["category"]) && isset($_POST["number"]) && isset($_GET["type"]) && isset($_GET["catID"])){
+        $userID = $_POST['id'];
+        $nome = $_POST['name'];
+        $cognome = $_POST['surname'];
+        $sesso = $_POST['sex'];
+        $data = $_POST['date'];
+        $IDsocieta = $_POST['society'];
+        $IDcategoria = $_POST['category'];
+        $pettorina = $_POST['number'];
 
-    $idUtente = $_GET["userID"];
-    $catID = $_GET["catID"];
-    $type = $_GET["type"];    //tipo di raggruppamento CHE NON DEVE CAMBIARE
+        //GET
+        $catID = $_GET["catID"];
+        $type = $_GET["type"];
 
-    /**Cancello dalla tabella Utenti l'utente in questione*/
-    $deleteQuery = "DELETE FROM utente WHERE utente.ID = ".$idUtente.";";
-    $risultato = $conn->query($deleteQuery);
-    /**.....*/
+        //Query
+        if($sesso=="female")
+            $updateQuery  = "UPDATE utente SET nome = '".$nome."', cognome = '".$cognome."', data_nascita = '".$data."', sesso = 'F', n_pettorina = ".$pettorina.", id_societa = '".$IDsocieta."', id_categoria = '".$IDcategoria."' WHERE ID = ".$userID.";";
+        else
+            $updateQuery  = "UPDATE utente SET nome = '".$nome."', cognome = '".$cognome."', data_nascita = '".$data."', sesso = 'M', n_pettorina = ".$pettorina.", id_societa = '".$IDsocieta."', id_categoria = '".$IDcategoria."' WHERE ID = ".$userID.";";
+        $risultato = $conn->query($updateQuery);
 
-    /**Aggiorno pagina*/
-    echo "<div class=\"w3-responsive\"><!--Scroll bar se schermata troppo piccola-->
-    <table align=\"center\" style=\"width: 90%;\" class=\"w3-table w3-striped w3-centered w3-large w3-hoverable w3-border\">
-        <tr class=\"w3-green\">
-            <th>Nome</th>
-            <th>Cognome</th>
-            <th>Sesso</th>
-            <th>Data di nascita</th>
-            <th>Societ&agrave</th>
-            <th>Categoria</th>
-            <th>Pettorina</th>
-            <th>Punteggio</th>
-        </tr>";
+        /**Aggiorno pagina*/
+        echo "<div class='w3-responsive'>
+        <table align='center' style='width: 90%;' class='w3-table w3-striped w3-centered w3-large w3-hoverable w3-border'>
+            <tr class='w3-green'>
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>Sesso</th>
+                <th>Data di nascita</th>
+                <th>Societ&agrave</th>
+                <th>Categoria</th>
+                <th>Pettorina</th>
+                <th>Punteggio</th>
+            </tr>";
+        
         /**ATTENZIONE --> rispetto a raggruppa.php i controlli su $type sono AL CONTRARIO, perchè dopo il filtro per categoria il bottone, e quindi il raggruppamento NON deve cambiare*/
         if($type==1){
 
@@ -63,31 +76,31 @@ if(isset($_GET["type"]) && isset($_GET["catID"]) && isset($_GET["userID"])){
                     <td class='riga' href='profiloUtente.php?userID=".$outUtenti["userID"]."' onclick='infoUser(".$outUtenti["userID"].");'>".$outUtenti["pettorina_utente"]."</td>
                     ";
 
-                    if(is_null($outUtenti["punteggio"])){
-                        echo "<td class='riga' href='profiloUtente.php?userID=".$outUtenti["userID"]."' onclick='infoUser(".$outUtenti["userID"].");'> - </td>";
-                    }else{
-                        echo "<td class='riga' href='profiloUtente.php?userID=".$outUtenti["userID"]."' onclick='infoUser(".$outUtenti["userID"].");'>".$outUtenti["punteggio"]."</td>";
-                    }
-                echo "
+            if(is_null($outUtenti["punteggio"])){
+                echo "<td class='riga' href='profiloUtente.php?userID=".$outUtenti["userID"]."' onclick='infoUser(".$outUtenti["userID"].");'> - </td>";
+            }else{
+                echo "<td class='riga' href='profiloUtente.php?userID=".$outUtenti["userID"]."' onclick='infoUser(".$outUtenti["userID"].");'>".$outUtenti["punteggio"]."</td>";
+            }
+            echo "
                     <td><button onclick='animazioneModificaUtente(".$outUtenti["userID"].");' class=\"w3-btn w3-ripple\"><img src='round_create_black_18dp.png'></button></td>
                     <td><button onclick='rimuoviUtente(\"".$outUtenti["nome_utente"]."\",".$outUtenti["userID"].");' class=\"w3-btn w3-ripple\"><img src='baseline_delete_black_18dp.png'></button></td>
                     ";
-                echo "</tr>";
-            /**...*/
-            /**PER SLIDE DOWN MODIFICA*/
-            /**...*/
+            echo "</tr>";
+        /**...*/
+        /**PER SLIDE DOWN MODIFICA*/
+        /**...*/
             echo "
-                    <div method='post' action='modificaUtente.php'>
-                    <tr style='display: none;' id='".$outUtenti["userID"]."'>
-                            <td><input id='".$outUtenti["userID"]."nome' class=\"w3-input w3-border w3-round\" type=\"text\" name=\"nome\"  value=\"".$outUtenti["nome_utente"]."\"></td>
-                            <td><input id='".$outUtenti["userID"]."cognome' class=\"w3-input w3-border w3-round\" type=\"text\" name=\"cognome\"  value=\"".$outUtenti["cognome_utente"]."\"></td>";
+                <div method='post' action='modificaUtente.php'>
+                <tr style='display: none;' id='".$outUtenti["userID"]."'>
+                        <td><input id='".$outUtenti["userID"]."nome' class=\"w3-input w3-border w3-round\" type=\"text\" name=\"nome\"  value=".$outUtenti["nome_utente"]."></td>
+                        <td><input id='".$outUtenti["userID"]."cognome' class=\"w3-input w3-border w3-round\" type=\"text\" name=\"cognome\"  value=".$outUtenti["cognome_utente"]."></td>";
             if($outUtenti["sesso_utente"] == "M"){  //il "pre select" viene settato al valore inizialmente registrato
                 echo "<td><select class='w3-select w3-animate-input w3-border w3-round' id='".$outUtenti["userID"]."sesso' name=\"sesso\"><option value=\"male\" selected>M</option><option value=\"female\">F</option></select></td>";
             }else{
                 echo "<td><select class='w3-select w3-animate-input w3-border w3-round' id='".$outUtenti["userID"]."sesso' name=\"sesso\"><option value=\"male\">M</option><option value=\"female\" selected>F</option></select></td>";
             }
             echo "
-                            <td><input id='".$outUtenti["userID"]."data' class=\"w3-input w3-border w3-round\" type=\"date\" name=\"data\"  value=".$outUtenti["data_nascita_utente"]."></td>";
+                        <td><input id='".$outUtenti["userID"]."data' class=\"w3-input w3-border w3-round\" type=\"date\" name=\"data\"  value=".$outUtenti["data_nascita_utente"]."></td>";
 
             echo "<td><select class='w3-select w3-animate-input w3-border w3-round' id='".$outUtenti["userID"]."societa' name=\"societa\">";
             /*RICERCA SOCIETA PER SELECT*/
@@ -120,18 +133,15 @@ if(isset($_GET["type"]) && isset($_GET["catID"]) && isset($_GET["userID"])){
             echo "<td></td>";   //copre buco punteggio (il punteggio di ogni gara è modificabile su un altra schermata)
 
             echo "
-                    <td><button class='w3-button w3-teal' onclick=\"modificaUtente(".$outUtenti['userID'].", document.getElementById('".$outUtenti['userID']."nome').value, document.getElementById('".$outUtenti['userID']."cognome').value, document.getElementById('".$outUtenti['userID']."sesso').value, document.getElementById('".$outUtenti['userID']."data').value, document.getElementById('".$outUtenti['userID']."societa').value, document.getElementById('".$outUtenti['userID']."categoria').value, document.getElementById('".$outUtenti['userID']."pettorina').value);\">MODIFICA</button></td>
-                    </tr>        
-                    </div>
-                ";
+                <td><button class='w3-button w3-teal' onclick=\"modificaUtente(".$outUtenti['userID'].", document.getElementById('".$outUtenti['userID']."nome').value, document.getElementById('".$outUtenti['userID']."cognome').value, document.getElementById('".$outUtenti['userID']."sesso').value, document.getElementById('".$outUtenti['userID']."data').value, document.getElementById('".$outUtenti['userID']."societa').value, document.getElementById('".$outUtenti['userID']."categoria').value, document.getElementById('".$outUtenti['userID']."pettorina').value);\">MODIFICA</button></td>
+                </tr>        
+                </div>
+            ";
         }
         echo "</table>";
         echo "</div>";
-?>
-
-<?php
-}else{
-    echo "<script>alert(')-: Errore. Contattare l\'amministratore di sistema.');</script>";  //#TODO Error page
-    header("location: errorPage.php");
-}
+    }else{
+        echo "<script>alert(')-: Errore. Contattare l\'amministratore di sistema.');</script>";  //#TODO Error page
+        header("location: /errorPage.php");
+    }
 ?>

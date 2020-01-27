@@ -89,19 +89,10 @@ if(isset($_POST["submit"])){
 
     //Controlla se l'utente è gia presente
     if(!userExists($nome, $cognome)){
-        if(!is_int($pettorina)) {    //controlla se il numero di pettorina è un numero intero
-            if (!pettorinaExists($pettorina)) {
-                //Query
-                $insertQuery = "INSERT INTO utente (nome, cognome, data_nascita, sesso, n_pettorina, id_societa, id_categoria) VALUES ( '" . $nome . "', '" . $cognome . "', '" . $data . "', '" . strtoupper($sesso) . "', '" . $pettorina . "', '" . $societa . "', '" . $categoria . "');";
-                if (!($ris = $conn->query($insertQuery))) {
-                    echo "<script>alert(\"Errore in fase di inserimento dati.\");</script>";
-                }
-            } else {
-                /**Se la pettorina è gia presente*/
-                echo "<script>alert(\"Valore inserito non valido - Numero di pettorina gia presente.\");</script>";
-            }
-        }else{
-            echo "<script>alert(\"Valore inserito non valido - Numero di pettorina in formato non valido.\");</script>";
+        //Query
+        $insertQuery  = "INSERT INTO utente (nome, cognome, data_nascita, sesso, n_pettorina, id_societa, id_categoria) VALUES ( '".$nome."', '".$cognome."', '".$data."', '".strtoupper($sesso)."', '".$pettorina."', '".$societa."', '".$categoria."');";
+        if(!($ris = $conn->query($insertQuery))){
+            echo "<script>alert(\"Errore in fase di inserimento dati.\");</script>";
         }
     }
     else{

@@ -246,6 +246,6 @@ if(isset($_GET["type"]) && isset($_GET["catID"])){
 <?php
 }else{
     echo "<script>alert(')-: Errore. Contattare l\'amministratore di sistema.');</script>";  //#TODO Error page
-    header("location: /errorPage.php");
+    header("location: errorPage.php");
 }
 ?>

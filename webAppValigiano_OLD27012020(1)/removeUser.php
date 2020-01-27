@@ -79,8 +79,8 @@ if(isset($_GET["type"]) && isset($_GET["catID"]) && isset($_GET["userID"])){
             echo "
                     <div method='post' action='modificaUtente.php'>
                     <tr style='display: none;' id='".$outUtenti["userID"]."'>
-                            <td><input id='".$outUtenti["userID"]."nome' class=\"w3-input w3-border w3-round\" type=\"text\" name=\"nome\"  value=\"".$outUtenti["nome_utente"]."\"></td>
-                            <td><input id='".$outUtenti["userID"]."cognome' class=\"w3-input w3-border w3-round\" type=\"text\" name=\"cognome\"  value=\"".$outUtenti["cognome_utente"]."\"></td>";
+                            <td><input id='".$outUtenti["userID"]."nome' class=\"w3-input w3-border w3-round\" type=\"text\" name=\"nome\"  value=".$outUtenti["nome_utente"]."></td>
+                            <td><input id='".$outUtenti["userID"]."cognome' class=\"w3-input w3-border w3-round\" type=\"text\" name=\"cognome\"  value=".$outUtenti["cognome_utente"]."></td>";
             if($outUtenti["sesso_utente"] == "M"){  //il "pre select" viene settato al valore inizialmente registrato
                 echo "<td><select class='w3-select w3-animate-input w3-border w3-round' id='".$outUtenti["userID"]."sesso' name=\"sesso\"><option value=\"male\" selected>M</option><option value=\"female\">F</option></select></td>";
             }else{
@@ -132,6 +132,6 @@ if(isset($_GET["type"]) && isset($_GET["catID"]) && isset($_GET["userID"])){
 <?php
 }else{
     echo "<script>alert(')-: Errore. Contattare l\'amministratore di sistema.');</script>";  //#TODO Error page
-    header("location: errorPage.php");
+    header("location: /errorPage.php");
 }
 ?>

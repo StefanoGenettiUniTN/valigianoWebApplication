@@ -10,13 +10,6 @@ function userExists($_nome, $_cognome){
     else return false;
 }
 
-function pettorinaExists($_pettorina){
-    global $conn;
-    $sql = "SELECT * FROM utente WHERE n_pettorina=".$_pettorina.";";
-    if(($conn->query($sql))->num_rows>=1) return true;
-    else return false;
-}
-
 function categoriaExists($_nome){
     global $conn;
     $sql = "SELECT * FROM categoria WHERE nome = '$_nome';";
