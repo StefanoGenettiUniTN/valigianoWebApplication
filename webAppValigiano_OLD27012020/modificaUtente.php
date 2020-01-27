@@ -15,11 +15,9 @@
         <script>
             /**Elimina utente*/
             function rimuoviUtente(nome, idUtente){
-                var raggruppamentoSelezionato = $('#btnRaggruppamento').val();  //SE 1 c'è scritto raggruppa per SOCIETA, SE 2 c'è scritto ragguppa per CATEGORIA
-                var categoriaSelezionata = $("#catFilter").val();   //categoria selezionata
                 if(confirm("L'utente "+nome+" sta per essere eliminato"))
                     $.ajax({
-                        url: 'removeUser.php?userID='+idUtente+"&type="+raggruppamentoSelezionato+"&catID="+categoriaSelezionata,  //idUtente contiene l'id dell'utente da rimuovere
+                        url: 'removeUser.php?userID='+idUtente,  //idUtente contiene l'id dell'utente da rimuovere
                         success: function(data) {
                             $("#outputJQ").html(data);
                         }
@@ -52,11 +50,8 @@
 
             /*Riceve in input dati utente e modifica record*/
             function modificaUtente(idUtente, nome, cognome, sesso, data, societa, categoria, pettorina){
-                var raggruppamentoSelezionato = $('#btnRaggruppamento').val();  //SE 1 c'è scritto raggruppa per SOCIETA, SE 2 c'è scritto ragguppa per CATEGORIA
-                var categoriaSelezionata = $("#catFilter").val();   //categoria selezionata
-
                 if(idUtente && nome && cognome && sesso && data && societa && categoria && pettorina){
-                    $.post("modify.php?type="+raggruppamentoSelezionato+"&catID="+categoriaSelezionata,
+                    $.post("modify.php",
                         {
                             id: idUtente,
                             name: nome,
@@ -84,9 +79,7 @@
                 }
             });
             */
-
-            /*
-            function filtroCategoria(valore){   //si preferisce non usare più questa alternativa ma rifare query #TODO aggiustare id e classi
+            function filtroCategoria(valore){
                 if(valore=="all"){
                     $('.record').show();
                 }else{
@@ -94,23 +87,11 @@
                     $(".cat"+valore).show();
                 }
             }
-            */
-
-            function filtroCategoria(valore){   //valore contiene la categoria selezionata
-                var raggruppamentoSelezionato = $('#btnRaggruppamento').val();  //SE 1 c'è scritto raggruppa per SOCIETA, SE 2 c'è scritto ragguppa per CATEGORIA
-                $.ajax({
-                    url: 'categoryFilter.php?catID='+valore+'&type='+raggruppamentoSelezionato,  //type 1 --> raggruppa societa type 2 --> raggruppa categoria //catID=categoria selezionata
-                    success: function(data) {
-                        $("#outputJQRaggruppamento").html(data);
-                    }
-                });
-            }
 
 
             function raggruppa(tipo){
-                var categoriaSelezionata = $("#catFilter").val();
                 $.ajax({
-                    url: 'raggruppa.php?type='+tipo+'&catID='+categoriaSelezionata,  //type 1 --> raggruppa societa type 2 --> raggruppa categoria //catID=categoria selezionata
+                    url: 'raggruppa.php?type='+tipo,  //type 1 --> raggruppa societa type 2 --> raggruppa categoria
                     success: function(data) {
                         $("#outputJQRaggruppamento").html(data);
                     }
@@ -127,6 +108,7 @@
         <h2 class="w3-margin w3-container" style="text-shadow:1px 1px 0 #444; height: 8%;">Pagina di modifica utente</h2>
     </div>
 
+    <div id="outputJQRaggruppamento">
     <div style="margin-right: 10%; margin-top: 2%; width: 20%;" class="w3-margin-bottom">
         <p class="w3-margin-left">Filtra per categoria:</p>
         <select id="catFilter" class='w3-select w3-border w3-round' name=\"filtroCategoria\" style="margin-left: 10%;" onchange="filtroCategoria(this.value);">
@@ -140,11 +122,10 @@
             }
         ?>
         </select>
+
+        <button class="w3-blue-gray w3-button w3-block w3-centered w3-margin w3-round-medium" onclick="raggruppa(1)">RAGGRUPPA PER SOCIETA</button>
+
     </div>
-
-    <div id="outputJQRaggruppamento"><!--/Output JQUERY Raggruppamento.../-->
-        <button style="margin-right: 10%; margin-top: 2%; width: 20%;" class="w3-blue-gray w3-button w3-block w3-centered w3-margin w3-round-medium" onclick="raggruppa(1)" id="btnRaggruppamento" value="1">RAGGRUPPA PER SOCIETA</button>
-
     <hr style="margin:auto; margin-top: 2%; width: 95%;">
     <a href="aggiungiUtente.php" class="w3-ripple w3-teal w3-button w3-block w3-centered" style="margin:auto; margin-top: 3%; width: 90%;" >AGGIUNGI UTENTE</a><br>
 

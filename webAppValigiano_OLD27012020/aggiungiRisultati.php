@@ -70,11 +70,7 @@ if(isset($_GET["garaID"])) {
                 var i = 0;
                 if(selectedCat!="zero"){    //nessuna categoria selezionata = "zero"
                     while(i<(rowCount-1) && promptInput!="F"){
-                        if(i>0) //se è gia stato inserito almeno un valore stampa anche l'ultimo valore inserito
-                            promptInput = prompt("Inserisca i numeri di pettorina degli atleti in ordine di arrivo.\nPer terminare l'inupt manualmente digiti [ F (fine)]\nSono stati inseriti "+i+" valori.\nUltimo valore inserito: "+arrayRisultati[i-1]+".");
-                        else
-                            promptInput = prompt("Inserisca i numeri di pettorina degli atleti in ordine di arrivo.\nPer terminare l'inupt manualmente digiti [ F (fine)]\nSono stati inseriti "+i+" valori.");
-
+                        promptInput = prompt("Inserisca i numeri di pettorina degli atleti in ordine di arrivo. Per terminare l'inupt manualmente digiti [ F (fine)]");
                         if(promptInput!="F" && Number.isInteger(parseInt(promptInput))) {
                             arrayRisultati.push(promptInput);
                             i++;
@@ -108,7 +104,7 @@ if(isset($_GET["garaID"])) {
         if($outTitolo = $risQueryTitolo->fetch_assoc())
             echo "<h2 class='w3-margin w3-container' style='height: 8%;'><b>EVENTO:</b> ".$outTitolo["luogo"]."  ".$outTitolo["data"]." - <u>Inserimento risultati</u></h2>";
         else
-            echo "<script>alert(')-: Errore. Contattare l\'amministratore di sistema.');</script>";  #TODO error page
+            echo "<script>alert('Fatal error');</script>";  #TODO error page
         ?>
     </div>
 
@@ -139,6 +135,6 @@ if(isset($_GET["garaID"])) {
 
 <?php
 }else{
-    echo "<script>alert(')-: Errore. Contattare l\'amministratore di sistema.');</script>";  //#TODO Error page
+    echo "Error!";  //#TODO Error page
 }
 ?>

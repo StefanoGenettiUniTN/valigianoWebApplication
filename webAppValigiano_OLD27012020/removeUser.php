@@ -3,15 +3,10 @@
     require_once("DBconfig.php");
 ?>
 
-<?php
-if(isset($_GET["type"]) && isset($_GET["catID"]) && isset($_GET["userID"])){
-?>
 
 <?php
 
     $idUtente = $_GET["userID"];
-    $catID = $_GET["catID"];
-    $type = $_GET["type"];    //tipo di raggruppamento CHE NON DEVE CAMBIARE
 
     /**Cancello dalla tabella Utenti l'utente in questione*/
     $deleteQuery = "DELETE FROM utente WHERE utente.ID = ".$idUtente.";";
@@ -19,9 +14,9 @@ if(isset($_GET["type"]) && isset($_GET["catID"]) && isset($_GET["userID"])){
     /**.....*/
 
     /**Aggiorno pagina*/
-    echo "<div class=\"w3-responsive\"><!--Scroll bar se schermata troppo piccola-->
-    <table align=\"center\" style=\"width: 90%;\" class=\"w3-table w3-striped w3-centered w3-large w3-hoverable w3-border\">
-        <tr class=\"w3-green\">
+    echo "<div class='w3-responsive'>
+    <table align='center' style='width: 90%;' class='w3-table w3-striped w3-centered w3-large w3-hoverable w3-border'>
+        <tr class='w3-green'>
             <th>Nome</th>
             <th>Cognome</th>
             <th>Sesso</th>
@@ -31,23 +26,7 @@ if(isset($_GET["type"]) && isset($_GET["catID"]) && isset($_GET["userID"])){
             <th>Pettorina</th>
             <th>Punteggio</th>
         </tr>";
-        /**ATTENZIONE --> rispetto a raggruppa.php i controlli su $type sono AL CONTRARIO, perchè dopo il filtro per categoria il bottone, e quindi il raggruppamento NON deve cambiare*/
-        if($type==1){
-
-            if($catID=="all")   //se l'utente non ha selezionato nessuna categoria in particolare, stampa tutto
-                $query = "SELECT utente.nome AS nome_utente, utente.cognome AS cognome_utente, utente.sesso AS sesso_utente, utente.data_nascita AS data_nascita_utente, utente.n_pettorina AS pettorina_utente, utente.ID AS userID, utente.id_categoria, utente.id_societa, categoria.nome AS nome_categoria, categoria.ID, classifica.id_utente, societa.nome AS nome_societa, societa.ID, SUM(classifica.punteggio) AS punteggio FROM societa, categoria, utente LEFT OUTER JOIN classifica ON utente.ID = classifica.id_utente WHERE utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID GROUP BY utente.ID ORDER BY utente.id_categoria DESC, utente.nome DESC, utente.cognome DESC, utente.id_societa DESC;";
-            else
-                $query = "SELECT utente.nome AS nome_utente, utente.cognome AS cognome_utente, utente.sesso AS sesso_utente, utente.data_nascita AS data_nascita_utente, utente.n_pettorina AS pettorina_utente, utente.ID AS userID, utente.id_categoria, utente.id_societa, categoria.nome AS nome_categoria, categoria.ID, classifica.id_utente, societa.nome AS nome_societa, societa.ID, SUM(classifica.punteggio) AS punteggio FROM societa, categoria, utente LEFT OUTER JOIN classifica ON utente.ID = classifica.id_utente WHERE utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND utente.id_categoria = ".$catID." GROUP BY utente.ID ORDER BY utente.id_categoria DESC, utente.nome DESC, utente.cognome DESC, utente.id_societa DESC;";
-
-        }else{  //type==2
-
-            if($catID=="all")   //se l'utente non ha selezionato nessuna categoria in particolare, stampa tutto
-                $query = "SELECT utente.nome AS nome_utente, utente.cognome AS cognome_utente, utente.sesso AS sesso_utente, utente.data_nascita AS data_nascita_utente, utente.n_pettorina AS pettorina_utente, utente.ID AS userID, utente.id_categoria, utente.id_societa, categoria.nome AS nome_categoria, categoria.ID, classifica.id_utente, societa.nome AS nome_societa, societa.ID, SUM(classifica.punteggio) AS punteggio FROM societa, categoria, utente LEFT OUTER JOIN classifica ON utente.ID = classifica.id_utente WHERE utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID GROUP BY utente.ID ORDER BY utente.id_societa DESC, utente.nome DESC, utente.cognome DESC, utente.id_categoria DESC;";
-            else
-                $query = "SELECT utente.nome AS nome_utente, utente.cognome AS cognome_utente, utente.sesso AS sesso_utente, utente.data_nascita AS data_nascita_utente, utente.n_pettorina AS pettorina_utente, utente.ID AS userID, utente.id_categoria, utente.id_societa, categoria.nome AS nome_categoria, categoria.ID, classifica.id_utente, societa.nome AS nome_societa, societa.ID, SUM(classifica.punteggio) AS punteggio FROM societa, categoria, utente LEFT OUTER JOIN classifica ON utente.ID = classifica.id_utente WHERE utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND utente.id_categoria = ".$catID." GROUP BY utente.ID ORDER BY utente.id_societa DESC, utente.nome DESC, utente.cognome DESC, utente.id_categoria DESC;";
-
-        }
-        //$query = "SELECT utente.nome AS nome_utente, utente.cognome AS cognome_utente, utente.sesso AS sesso_utente, utente.data_nascita AS data_nascita_utente, utente.n_pettorina AS pettorina_utente, utente.ID AS userID, utente.id_categoria, utente.id_societa, categoria.nome AS nome_categoria, categoria.ID, classifica.id_utente, societa.nome AS nome_societa, societa.ID, SUM(classifica.punteggio) AS punteggio FROM societa, categoria, utente LEFT OUTER JOIN classifica ON utente.ID = classifica.id_utente WHERE utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID GROUP BY utente.ID ORDER BY utente.id_categoria DESC, utente.nome DESC, utente.cognome DESC, utente.id_societa DESC;";
+        $query = "SELECT utente.nome AS nome_utente, utente.cognome AS cognome_utente, utente.sesso AS sesso_utente, utente.data_nascita AS data_nascita_utente, utente.n_pettorina AS pettorina_utente, utente.ID AS userID, utente.id_categoria, utente.id_societa, categoria.nome AS nome_categoria, categoria.ID, classifica.id_utente, societa.nome AS nome_societa, societa.ID, SUM(classifica.punteggio) AS punteggio FROM societa, categoria, utente LEFT OUTER JOIN classifica ON utente.ID = classifica.id_utente WHERE utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID GROUP BY utente.ID ORDER BY utente.id_categoria DESC, utente.nome DESC, utente.cognome DESC, utente.id_societa DESC;";
 
         $ris = $conn->query($query);
 
@@ -127,11 +106,4 @@ if(isset($_GET["type"]) && isset($_GET["catID"]) && isset($_GET["userID"])){
         }
         echo "</table>";
         echo "</div>";
-?>
-
-<?php
-}else{
-    echo "<script>alert(')-: Errore. Contattare l\'amministratore di sistema.');</script>";  //#TODO Error page
-    header("location: /errorPage.php");
-}
 ?>

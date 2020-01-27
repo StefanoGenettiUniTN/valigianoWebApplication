@@ -5,23 +5,32 @@ require_once("DBconfig.php");
 
 
 <?php
-    if(isset($_GET["type"]) && isset($_GET["catID"])){
-?>
-
-<?php
 
 $type = $_GET["type"];
-$catID = $_GET["catID"];
-
 /**
     type = 1 --> raggurppa per societa
     type = 2 --> raggruppa per categoria
  */
 
 if($type=="1"){ //RAGGRUPPA PER SOCIETA
+    echo "
+    <div style='margin-right: 10%; margin-top: 2%; width: 20%;' class='w3-margin-bottom'>
+        <p class='w3-margin-left'>Filtra per categoria:</p>
+        <select id='catFilter' class='w3-select w3-border w3-round' name='filtroCategoria' style='margin-left: 10%;' onchange='filtroCategoria(this.value);'>
+        <option value='all' selected>Mostra tutte le categorie</option>";
 
-    echo "<button style='margin-right: 10%; margin-top: 2%; width: 20%;' class='w3-blue-gray w3-button w3-block w3-centered w3-margin w3-round-medium' onclick=\"raggruppa('2')\" id='btnRaggruppamento' value='2'>RAGGRUPPA PER CATEGORIA</button>
+    /*RICERCA CATEGORIA PER SELECT*/
+    $queryCategoria = "SELECT id, nome FROM categoria;";
+    $risCategoria = $conn->query($queryCategoria);
+    while($categoria = $risCategoria->fetch_assoc()) {
+        echo "<option value='".$categoria["id"]."'>".$categoria["nome"]."</option>";
+    }
 
+    echo "</select>
+
+        <button class='w3-blue-gray w3-button w3-block w3-centered w3-margin w3-round-medium' onclick=\"raggruppa('2')\">RAGGRUPPA PER CATEGORIA</button>
+
+    </div>
     <hr style='margin:auto; margin-top: 2%; width: 95%;'>
     <a href='aggiungiUtente.php' class='w3-ripple w3-teal w3-button w3-block w3-centered' style='margin:auto; margin-top: 3%; width: 90%;' >AGGIUNGI UTENTE</a><br>
 
@@ -39,11 +48,7 @@ if($type=="1"){ //RAGGRUPPA PER SOCIETA
             <th>Pettorina</th>
             <th>Punteggio</th>
         </tr>";
-    if($catID=="all")   //se l'utente non ha selezionato nessuna categoria in particolare, stampa tutto
-        $query = "SELECT utente.nome AS nome_utente, utente.cognome AS cognome_utente, utente.sesso AS sesso_utente, utente.data_nascita AS data_nascita_utente, utente.n_pettorina AS pettorina_utente, utente.ID AS userID, utente.id_categoria, utente.id_societa, categoria.nome AS nome_categoria, categoria.ID, classifica.id_utente, societa.nome AS nome_societa, societa.ID, SUM(classifica.punteggio) AS punteggio FROM societa, categoria, utente LEFT OUTER JOIN classifica ON utente.ID = classifica.id_utente WHERE utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID GROUP BY utente.ID ORDER BY utente.id_societa DESC, utente.nome DESC, utente.cognome DESC, utente.id_categoria DESC;";
-    else
-        $query = "SELECT utente.nome AS nome_utente, utente.cognome AS cognome_utente, utente.sesso AS sesso_utente, utente.data_nascita AS data_nascita_utente, utente.n_pettorina AS pettorina_utente, utente.ID AS userID, utente.id_categoria, utente.id_societa, categoria.nome AS nome_categoria, categoria.ID, classifica.id_utente, societa.nome AS nome_societa, societa.ID, SUM(classifica.punteggio) AS punteggio FROM societa, categoria, utente LEFT OUTER JOIN classifica ON utente.ID = classifica.id_utente WHERE utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND utente.id_categoria = ".$catID." GROUP BY utente.ID ORDER BY utente.id_societa DESC, utente.nome DESC, utente.cognome DESC, utente.id_categoria DESC;";
-
+    $query = "SELECT utente.nome AS nome_utente, utente.cognome AS cognome_utente, utente.sesso AS sesso_utente, utente.data_nascita AS data_nascita_utente, utente.n_pettorina AS pettorina_utente, utente.ID AS userID, utente.id_categoria, utente.id_societa, categoria.nome AS nome_categoria, categoria.ID, classifica.id_utente, societa.nome AS nome_societa, societa.ID, SUM(classifica.punteggio) AS punteggio FROM societa, categoria, utente LEFT OUTER JOIN classifica ON utente.ID = classifica.id_utente WHERE utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID GROUP BY utente.ID ORDER BY utente.id_societa DESC, utente.nome DESC, utente.cognome DESC, utente.id_categoria DESC;";
     $ris = $conn->query($query);
 
     while($outUtenti = $ris->fetch_assoc()){
@@ -130,8 +135,23 @@ if($type=="1"){ //RAGGRUPPA PER SOCIETA
 
 }else{  //RAGGRUPPA PER CATEGORIA
     echo "
-        <button style='margin-right: 10%; margin-top: 2%; width: 20%;' class='w3-blue-gray w3-button w3-block w3-centered w3-margin w3-round-medium' onclick=\"raggruppa('1')\" id='btnRaggruppamento' value='1'>RAGGRUPPA PER SOCIETA</button>
-        
+    <div style='margin-right: 10%; margin-top: 2%; width: 20%;' class='w3-margin-bottom'>
+        <p class='w3-margin-left'>Filtra per categoria:</p>
+        <select id='catFilter' class='w3-select w3-border w3-round' name='filtroCategoria' style='margin-left: 10%;' onchange='filtroCategoria(this.value);'>
+        <option value='all' selected>Mostra tutte le categorie</option>";
+
+            /*RICERCA CATEGORIA PER SELECT*/
+            $queryCategoria = "SELECT id, nome FROM categoria;";
+            $risCategoria = $conn->query($queryCategoria);
+            while($categoria = $risCategoria->fetch_assoc()) {
+                echo "<option value='".$categoria["id"]."'>".$categoria["nome"]."</option>";
+            }
+
+        echo "</select>
+
+        <button class='w3-blue-gray w3-button w3-block w3-centered w3-margin w3-round-medium' onclick=\"raggruppa('1')\">RAGGRUPPA PER SOCIETA</button>
+
+    </div>
     <hr style='margin:auto; margin-top: 2%; width: 95%;'>
     <a href='aggiungiUtente.php' class='w3-ripple w3-teal w3-button w3-block w3-centered' style='margin:auto; margin-top: 3%; width: 90%;' >AGGIUNGI UTENTE</a><br>
 
@@ -149,12 +169,7 @@ if($type=="1"){ //RAGGRUPPA PER SOCIETA
             <th>Pettorina</th>
             <th>Punteggio</th>
         </tr>";
-
-        if($catID=="all")   //se l'utente non ha selezionato nessuna categoria in particolare, stampa tutto
-            $query = "SELECT utente.nome AS nome_utente, utente.cognome AS cognome_utente, utente.sesso AS sesso_utente, utente.data_nascita AS data_nascita_utente, utente.n_pettorina AS pettorina_utente, utente.ID AS userID, utente.id_categoria, utente.id_societa, categoria.nome AS nome_categoria, categoria.ID, classifica.id_utente, societa.nome AS nome_societa, societa.ID, SUM(classifica.punteggio) AS punteggio FROM societa, categoria, utente LEFT OUTER JOIN classifica ON utente.ID = classifica.id_utente WHERE utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID GROUP BY utente.ID ORDER BY utente.id_categoria DESC, utente.nome DESC, utente.cognome DESC, utente.id_societa DESC;";
-        else
-            $query = "SELECT utente.nome AS nome_utente, utente.cognome AS cognome_utente, utente.sesso AS sesso_utente, utente.data_nascita AS data_nascita_utente, utente.n_pettorina AS pettorina_utente, utente.ID AS userID, utente.id_categoria, utente.id_societa, categoria.nome AS nome_categoria, categoria.ID, classifica.id_utente, societa.nome AS nome_societa, societa.ID, SUM(classifica.punteggio) AS punteggio FROM societa, categoria, utente LEFT OUTER JOIN classifica ON utente.ID = classifica.id_utente WHERE utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND utente.id_categoria = ".$catID." GROUP BY utente.ID ORDER BY utente.id_categoria DESC, utente.nome DESC, utente.cognome DESC, utente.id_societa DESC;";
-
+        $query = "SELECT utente.nome AS nome_utente, utente.cognome AS cognome_utente, utente.sesso AS sesso_utente, utente.data_nascita AS data_nascita_utente, utente.n_pettorina AS pettorina_utente, utente.ID AS userID, utente.id_categoria, utente.id_societa, categoria.nome AS nome_categoria, categoria.ID, classifica.id_utente, societa.nome AS nome_societa, societa.ID, SUM(classifica.punteggio) AS punteggio FROM societa, categoria, utente LEFT OUTER JOIN classifica ON utente.ID = classifica.id_utente WHERE utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID GROUP BY utente.ID ORDER BY utente.id_categoria DESC, utente.nome DESC, utente.cognome DESC, utente.id_societa DESC;";
         $ris = $conn->query($query);
 
         while($outUtenti = $ris->fetch_assoc()){
@@ -237,10 +252,3 @@ echo "
     </div>
     </div>";
 }
-?>
-<?php
-    }else{
-        echo "<script>alert(')-: Errore. Contattare l\'amministratore di sistema.');</script>";  //#TODO Error page
-        header("location: /errorPage.php");
-    }
-?>

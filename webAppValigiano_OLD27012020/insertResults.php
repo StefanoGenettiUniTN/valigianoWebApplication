@@ -113,7 +113,7 @@ if(isset($_POST["catID"]) && isset($_POST["raceID"]) && isset($_POST["resultsArr
         echo "</table>";
         echo "</div>";
     }else{
-        echo "<script>alert(')-: Errore. Contattare l\'amministratore di sistema.');</script>"; //TODO Error page
+        echo "Errore!"; //TODO Error page
     }
 }
 ?>

@@ -63,6 +63,6 @@ echo "
 
 <?php
     }else{
-        echo "<script>alert(')-: Errore. Contattare l\'amministratore di sistema.');</script>";  //#TODO Error page
+        echo "Error!";  //#TODO Error page
     }
 ?>

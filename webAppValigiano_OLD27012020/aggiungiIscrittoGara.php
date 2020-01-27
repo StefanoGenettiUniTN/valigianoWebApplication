@@ -55,7 +55,7 @@ if(isset($_GET["garaID"])) {
     if($outTitolo = $risQueryTitolo->fetch_assoc())
         echo "<h2 class='w3-margin w3-container' style='height: 8%;'><b>EVENTO:</b> ".$outTitolo["luogo"]."  ".$outTitolo["data"]." - <u>Aggiunta iscritti</u></h2>";
     else
-        echo "<script>alert(')-: Errore. Contattare l\'amministratore di sistema.');</script>";  #TODO error page
+        echo "<script>alert('Fatal error');</script>";  #TODO error page
     ?>
 </div>
 
