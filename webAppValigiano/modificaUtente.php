@@ -99,7 +99,7 @@
             function filtroCategoria(valore){   //valore contiene la categoria selezionata
                 var raggruppamentoSelezionato = $('#btnRaggruppamento').val();  //SE 1 c'è scritto raggruppa per SOCIETA, SE 2 c'è scritto ragguppa per CATEGORIA
                 $.ajax({
-                    url: 'categoryFilter.php?catID='+valore+'&type='+raggruppamentoSelezionato,  //type 1 --> raggruppa societa type 2 --> raggruppa categoria //catID=categoria selezionata
+                    url: 'categoryFilterModificaUtente.php?catID='+valore+'&type='+raggruppamentoSelezionato,  //type 1 --> raggruppa societa type 2 --> raggruppa categoria //catID=categoria selezionata
                     success: function(data) {
                         $("#outputJQRaggruppamento").html(data);
                     }

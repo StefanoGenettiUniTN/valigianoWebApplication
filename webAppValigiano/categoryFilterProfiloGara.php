@@ -1,26 +1,23 @@
 <?php
-/**Rimozione iscritto passato con GET dalla gara passata con GET*/
+
+/**Da profiloGara.php faccio nuovamente query per filtrare categoria*/
+
 session_start();
 require_once("DBconfig.php");
-
-/*Prendo in INPUT anche la categoria già selezionata*/
-if(isset($_GET["raceID"]) && isset($_GET["userID"]) && isset($_GET["catID"])) {
 ?>
 
 
 <?php
+if(isset($_GET["catID"])){
+    ?>
 
-$idUtente = $_GET["userID"];
-$garaID = $_GET["raceID"];
-$catID = $_GET["catID"];
+    <?php
 
-/**Cancello dalla tabella Classifica il record corrispondete a IDGara e IDUtente selezionati (effetto collaterale: perdo punteggio nel caso la gara fosse già stata fatta)*/
-$deleteQuery = "DELETE FROM classifica WHERE id_utente = ".$idUtente." AND id_gara=".$garaID.";";
-$risultato = $conn->query($deleteQuery);
-/**.....*/
+    $catID = $_GET["catID"];
+    $garaID = $_GET["raceID"];
 
-/**Aggiorno pagina*/
-echo "<div class=\"w3-responsive\"><!--Scroll bar se schermata troppo piccola-->
+    /**Aggiorno pagina*/
+    echo "<div class=\"w3-responsive\"><!--Scroll bar se schermata troppo piccola-->
             <table align=\"center\" style=\"width: 90%;\" class=\"w3-table w3-striped w3-centered w3-large w3-hoverable w3-border sortable\">
                 <tr class=\"w3-green\">
                     <th>Nome</th>
@@ -35,8 +32,6 @@ echo "<div class=\"w3-responsive\"><!--Scroll bar se schermata troppo piccola-->
         $query = "SELECT *, utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome FROM classifica, utente, categoria, societa WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND classifica.id_gara=".$garaID." ORDER BY categoria.nome ASC, utente.nome ASC, utente.cognome ASC;";
     else
         $query = "SELECT *, utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome FROM classifica, utente, categoria, societa WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND classifica.id_gara=".$garaID." AND utente.id_categoria=".$catID." ORDER BY categoria.nome ASC, utente.nome ASC, utente.cognome ASC;";
-    //$query = "SELECT *, utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome FROM classifica, utente, categoria, societa WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND classifica.id_gara=".$garaID." ORDER BY categoria.nome ASC, utente.nome ASC, utente.cognome ASC;";
-
     $ris = $conn->query($query);
 
     while($outIscritti = $ris->fetch_assoc()){
@@ -62,14 +57,15 @@ echo "<div class=\"w3-responsive\"><!--Scroll bar se schermata troppo piccola-->
         echo "</tr>";
     }
 
-echo "
+    echo "
         </table>
         </div>
     ";
-?>
+    ?>
 
 <?php
-    }else{
-        echo "<script>alert(')-: Errore. Contattare l\'amministratore di sistema.');</script>";  //#TODO Error page
-    }
+}else{
+    echo "<script>alert(')-: Errore. Contattare l\'amministratore di sistema.');</script>";  //#TODO Error page
+    header("location: errorPage.php");
+}
 ?>

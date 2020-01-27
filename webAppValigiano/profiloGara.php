@@ -18,9 +18,10 @@ if(isset($_GET["garaID"])) {
 
             /**Elimina utente*/
             function rimuoviIscritto(nome, idGara, idUtente){
+                var categoriaSelezionata = $("#catFilter").val();
                 if(confirm("L'utente "+nome+" sta per essere rimosso dalla lista iscritti alla gara"))
                     $.ajax({
-                        url: 'removeSubscriber.php?raceID='+idGara+'&userID='+idUtente,  //idUtente contiene l'id dell'utente da rimuovere
+                        url: 'removeSubscriber.php?raceID='+idGara+'&userID='+idUtente+'&catID='+categoriaSelezionata,  //idUtente contiene l'id dell'utente da rimuovere
                         success: function(data) {
                             $("#outputJQ").html(data);
                         }
@@ -31,6 +32,8 @@ if(isset($_GET["garaID"])) {
                 window.location.href = "profiloUtente.php?userID="+link;
             }
 
+            /**Si preferisce non usare più questa alternativa ma rifare query #TODO aggiustare id e classi e valutare computazionalmente la scelta*/
+            /*
             function filtroCategoria(valore){
                 if(valore=="all"){
                     $('.record').show();
@@ -38,6 +41,15 @@ if(isset($_GET["garaID"])) {
                     $('.record').hide();
                     $(".cat"+valore).show();
                 }
+            }
+            */
+            function filtroCategoria(valore, idGara){   //valore contiene la categoria selezionata
+                $.ajax({
+                    url: 'categoryFilterProfiloGara.php?catID='+valore+'&raceID='+idGara,  //catID=categoria selezionata
+                    success: function(data) {
+                        $("#outputJQ").html(data);
+                    }
+                });
             }
 
         </script>
@@ -59,7 +71,7 @@ if(isset($_GET["garaID"])) {
 
     <div style="margin-right: 10%; margin-top: 2%; width: 20%;" class="w3-margin-bottom">
         <p class="w3-margin-left">Filtra per categoria:</p>
-        <select id="catFilter" class='w3-select w3-border w3-round' name=\"filtroCategoria\" style="margin-left: 10%;" onchange="filtroCategoria(this.value);">
+        <select id="catFilter" class='w3-select w3-border w3-round' name=\"filtroCategoria\" style="margin-left: 10%;" onchange="filtroCategoria(this.value, <?php echo $garaID;?>);">
             <option value="all" selected>Mostra tutte le categorie</option>
             <?php
             /*RICERCA CATEGORIA PER SELECT*/
