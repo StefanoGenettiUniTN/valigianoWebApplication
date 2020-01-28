@@ -9,8 +9,6 @@ require_once("DBconfig.php");
     <link rel="stylesheet" href="w3.css">
     <script src="jquery-3.4.1.min.js"></script>
     <script src="sorttable.js"></script>
-    <script src="print.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="print.min.css">
 
     <script>
 
@@ -47,13 +45,15 @@ require_once("DBconfig.php");
         /**Nel DIV OUTPUTJQUERY restituisce la tabella relativa ai risultati della gara selezionata*/
         /**NB: Ristampa anche select categoria*/
         function stampaRisultatiGara(garaSelezionata){
-            $.post("displayRaceRank.php",
-                {
-                    garID: garaSelezionata
-                },
-                function(data, status){
-                    $("#outputJQGara").html(data);
-                });
+            if(garaSelezionata != "zero"){
+                $.post("displayRaceRank.php",
+                    {
+                        garID: garaSelezionata
+                    },
+                    function(data, status){
+                        $("#outputJQGara").html(data);
+                    });
+            }
         }
 
     </script>

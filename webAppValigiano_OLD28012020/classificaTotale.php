@@ -9,8 +9,6 @@
         <link rel="stylesheet" href="w3.css">
         <script src="jquery-3.4.1.min.js"></script>
         <script src="sorttable.js"></script>
-        <script src="print.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="print.min.css">
 
         <script>
 
@@ -55,8 +53,6 @@
         }
         ?>
     </select>
-
-    <button class="w3-button w3-margin-top w3-margin-left w3-round-large w3-centered w3-deep-orange" style="width: 20%;" onclick="printJS({ printable: 'TabellaRis', type: 'html', header: 'Classifica complessiva', headerStyle: 'font-size: 15;'});">STAMPA</button><br>
 
     <hr style="margin:auto; margin-top: 2%; margin-bottom: 3%; width: 95%;">
 

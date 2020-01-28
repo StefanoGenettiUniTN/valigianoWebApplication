@@ -24,13 +24,15 @@ if(isset($_POST["garID"])){
     while($categoria = $risCategoria->fetch_assoc()) {
         echo "<option value='".$categoria["id"]."'>".$categoria["nome"]."</option>";
     }
-    echo "</select>
-    
-    <hr style=\"margin:auto; margin-top: 2%; margin-bottom: 3%; width: 95%;\">";
-    /*............*/
+    echo "</select>";
 
-    /*TABELLA*/
-    echo "<div class=\"w3-responsive\"><!--Scroll bar se schermata troppo piccola-->
+    if($garID!="zero") { //è stata selezionata una gara, allora stampo
+        echo "<button class=\"w3-button w3-margin-top w3-margin-left w3-round-large w3-centered w3-deep-orange\" style=\"width: 20%;\" onclick=\"printJS({ printable: 'TabellaRis', type: 'html', header: 'Classifica gara: <b>".getRaceName($garID)."</b>', headerStyle: 'font-size: 15;'});\">STAMPA</button><br>";
+        echo "<hr style=\"margin:auto; margin-top: 2%; margin-bottom: 3%; width: 95%;\">";
+        /*............*/
+
+        /*TABELLA*/
+        echo "<div class=\"w3-responsive\"><!--Scroll bar se schermata troppo piccola-->
             <table id=\"TabellaRis\" align=\"center\" style=\"width: 90%;\" class=\"w3-table w3-striped w3-centered w3-large w3-hoverable w3-border\">
                 <tr class=\"w3-green\">
                     <th>Posizione</th>
@@ -42,31 +44,34 @@ if(isset($_POST["garID"])){
                     <th>Pettorina</th>
                 </tr>";
 
-    //Query
-    $selectQuery  = "SELECT *, utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome FROM classifica, utente, categoria, societa, gara WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND classifica.id_gara = gara.ID AND gara.ID = ".$garID." ORDER BY categoria.nome ASC, punteggio DESC, utente.data_nascita ASC;";
+        //Query
+        $selectQuery = "SELECT *, utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome FROM classifica, utente, categoria, societa, gara WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND classifica.id_gara = gara.ID AND gara.ID = " . $garID . " ORDER BY categoria.nome ASC, punteggio DESC, utente.data_nascita ASC;";
 
-    $risultatoSelectQuery = $conn->query($selectQuery);
-    $posizione = 1;
-    $categoriaCorrente = "nessuna"; //tiene traccia della categoria che si sta stampando per stampare correttamente le posizioni (quando cambia categoria $posizione=1)
-    while($outUtenti = $risultatoSelectQuery->fetch_assoc()){
-        if($categoriaCorrente != $outUtenti["categoria_nome"]){ //#TODO selezione per idCategoria
-            $posizione=1;
-            $categoriaCorrente = $outUtenti["categoria_nome"];
-        }
-        echo "
-                    <tr class='cat".$outUtenti["id_categoria"]." record'>
-                        <td class='riga' href='profiloUtente.php?userID=".$outUtenti["id_utente"]."' onclick='infoUser(".$outUtenti["id_utente"].");'>" . $posizione . "</td>
-                        <td class='riga' href='profiloUtente.php?userID=".$outUtenti["id_utente"]."' onclick='infoUser(".$outUtenti["id_utente"].");'>" . $outUtenti["punteggio"] . "</td>
-                        <td class='riga' href='profiloUtente.php?userID=".$outUtenti["id_utente"]."' onclick='infoUser(".$outUtenti["id_utente"].");'>" . $outUtenti["utente_nome"] . "</td>
-                        <td class='riga' href='profiloUtente.php?userID=".$outUtenti["id_utente"]."' onclick='infoUser(".$outUtenti["id_utente"].");'>" . $outUtenti["utente_cognome"] . "</td>
-                        <td class='riga' href='profiloUtente.php?userID=".$outUtenti["id_utente"]."' onclick='infoUser(".$outUtenti["id_utente"].");'>" . $outUtenti["societa_nome"] . "</td>
-                        <td class='riga' href='profiloUtente.php?userID=".$outUtenti["id_utente"]."' onclick='infoUser(".$outUtenti["id_utente"].");'>" . $outUtenti["categoria_nome"] . "</td>
-                        <td class='riga' href='profiloUtente.php?userID=".$outUtenti["id_utente"]."' onclick='infoUser(".$outUtenti["id_utente"].");'>" . $outUtenti["n_pettorina"] . "</td>
+        $risultatoSelectQuery = $conn->query($selectQuery);
+        $posizione = 1;
+        $categoriaCorrente = "nessuna"; //tiene traccia della categoria che si sta stampando per stampare correttamente le posizioni (quando cambia categoria $posizione=1)
+        while ($outUtenti = $risultatoSelectQuery->fetch_assoc()) {
+            if ($categoriaCorrente != $outUtenti["categoria_nome"]) { //#TODO selezione per idCategoria
+                $posizione = 1;
+                $categoriaCorrente = $outUtenti["categoria_nome"];
+            }
+            echo "
+                    <tr class='cat" . $outUtenti["id_categoria"] . " record'>
+                        <td class='riga' href='profiloUtente.php?userID=" . $outUtenti["id_utente"] . "' onclick='infoUser(" . $outUtenti["id_utente"] . ");'>" . $posizione . "</td>
+                        <td class='riga' href='profiloUtente.php?userID=" . $outUtenti["id_utente"] . "' onclick='infoUser(" . $outUtenti["id_utente"] . ");'>" . $outUtenti["punteggio"] . "</td>
+                        <td class='riga' href='profiloUtente.php?userID=" . $outUtenti["id_utente"] . "' onclick='infoUser(" . $outUtenti["id_utente"] . ");'>" . $outUtenti["utente_nome"] . "</td>
+                        <td class='riga' href='profiloUtente.php?userID=" . $outUtenti["id_utente"] . "' onclick='infoUser(" . $outUtenti["id_utente"] . ");'>" . $outUtenti["utente_cognome"] . "</td>
+                        <td class='riga' href='profiloUtente.php?userID=" . $outUtenti["id_utente"] . "' onclick='infoUser(" . $outUtenti["id_utente"] . ");'>" . $outUtenti["societa_nome"] . "</td>
+                        <td class='riga' href='profiloUtente.php?userID=" . $outUtenti["id_utente"] . "' onclick='infoUser(" . $outUtenti["id_utente"] . ");'>" . $outUtenti["categoria_nome"] . "</td>
+                        <td class='riga' href='profiloUtente.php?userID=" . $outUtenti["id_utente"] . "' onclick='infoUser(" . $outUtenti["id_utente"] . ");'>" . $outUtenti["n_pettorina"] . "</td>
                         ";
-        echo "</tr>";
-        $posizione++;
+            echo "</tr>";
+            $posizione++;
+        }
+        echo "</table>";
+        echo "</div>";
+    }else{  //nessuna gara selezionata --> NON STAMPO NIENTE (evito problemi con btnStampa)
+        echo "<hr style=\"margin:auto; margin-top: 2%; margin-bottom: 3%; width: 95%;\">";
     }
-    echo "</table>";
-    echo "</div>";
 }
 ?>

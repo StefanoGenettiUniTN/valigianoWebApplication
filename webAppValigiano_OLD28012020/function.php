@@ -66,12 +66,3 @@ function inserisciIscritti($garaID){
         }
     }
 }
-
-/**Restituisce nome gara da ID gara*/
-function getRaceName($_garID){
-    global $conn;
-    $sql = "SELECT luogo FROM gara WHERE id=".$_garID.";";
-    $resultSql = $conn->query($sql);
-    if($outSql = $resultSql->fetch_assoc())
-        return $outSql["luogo"];
-}
