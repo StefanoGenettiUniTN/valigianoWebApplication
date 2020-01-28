@@ -29,9 +29,9 @@ if(isset($_GET["catID"])){
                 </tr>";
 
     if($catID=="all")   //nessuna categoria in particolare selezionata
-        $query = "SELECT *, utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome FROM classifica, utente, categoria, societa WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND classifica.id_gara=".$garaID." ORDER BY categoria.nome ASC, utente.nome ASC, utente.cognome ASC;";
+        $query = "SELECT *, utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome FROM classifica, utente, categoria, societa WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND classifica.id_gara=".$garaID." ORDER BY categoria.nome ASC, punteggio DESC, utente.data_nascita ASC, utente.nome ASC, utente.cognome ASC;";
     else
-        $query = "SELECT *, utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome FROM classifica, utente, categoria, societa WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND classifica.id_gara=".$garaID." AND utente.id_categoria=".$catID." ORDER BY categoria.nome ASC, utente.nome ASC, utente.cognome ASC;";
+        $query = "SELECT *, utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome FROM classifica, utente, categoria, societa WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND classifica.id_gara=".$garaID." AND utente.id_categoria=".$catID." ORDER BY categoria.nome ASC, punteggio DESC, utente.data_nascita ASC, utente.nome ASC, utente.cognome ASC;";
     $ris = $conn->query($query);
 
     while($outIscritti = $ris->fetch_assoc()){
@@ -50,9 +50,12 @@ if(isset($_GET["catID"])){
         }else{
             echo "<td class='riga' href='profiloUtente.php?userID=".$outIscritti["id_utente"]."' onclick='infoUser(".$outIscritti["id_utente"].");'>".$outIscritti["punteggio"]."</td>";
         }
+        /**Rimosso 27 gennaio 2020 dopo aver scoperto che gli utenti sono da subito iscritti a tutte le gare*/
+        /*
         echo "
                 <td><button onclick='rimuoviIscritto(\"".$outIscritti["utente_nome"]."\",".$garaID.", ".$outIscritti["id_utente"].");' class=\"w3-btn w3-ripple\"><img src='baseline_delete_black_18dp.png'></button></td>
                 ";
+        */
 
         echo "</tr>";
     }

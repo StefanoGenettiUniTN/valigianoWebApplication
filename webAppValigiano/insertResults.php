@@ -34,7 +34,7 @@ if(isset($_POST["catID"]) && isset($_POST["raceID"]) && isset($_POST["resultsArr
     $posInClassifica = 1;
 
     foreach ($arrayRisultati as $pettorina){
-        $punteggio = (($totPartecipanti-$posInClassifica)/$totPartecipanti)*100;    //punteggio da assegnare secondo formula
+        $punteggio = (($totPartecipanti-$posInClassifica)/$totPartecipanti)*100+1;    //punteggio da assegnare secondo formula
         /**Query di aggiornamento*/
         $updateQuery  = "UPDATE classifica INNER JOIN utente ON utente.ID = classifica.id_utente SET classifica.punteggio=".$punteggio." WHERE utente.n_pettorina=".$pettorina." AND classifica.id_gara=".$garaID.";";
         $risultato = $conn->query($updateQuery);

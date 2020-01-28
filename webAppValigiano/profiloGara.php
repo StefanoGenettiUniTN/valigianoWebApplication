@@ -84,9 +84,10 @@ if(isset($_GET["garaID"])) {
         </select>
     </div>
     <a href="aggiungiRisultati.php?garaID=<?php echo"$garaID";?>" class="w3-button w3-margin-top w3-margin-left w3-round-large w3-centered w3-deep-orange" style="width: 20%;" >INSERISCI RISULTATI</a><br>
-    <hr style="margin:auto; margin-top: 2%; width: 95%;">
+    <hr style="margin:auto; margin-top: 2%; width: 95%;" class="w3-margin-bottom">
 
-    <a href="aggiungiIscrittoGara.php?garaID=<?php echo"$garaID";?>" class="w3-ripple w3-teal w3-button w3-block w3-centered" style="margin:auto; margin-top: 3%; width: 90%;" >AGGIUNGI ISCRITTI</a><br>
+    <!--Rimosso 27 gennaio 2020 dopo aver scoperto che gli utenti sono da subito iscritti a tutte le gare-->
+    <!--<a href="aggiungiIscrittoGara.php?garaID=echo"$garaID";" class="w3-ripple w3-teal w3-button w3-block w3-centered" style="margin:auto; margin-top: 3%; width: 90%;" >AGGIUNGI ISCRITTI</a><br>-->
 
     <div id="outputJQ"><!--/Output JQUERY.../-->
 
@@ -101,7 +102,7 @@ if(isset($_GET["garaID"])) {
                     <th>Punteggio</th>
                 </tr>
                 <?php
-                $query = "SELECT *, utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome FROM classifica, utente, categoria, societa WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND classifica.id_gara=".$garaID." ORDER BY categoria.nome ASC, utente.nome ASC, utente.cognome ASC;";
+                $query = "SELECT *, utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome FROM classifica, utente, categoria, societa WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND classifica.id_gara=".$garaID." ORDER BY categoria.nome ASC, punteggio DESC, utente.data_nascita ASC, utente.nome ASC, utente.cognome ASC;";
                 $ris = $conn->query($query);
 
                 while($outIscritti = $ris->fetch_assoc()){
@@ -120,9 +121,12 @@ if(isset($_GET["garaID"])) {
                     }else{
                         echo "<td class='riga' href='profiloUtente.php?userID=".$outIscritti["id_utente"]."' onclick='infoUser(".$outIscritti["id_utente"].");'>".$outIscritti["punteggio"]."</td>";
                     }
+                    /**Rimosso 27 gennaio 2020 dopo aver scoperto che gli utenti sono da subito iscritti a tutte le gare*/
+                    /*
                     echo "
                 <td><button onclick='rimuoviIscritto(\"".$outIscritti["utente_nome"]."\",".$garaID.", ".$outIscritti["id_utente"].");' class=\"w3-btn w3-ripple\"><img src='baseline_delete_black_18dp.png'></button></td>
                 ";
+                    */
 
                     echo "</tr>";
                 }

@@ -50,3 +50,19 @@ function isRegistered($_arrayIscritti, $_userId){
     }
     return false;
 }
+
+/**Aggiunta 27 gennaio 2020 dopo aver scoperto che gli utenti sono da subito iscritti a tutte le gare*/
+/**Vengono iscritti tutti gli utenti alla gara passata in input*/
+function inserisciIscritti($garaID){
+    global $conn;
+    //Prendo ID di tutti gli utenti
+    $getUserQuery = "SELECT ID FROM utente;";
+    $resultGetUserQuery = $conn->query($getUserQuery);
+    //Popolo classifica con id utenti
+    while($outGetUserQuery = $resultGetUserQuery->fetch_assoc()){
+        $insertQuery  = "INSERT INTO classifica (id_utente, id_gara, punteggio) VALUES (".$outGetUserQuery["ID"].", ".$garaID.", 0);";
+        if(!$risultato = $conn->query($insertQuery)){
+            echo "<script>alert(\"Err\");</script>";
+        }
+    }
+}

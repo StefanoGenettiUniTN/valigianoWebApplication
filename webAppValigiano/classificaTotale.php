@@ -73,7 +73,12 @@
                 <!--...-->
             <?php
             //Query
-            $selectQuery  = "SELECT *, utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome, SUM(classifica.punteggio) AS punteggioTotale, COUNT(classifica.id_utente) AS garePartecipate FROM classifica, utente, categoria, societa WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID GROUP BY utente.ID HAVING garePartecipate>=3 ORDER BY categoria.nome ASC, punteggioTotale DESC, utente.data_nascita ASC;";
+            /**Vengono stampati solo gli atleti che hanno partecipato ad almeno 3 gare
+
+             * garePartecipate conta le gare; prende in considerazione solo le gare alle quali l'atleta ha
+             * partecipato con classifica.punteggio>0. Infatti a una gara prendi sempre almeno 1 punto
+             */
+            $selectQuery  = "SELECT *, utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome, SUM(classifica.punteggio) AS punteggioTotale, COUNT(classifica.id_utente) AS garePartecipate FROM classifica, utente, categoria, societa WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND classifica.punteggio>0 GROUP BY utente.ID HAVING garePartecipate>=3 ORDER BY categoria.nome ASC, punteggioTotale DESC, utente.data_nascita ASC;";
             $risultatoSelectQuery = $conn->query($selectQuery);
             $posizione = 1;
             $categoriaCorrente = "nessuna"; //tiene traccia della categoria che si sta stampando per stampare correttamente le posizioni (quando cambia categoria $posizione=1)

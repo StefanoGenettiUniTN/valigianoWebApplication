@@ -53,6 +53,15 @@ if(isset($_POST["submit"])){
         $insertQuery  = "INSERT INTO gara (luogo, data) VALUES ( '".$luogo."', '".$data."');";
         if(!($ris = $conn->query($insertQuery))){
             echo "<script>alert(\"Errore in fase di inserimento dati.\");</script>";
+        }else{
+            /**Aggiunta 27 gennaio 2020 dopo aver scoperto che gli utenti sono da subito iscritti a tutte le gare*/
+            /**Se l'inserimento è avvenuto correttamente, vengono iscritti tutti gli utenti alla gara*/
+
+            //Cerco ID gara appena inserita
+            $getIDQuery  = "SELECT ID FROM gara WHERE luogo='".$luogo."' AND data='".$data."';";
+            $resultGetIDQuery = $conn->query($getIDQuery);
+            $outGetIDQuery = $resultGetIDQuery->fetch_assoc();
+            inserisciIscritti($outGetIDQuery["ID"]);
         }
     }
     else{

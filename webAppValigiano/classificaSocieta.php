@@ -30,7 +30,7 @@ require_once("DBconfig.php");
 <body>
 <a href="index.php" style="text-decoration: none;"><button class="w3-button w3-margin w3-teal w3-display-topright" style="height: 8%;"><i style="margin-right: 30px;"><img src="homeGrande.png"></i>Torna alla home</button></a>
 <div class="w3-card w3-margin w3-round">
-    <h2 class='w3-margin w3-container' style='height: 8%;'>Classifica singola gara</h2>
+    <h2 class='w3-margin w3-container' style='height: 8%;'>Classifica societ&agrave</h2>
 </div>
 
 <h5 class="w3-margin-left w3-padding">Specifichi la <b>gara</b></h5>
@@ -59,7 +59,8 @@ require_once("DBconfig.php");
         </tr>
     <?php
         //Query
-        $selectQuery  = "SELECT *, societa.nome AS societa_nome, SUM(classifica.punteggio) AS punteggioTotale FROM classifica, utente, societa WHERE classifica.id_utente = utente.ID AND utente.id_societa = societa.ID GROUP BY societa.ID ORDER BY punteggioTotale DESC;";
+        //$selectQuery  = "SELECT *, societa.nome AS societa_nome, SUM(classifica.punteggio) AS punteggioTotale, COUNT(classifica.id_utente) AS garePartecipate FROM classifica, utente, societa WHERE classifica.id_utente = utente.ID AND utente.id_societa = societa.ID AND classifica.punteggio>0 GROUP BY societa.ID, utente.ID HAVING garePartecipate>=3 ORDER BY punteggioTotale DESC;";
+        $selectQuery = "SELECT *, societa.nome AS societa_nome, SUM(classifica.punteggio) AS punteggioTotale, COUNT(classifica.id_utente) AS garePartecipate FROM classifica, utente, categoria, societa WHERE classifica.id_utente = utente.ID AND utente.id_societa = societa.ID AND classifica.punteggio>0 GROUP BY societa.ID HAVING garePartecipate>=3 ORDER BY punteggioTotale DESC;";
         $risultatoSelectQuery = $conn->query($selectQuery);
         $posizione = 1;
         while($outSocieta = $risultatoSelectQuery->fetch_assoc()){
