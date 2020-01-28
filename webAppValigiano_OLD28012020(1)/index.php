@@ -71,8 +71,5 @@
     <!--END w3 - content-->
     </div >
 
-    <!--Bottone per Backup-->
-    <a href="backup.php" class="w3-button  w3-round-large w3-centered w3-deep-orange w3-display-bottomright w3-margin" style="width: 20%;" target="_blank">ESPORTA BACKUP</a>
-
 </body>
 </html>
