@@ -61,13 +61,10 @@
                 </div >
                 <h5 style="font-family: 'myFont'; font-size: x-large;" class="w3cardFiglio w3-margin-left">Modifica dati <i>societ&agrave</i></h5>
         </div></a>
-        <hr>
-        <a href="modificaFamiglia.php"><div class="w3-card w3-padding w3-margin w3-hover-shadow w3cardPadre">
-                <div style = "height: 15%; width: 15%;" class="w3-center w3-display-container w3-margin-left w3-padding w3cardFiglio" >
-                    <img class="w3-round-medium" style = "height: 100%; width: 100%;" src = "immagini/baby-2717347_1920.jpg" alt = "modifica societa" >
-                </div >
-                <h5 style="font-family: 'myFont'; font-size: x-large;" class="w3cardFiglio w3-margin-left">Modifica dati <i>famiglia</i></h5>
-        </div></a>
+
+
+        <!-- Footer -->
+        <?php include("footerLayout.php");?>
 
     </body>
 

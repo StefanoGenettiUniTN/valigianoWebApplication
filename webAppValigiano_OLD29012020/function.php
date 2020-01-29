@@ -38,13 +38,6 @@ function garaExists($_luogo, $_data){
     else return false;
 }
 
-function famigliaExists($_nome){
-    global $conn;
-    $sql = "SELECT * FROM famiglia WHERE nome = '$_nome';";
-    if(($conn->query($sql))->num_rows>=1) return true;
-    else return false;
-}
-
 /**Funzione usata in agggiungi iscritto gara
 
  * Controlla se nell'array passato in input l'ID è contenuto
@@ -57,20 +50,6 @@ function isRegistered($_arrayIscritti, $_userId){
     }
     return false;
 }
-
-/**Funzione usata in agggiungi membro famiglia
-
- * Controlla se nell'array passato in input l'ID è contenuto
-
- */
-function isRelative($_arrayParenti, $_userId){
-    foreach ($_arrayParenti as $utente) {
-        if($utente == $_userId)
-            return true;
-    }
-    return false;
-}
-
 
 /**Aggiunta 27 gennaio 2020 dopo aver scoperto che gli utenti sono da subito iscritti a tutte le gare*/
 /**Vengono iscritti tutti gli utenti alla gara passata in input*/
