@@ -23,9 +23,9 @@ if(isset($_POST["garID"])){
 
     //Query
     if($garID=="zero")  //nessuna gara in particolare selezionata
-        $selectQuery  = "SELECT *, SUM(classifica.punteggio) AS punteggioTotale, societa.nome AS societa_nome FROM utente, classifica, societa WHERE utente.id_societa=societa.ID AND classifica.id_utente=utente.ID AND utente.ID IN (SELECT utente.ID FROM utente,classifica WHERE utente.ID=classifica.id_utente AND classifica.punteggio>0 GROUP BY utente.ID HAVING COUNT(classifica.id_utente)>=3) GROUP BY societa.ID ORDER BY punteggioTotale DESC;";
+        $selectQuery  = "SELECT *, societa.nome AS societa_nome, SUM(classifica.punteggio) AS punteggioTotale, COUNT(classifica.id_utente) AS garePartecipate FROM classifica, utente, categoria, societa WHERE classifica.id_utente = utente.ID AND utente.id_societa = societa.ID AND classifica.punteggio>0 GROUP BY societa.ID HAVING garePartecipate>=3 ORDER BY punteggioTotale DESC;";
     else
-        $selectQuery  = " SELECT *, SUM(classifica.punteggio) AS punteggioTotale, societa.nome AS societa_nome FROM utente, classifica, societa WHERE utente.id_societa=societa.ID AND classifica.id_utente=utente.ID AND classifica.id_gara=".$garID." GROUP BY societa.ID ORDER BY punteggioTotale DESC;";
+        $selectQuery  = "SELECT *, societa.nome AS societa_nome, SUM(classifica.punteggio) AS punteggioTotale FROM classifica, utente, societa WHERE classifica.id_utente = utente.ID AND utente.id_societa = societa.ID AND classifica.id_gara=".$garID." GROUP BY societa.ID ORDER BY punteggioTotale DESC;";
 
     $risultatoSelectQuery = $conn->query($selectQuery);
     $posizione = 1;

@@ -62,13 +62,10 @@
         <h5 style="font-family: 'myFont'; font-size: x-large;" class="w3cardFiglio w3-margin-left">CLASSIFICA SOCIETA'</h5>
     </div></a>
 <hr>
-<a href="classificaFamiglia.php"><div class="w3-card w3-padding w3-margin w3-hover-shadow w3cardPadre">
-        <div style = "height: 15%; width: 15%;" class="w3-center w3-display-container w3-margin-left w3-padding w3cardFiglio" >
-            <img style = "height: 100%; width: 100%;" src = "immagini/holding-hands-918990_1920.jpg" alt = "modifica categoria" class="w3-round-large">
-        </div >
-        <h5 style="font-family: 'myFont'; font-size: x-large;" class="w3cardFiglio w3-margin-left">CLASSIFICA FAMIGLIA</h5>
-    </div></a>
-<hr>
+
+<!-- Footer -->
+<?php include("footerLayout.php");?>
 
 </body>
+
 </html>

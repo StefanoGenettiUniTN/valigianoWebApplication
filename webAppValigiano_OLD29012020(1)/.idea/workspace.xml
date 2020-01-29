@@ -65,7 +65,7 @@
               <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/cc74e035-c4db-4fb9-a069-cea75da4a841/console.sql">
                 <provider selected="true" editor-type-id="text-editor">
                   <state>
-                    <caret selection-end-column="443" />
+                    <caret column="167" selection-start-column="167" selection-end-column="167" />
                   </state>
                 </provider>
               </entry>
@@ -91,64 +91,68 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classifica.php">
+        <entry file="file://$PROJECT_DIR$/profiloGara.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="65" column="7" lean-forward="true" selection-start-line="65" selection-start-column="7" selection-end-line="65" selection-end-column="7" />
+            <state relative-caret-position="119">
+              <caret line="52" column="13" lean-forward="true" selection-start-line="45" selection-start-column="12" selection-end-line="52" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classificaFamiglia.php">
+        <entry file="file://$PROJECT_DIR$/profiloFamiglia.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="65" column="520" lean-forward="true" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="520" />
+            <state relative-caret-position="822">
+              <caret line="39" column="13" lean-forward="true" selection-start-line="35" selection-start-column="12" selection-end-line="39" selection-end-column="13" />
+              <folding>
+                <element signature="n#style#0;n#h2#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#1;n#body#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classificaSocieta.php">
+        <entry file="file://$PROJECT_DIR$/aggiungiMembroFamiglia.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="602">
-              <caret line="67" column="442" lean-forward="true" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="442" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/displayRaceRankSociety.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="26" column="2" lean-forward="true" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classificaSingolaGara.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-358">
-              <caret line="12" column="64" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="12" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/displayRaceRank.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="29" column="303" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="303" />
+            <state relative-caret-position="1078">
+              <caret line="91" column="175" selection-start-line="91" selection-start-column="175" selection-end-line="91" selection-end-column="175" />
+              <folding>
+                <element signature="n#style#0;n#h2#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/classificaTotale.php">
+        <entry file="file://$PROJECT_DIR$/categoryFilterAggiungiMembroFamiglia.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="84" column="562" selection-start-line="84" selection-start-column="29" selection-end-line="84" selection-end-column="562" />
+            <state relative-caret-position="132">
+              <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+              <folding>
+                <element signature="n#style#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addFamilyMember.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1328">
+              <caret line="67" column="47" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="67" selection-end-column="47" />
+              <folding>
+                <element signature="n#style#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aggiungiIscrittoGara.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1254">
+              <caret line="57" column="81" selection-end-line="133" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -166,9 +170,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/aggiungiCategoria.php" />
+        <option value="$PROJECT_DIR$/aggiungiSocieta.php" />
         <option value="$PROJECT_DIR$/gethint.php" />
         <option value="$PROJECT_DIR$/addSubscriber.php" />
         <option value="$PROJECT_DIR$/viewCategoryResults.php" />
+        <option value="$PROJECT_DIR$/classifica.php" />
         <option value="$PROJECT_DIR$/prova.php" />
         <option value="$PROJECT_DIR$/errorPage.php" />
         <option value="$PROJECT_DIR$/aggiungiIscrittoGara.php" />
@@ -195,9 +202,11 @@
         <option value="$PROJECT_DIR$/categoryFilterProfiloGara.php" />
         <option value="$PROJECT_DIR$/insertResults.php" />
         <option value="$PROJECT_DIR$/displayCategoryRank.php" />
+        <option value="$PROJECT_DIR$/displayRaceRankSociety.php" />
         <option value="$PROJECT_DIR$/classificaTotale.php" />
         <option value="$PROJECT_DIR$/classificaSingolaGara.php" />
         <option value="$PROJECT_DIR$/displayRaceRank.php" />
+        <option value="$PROJECT_DIR$/classificaSocieta.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/backup.php" />
         <option value="$PROJECT_DIR$/aggiungiFamiglia.php" />
@@ -206,17 +215,12 @@
         <option value="$PROJECT_DIR$/modificaFamiglia.php" />
         <option value="$PROJECT_DIR$/modificaDati.php" />
         <option value="$PROJECT_DIR$/function.php" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/cc74e035-c4db-4fb9-a069-cea75da4a841/console.sql" />
         <option value="$PROJECT_DIR$/removeRelative.php" />
         <option value="$PROJECT_DIR$/profiloFamiglia.php" />
         <option value="$PROJECT_DIR$/addFamilyMember.php" />
         <option value="$PROJECT_DIR$/aggiungiMembroFamiglia.php" />
         <option value="$PROJECT_DIR$/categoryFilterAggiungiMembroFamiglia.php" />
-        <option value="$PROJECT_DIR$/classifica.php" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/cc74e035-c4db-4fb9-a069-cea75da4a841/console.sql" />
-        <option value="$PROJECT_DIR$/classificaFamiglia.php" />
-        <option value="$PROJECT_DIR$/displayRaceRankFamily.php" />
-        <option value="$PROJECT_DIR$/classificaSocieta.php" />
-        <option value="$PROJECT_DIR$/displayRaceRankSociety.php" />
       </list>
     </option>
   </component>
@@ -331,12 +335,12 @@
       <workItem from="1580112543253" duration="167000" />
       <workItem from="1580112864968" duration="17489000" />
       <workItem from="1580196873694" duration="15801000" />
-      <workItem from="1580302055478" duration="10032000" />
+      <workItem from="1580302055478" duration="5709000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136998000" />
+    <option name="totallyTimeSpent" value="132675000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1294" height="1047" extended-state="0" />
@@ -378,6 +382,23 @@
     <state x="376" y="175" key="run.anything.popup/59.27.1307.741@59.27.1307.741" timestamp="1575754538814" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/aggiungiUtente.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="808">
+          <caret line="91" column="12" selection-start-line="91" selection-start-column="12" selection-end-line="91" selection-end-column="12" />
+          <folding>
+            <element signature="e#1824#1852#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modifyGar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="47" column="160" selection-start-line="47" selection-start-column="160" selection-end-line="47" selection-end-column="160" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/modifySoc.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="453">
@@ -483,6 +504,37 @@
           <folding>
             <element signature="n#style#0;n#table#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/displayRaceRank.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="29" column="303" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="303" />
+          <folding>
+            <element signature="n#style#0;n#select#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#hr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#hr#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classificaSocieta.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="50" column="254" lean-forward="true" selection-start-line="50" selection-end-line="50" selection-end-column="254" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#body#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/displayRaceRankSociety.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="29" column="55" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -611,6 +663,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/cc74e035-c4db-4fb9-a069-cea75da4a841/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="167" selection-start-column="167" selection-end-column="167" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/removeSubscriber.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -628,6 +687,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/classificaTotale.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="68" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="12" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gara.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -635,47 +701,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/classifica.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="24" column="56" lean-forward="true" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classificaSingolaGara.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="12" column="64" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="12" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/aggiungiIscrittoGara.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1254">
           <caret line="57" column="81" selection-end-line="133" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addFamilyMember.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1328">
-          <caret line="67" column="47" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="67" selection-end-column="47" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/categoryFilterProfiloGara.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="814">
-          <caret line="37" column="68" lean-forward="true" selection-start-line="37" selection-start-column="68" selection-end-line="37" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/categoryFilterAggiungiMembroFamiglia.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aggiungiMembroFamiglia.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1078">
-          <caret line="91" column="175" selection-start-line="91" selection-start-column="175" selection-end-line="91" selection-end-column="175" />
-          <folding>
-            <element signature="n#style#0;n#h2#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -690,6 +733,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/addFamilyMember.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1328">
+          <caret line="67" column="47" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="67" selection-end-column="47" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/profiloGara.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -697,66 +750,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classifica.php">
+    <entry file="file://$PROJECT_DIR$/categoryFilterProfiloGara.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="65" column="7" lean-forward="true" selection-start-line="65" selection-start-column="7" selection-end-line="65" selection-end-column="7" />
+        <state relative-caret-position="814">
+          <caret line="37" column="68" lean-forward="true" selection-start-line="37" selection-start-column="68" selection-end-line="37" selection-end-column="68" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/cc74e035-c4db-4fb9-a069-cea75da4a841/console.sql">
+    <entry file="file://$PROJECT_DIR$/aggiungiMembroFamiglia.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="443" />
+        <state relative-caret-position="1078">
+          <caret line="91" column="175" selection-start-line="91" selection-start-column="175" selection-end-line="91" selection-end-column="175" />
+          <folding>
+            <element signature="n#style#0;n#h2#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/displayRaceRankFamily.php">
+    <entry file="file://$PROJECT_DIR$/categoryFilterAggiungiMembroFamiglia.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="27" column="371" selection-start-line="27" selection-start-column="371" selection-end-line="27" selection-end-column="371" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classificaFamiglia.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="65" column="520" lean-forward="true" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="520" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classificaSocieta.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="67" column="442" lean-forward="true" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="442" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/displayRaceRankSociety.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="26" column="2" lean-forward="true" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classificaSingolaGara.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-358">
-          <caret line="12" column="64" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="12" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/displayRaceRank.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="29" column="303" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="303" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classificaTotale.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="84" column="562" selection-start-line="84" selection-start-column="29" selection-end-line="84" selection-end-column="562" />
+        <state relative-caret-position="132">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
