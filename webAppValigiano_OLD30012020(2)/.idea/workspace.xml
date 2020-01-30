@@ -90,21 +90,9 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/profiloGara.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1562">
-              <caret line="13" column="81" selection-start-line="13" selection-start-column="81" selection-end-line="13" selection-end-column="81" />
-              <folding>
-                <element signature="n#style#0;n#h2#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
         </entry>
       </file>
     </leaf>
@@ -139,6 +127,10 @@
         <option value="$PROJECT_DIR$/displayRaceRankFamily.php" />
         <option value="$PROJECT_DIR$/displayRaceRankSociety.php" />
         <option value="$PROJECT_DIR$/function.php" />
+        <option value="$PROJECT_DIR$/removeUser.php" />
+        <option value="$PROJECT_DIR$/modify.php" />
+        <option value="$PROJECT_DIR$/categoryFilterModificaUtente.php" />
+        <option value="$PROJECT_DIR$/raggruppa.php" />
         <option value="$PROJECT_DIR$/categoryFilterAggiungiMembroFamiglia.php" />
         <option value="$PROJECT_DIR$/categoryFilterProfiloGara.php" />
         <option value="$PROJECT_DIR$/viewCategoryResults.php" />
@@ -163,14 +155,10 @@
         <option value="$PROJECT_DIR$/modificaDati.php" />
         <option value="$PROJECT_DIR$/modificaFamiglia.php" />
         <option value="$PROJECT_DIR$/modificaSocieta.php" />
+        <option value="$PROJECT_DIR$/modificaUtente.php" />
         <option value="$PROJECT_DIR$/profiloFamiglia.php" />
         <option value="$PROJECT_DIR$/profiloGara.php" />
         <option value="$PROJECT_DIR$/profiloUtente.php" />
-        <option value="$PROJECT_DIR$/modificaUtente.php" />
-        <option value="$PROJECT_DIR$/categoryFilterModificaUtente.php" />
-        <option value="$PROJECT_DIR$/modify.php" />
-        <option value="$PROJECT_DIR$/removeUser.php" />
-        <option value="$PROJECT_DIR$/raggruppa.php" />
       </list>
     </option>
   </component>
@@ -287,12 +275,12 @@
       <workItem from="1580112864968" duration="17489000" />
       <workItem from="1580196873694" duration="15801000" />
       <workItem from="1580302055478" duration="10032000" />
-      <workItem from="1580373382753" duration="7029000" />
+      <workItem from="1580373382753" duration="5524000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144027000" />
+    <option name="totallyTimeSpent" value="142522000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1294" height="1047" extended-state="0" />
@@ -410,6 +398,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1144">
           <caret line="67" column="47" lean-forward="true" selection-start-line="66" selection-start-column="4" selection-end-line="67" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/categoryFilterModificaUtente.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3168">
+          <caret line="144" column="131" lean-forward="true" selection-start-line="144" selection-start-column="131" selection-end-line="144" selection-end-column="131" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -559,6 +557,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/modificaUtente.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="81" selection-start-line="12" selection-start-column="81" selection-end-line="12" selection-end-column="81" />
+          <folding>
+            <element signature="n#style#0;n#tr#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modify.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5808">
+          <caret line="264" column="155" lean-forward="true" selection-start-line="264" selection-start-column="155" selection-end-line="264" selection-end-column="155" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/modifyCat.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1078">
@@ -592,7 +610,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/profiloGara.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="81" selection-start-line="13" selection-start-column="81" selection-end-line="13" selection-end-column="81" />
+          <folding>
+            <element signature="n#style#0;n#h2#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/viewCategoryResults.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/removeUser.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/removeSubscriber.php">
@@ -617,6 +648,16 @@
     <entry file="file://$PROJECT_DIR$/removeCategory.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/raggruppa.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2772">
+          <caret line="126" column="14" lean-forward="true" selection-start-line="126" selection-start-column="14" selection-end-line="126" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/profiloUtente.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -624,59 +665,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modify.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-864">
-          <caret line="289" column="724" selection-start-line="289" selection-start-column="724" selection-end-line="289" selection-end-column="724" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/removeUser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-798">
-          <caret line="46" column="716" selection-start-line="46" selection-start-column="716" selection-end-line="46" selection-end-column="716" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/raggruppa.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="155" column="714" selection-start-line="155" selection-start-column="714" selection-end-line="155" selection-end-column="714" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/categoryFilterModificaUtente.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="159" column="714" selection-start-line="159" selection-start-column="714" selection-end-line="159" selection-end-column="714" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modificaUtente.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2068">
-          <caret line="175" column="693" lean-forward="true" selection-start-line="175" selection-start-column="693" selection-end-line="175" selection-end-column="693" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/profiloGara.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1562">
-          <caret line="13" column="81" selection-start-line="13" selection-start-column="81" selection-end-line="13" selection-end-column="81" />
-          <folding>
-            <element signature="n#style#0;n#h2#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
   </component>
 </project>
