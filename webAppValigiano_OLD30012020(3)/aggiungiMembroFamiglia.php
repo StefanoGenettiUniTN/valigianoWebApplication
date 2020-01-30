@@ -117,7 +117,7 @@ if(isset($_GET["famID"])) {
                     <th>Pettorina</th>
                 </tr>
                 <?php
-                $query = "SELECT utente.nome AS nome_utente, utente.cognome AS cognome_utente, utente.n_pettorina AS pettorina_utente, utente.ID AS userID, utente.id_categoria, utente.id_societa, categoria.nome AS nome_categoria, categoria.ID, societa.nome AS nome_societa, societa.ID FROM societa, categoria, utente WHERE utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID ORDER BY categoria.nome ASC, utente.nome ASC, utente.cognome ASC, societa.nome ASC;";
+                $query = "SELECT utente.nome AS nome_utente, utente.cognome AS cognome_utente, utente.n_pettorina AS pettorina_utente, utente.ID AS userID, utente.id_categoria, utente.id_societa, categoria.nome AS nome_categoria, categoria.ID, societa.nome AS nome_societa, societa.ID FROM societa, categoria, utente WHERE utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID ORDER BY utente.id_categoria DESC, utente.nome DESC, utente.cognome DESC, utente.id_societa DESC;";
                 $ris = $conn->query($query);
 
                 /**RICERCO UTENTI GIA ISCRITTI ALLA FAMIGLIA, CHE NON STAMPO (controllo con funzione isRelative())*/

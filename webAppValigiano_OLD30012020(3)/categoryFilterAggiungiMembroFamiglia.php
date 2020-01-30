@@ -1,21 +1,21 @@
 <?php
-/**Aggiunta iscritto alla famiglia specificata con GET*/
+
+/**Da aggiungiMembroFamiglia.php faccio nuovamente query per filtrare categoria*/
 
 session_start();
 require_once("DBconfig.php");
 require_once("function.php");
 ?>
 
+
 <?php
+if(isset($_GET["catID"]) && isset($_GET["famID"])){
+    ?>
 
-if(isset($_POST["userID"]) && isset($_POST["famID"]) && isset($_POST["catID"])){  //passo anche la categoria selezionata
-    $userID = $_POST["userID"];
-    $famID = $_POST["famID"];
-    $catID = $_POST["catID"];
+    <?php
 
-    //Query
-    $insertQuery  = "INSERT INTO relazionefamigliare (id_utente, id_famiglia) VALUES (".$userID.", ".$famID.");";
-    $risultato = $conn->query($insertQuery);
+    $catID = $_GET["catID"];
+    $famID = $_GET["famID"];
 
     /**Aggiorno pagina*/
     echo "<div class=\"w3-responsive\"><!--Scroll bar se schermata troppo piccola-->
@@ -28,9 +28,9 @@ if(isset($_POST["userID"]) && isset($_POST["famID"]) && isset($_POST["catID"])){
                     <th>Pettorina</th>
                 </tr>";
     if($catID == "all") //nessuna categoria selezionata
-        $query = "SELECT utente.nome AS nome_utente, utente.cognome AS cognome_utente, utente.n_pettorina AS pettorina_utente, utente.ID AS userID, utente.id_categoria, utente.id_societa, categoria.nome AS nome_categoria, categoria.ID, societa.nome AS nome_societa, societa.ID FROM societa, categoria, utente WHERE utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID ORDER BY categoria.nome ASC, utente.nome ASC, utente.cognome ASC, societa.nome ASC;";
+        $query = "SELECT utente.nome AS nome_utente, utente.cognome AS cognome_utente, utente.n_pettorina AS pettorina_utente, utente.ID AS userID, utente.id_categoria, utente.id_societa, categoria.nome AS nome_categoria, categoria.ID, societa.nome AS nome_societa, societa.ID FROM societa, categoria, utente WHERE utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID ORDER BY utente.id_categoria DESC, utente.nome DESC, utente.cognome DESC, utente.id_societa DESC;";
     else
-        $query = "SELECT utente.nome AS nome_utente, utente.cognome AS cognome_utente, utente.n_pettorina AS pettorina_utente, utente.ID AS userID, utente.id_categoria, utente.id_societa, categoria.nome AS nome_categoria, categoria.ID, societa.nome AS nome_societa, societa.ID FROM societa, categoria, utente WHERE utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND categoria.ID=".$catID." ORDER BY categoria.nome ASC, utente.nome ASC, utente.cognome ASC, societa.nome ASC;";
+        $query = "SELECT utente.nome AS nome_utente, utente.cognome AS cognome_utente, utente.n_pettorina AS pettorina_utente, utente.ID AS userID, utente.id_categoria, utente.id_societa, categoria.nome AS nome_categoria, categoria.ID, societa.nome AS nome_societa, societa.ID FROM societa, categoria, utente WHERE utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND categoria.ID=".$catID." ORDER BY utente.id_categoria DESC, utente.nome DESC, utente.cognome DESC, utente.id_societa DESC;";
 
     $ris = $conn->query($query);
 
@@ -66,5 +66,11 @@ if(isset($_POST["userID"]) && isset($_POST["famID"]) && isset($_POST["catID"])){
 
     /**Aggiorno libreria sorttable*/
     echo "<script>refreshSortable();</script>";
+?>
+
+<?php
+}else{
+    echo "<script>alert(')-: Errore. Contattare l\'amministratore di sistema.');</script>";  //#TODO Error page
+    header("location: errorPage.php");
 }
 ?>
