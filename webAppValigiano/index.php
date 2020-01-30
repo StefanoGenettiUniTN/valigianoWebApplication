@@ -2,10 +2,11 @@
 <html>
 
     <head>
-        <title>Valigiano Web Application</title>
+        <title>Valligiano Web Application</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="w3.css">
+        <link rel="icon" href="immagini/logo.png" type="image/gif" sizes="16x16">
     </head>
     <style>
         h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
@@ -42,7 +43,7 @@
 
         <!--Header -->
         <header class="w3-container w3-center w3-padding-48 w3-white w3-opacity-min">
-            <h1 class="w3-xxlarge"><b> Web Application Valigiano </b></h1 >
+            <h1 class="w3-xxlarge"><b> Web Application Valligiano </b></h1 >
             <h6> Sviluppato da <span class="w3-tag w3-teal"> Stefano Genetti </span></h6 >
         </header >
 
@@ -75,6 +76,8 @@
     <a href="backup.php" class="w3-button  w3-round-large w3-centered w3-deep-orange w3-display-bottomright w3-margin" style="width: 20%;" target="_blank">ESPORTA BACKUP</a>
 
     <h4 class="w3-display-bottomleft w3-margin w3-padding w3-text-white"><b>Versione 1.0</b></h4>
+
+    <img src="immagini/logo.png" style="width: 13%;" class="w3-display-topright w3-margin">
 
 </body>
 </html>

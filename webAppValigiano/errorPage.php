@@ -6,6 +6,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="w3.css">
+        <link rel="icon" href="immagini/logo.png" type="image/gif" sizes="16x16">
 
         <style>
 
