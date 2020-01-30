@@ -142,7 +142,7 @@ if(isset($_GET["type"]) && isset($_GET["catID"])){
     <div id='outputJQ'><!--/Output JQUERY.../-->
 
     <div class='w3-responsive'><!--Scroll bar se schermata troppo piccola-->
-    <table align='center' style='width: 90%;' class='w3-table w3-striped w3-centered w3-large w3-hoverable w3-border'>
+    <table align='center' style='width: 90%;' id='myTable' class='w3-table w3-striped w3-centered w3-large w3-hoverable w3-border'>
         <tr class='w3-green'>
             <th>Nome</th>
             <th>Cognome</th>
@@ -241,11 +241,11 @@ if(isset($_GET["type"]) && isset($_GET["catID"])){
     </div>
     </div>";
     }
-    ?>
+?>
 
 <?php
 }else{
     echo "<script>alert(')-: Errore. Contattare l\'amministratore di sistema.');</script>";  //#TODO Error page
-    header("location: errorPage.php");
+    //header("location: errorPage.php");
 }
 ?>

@@ -28,7 +28,7 @@ if($type=="1"){ //RAGGRUPPA PER SOCIETA
     <div id='outputJQ'><!--/Output JQUERY.../-->
 
     <div class='w3-responsive'><!--Scroll bar se schermata troppo piccola-->
-    <table align='center' style='width: 90%;' class='w3-table w3-striped w3-centered w3-large w3-hoverable w3-border'>
+    <table align='center' style='width: 90%;' id='myTable' class='w3-table w3-striped w3-centered w3-large w3-hoverable w3-border'>
         <tr class='w3-green'>
             <th>Nome</th>
             <th>Cognome</th>
@@ -138,7 +138,7 @@ if($type=="1"){ //RAGGRUPPA PER SOCIETA
     <div id='outputJQ'><!--/Output JQUERY.../-->
 
     <div class='w3-responsive'><!--Scroll bar se schermata troppo piccola-->
-    <table align='center' style='width: 90%;' class='w3-table w3-striped w3-centered w3-large w3-hoverable w3-border'>
+    <table align='center' style='width: 90%;' id='myTable' class='w3-table w3-striped w3-centered w3-large w3-hoverable w3-border'>
         <tr class='w3-green'>
             <th>Nome</th>
             <th>Cognome</th>
@@ -160,7 +160,7 @@ if($type=="1"){ //RAGGRUPPA PER SOCIETA
         while($outUtenti = $ris->fetch_assoc()){
             //Si usa classe cat[idCategoria] per select JQuery categoria
             echo "
-    <tr class='cat".$outUtenti["id_categoria"]." record'>
+        <tr class='cat".$outUtenti["id_categoria"]." record'>
                     <td class='riga' href='profiloUtente.php?userID=".$outUtenti["userID"]."' onclick='infoUser(".$outUtenti["userID"].");'>".$outUtenti["nome_utente"]."</td>
                     <td class='riga' href='profiloUtente.php?userID=".$outUtenti["userID"]."' onclick='infoUser(".$outUtenti["userID"].");'>".$outUtenti["cognome_utente"]."</td>
                     <td class='riga' href='profiloUtente.php?userID=".$outUtenti["userID"]."' onclick='infoUser(".$outUtenti["userID"].");'>".$outUtenti["sesso_utente"]."</td>

@@ -18,7 +18,7 @@ if(isset($_POST["catID"]) && isset($_POST["raceID"])){
 
     /**Aggiorno pagina*/
     echo "<div class=\"w3-responsive\"><!--Scroll bar se schermata troppo piccola-->
-        <table id=\"TabellaRis\" align=\"center\" style=\"width: 90%;\" class=\"w3-table w3-striped w3-centered w3-large w3-hoverable w3-border\">
+        <table id=\"TabellaRis\" align=\"center\" style=\"width: 90%;\" class=\"w3-table w3-striped w3-centered w3-large w3-hoverable w3-border sortable\">
             <tr class=\"w3-green\">
                 <th>Punteggio</th>
                 <th>Nome</th>
@@ -42,5 +42,8 @@ if(isset($_POST["catID"]) && isset($_POST["raceID"])){
     }
     echo "</table>";
     echo "</div>";
+
+    /**Aggiorno libreria sorttable*/
+    echo "<script>refreshSortable();</script>";
 }
 ?>

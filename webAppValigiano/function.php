@@ -96,3 +96,12 @@ function getRaceName($_garID){
     if($outSql = $resultSql->fetch_assoc())
         return $outSql["luogo"];
 }
+
+/**Restituisce numero pettorina da ID utente*/
+function getPettorina($_userID){
+    global $conn;
+    $sql = "SELECT n_pettorina FROM utente WHERE id=".$_userID.";";
+    $resultSql = $conn->query($sql);
+    if($outSql = $resultSql->fetch_assoc())
+        return $outSql["n_pettorina"];
+}

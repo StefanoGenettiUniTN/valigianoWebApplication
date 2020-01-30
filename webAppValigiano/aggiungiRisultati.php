@@ -95,6 +95,12 @@ if(isset($_GET["garaID"])) {
                 }
             }
 
+            /**Aggiorna libreria sorttable*/
+            function refreshSortable(){
+                var newTableObject = document.getElementById("TabellaRis");
+                sorttable.makeSortable(newTableObject);
+            }
+
         </script>
 
     </head>
