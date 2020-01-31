@@ -97,15 +97,6 @@ function getRaceName($_garID){
         return $outSql["luogo"];
 }
 
-/**Restituisce nome categoria da ID categoria*/
-function getCategoryName($_catID){
-    global $conn;
-    $sql = "SELECT nome FROM categoria WHERE ID=".$_catID.";";
-    $resultSql = $conn->query($sql);
-    if($outSql = $resultSql->fetch_assoc())
-        return $outSql["nome"];
-}
-
 /**Restituisce numero pettorina da ID utente*/
 function getPettorina($_userID){
     global $conn;

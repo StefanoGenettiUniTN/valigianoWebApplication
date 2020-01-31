@@ -45,7 +45,7 @@ if(isset($_POST["garID"])){
                 </tr>";
 
         //Query
-        $selectQuery = "SELECT *, utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome FROM classifica, utente, categoria, societa, gara WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND classifica.id_gara = gara.ID AND gara.ID = " . $garID . " ORDER BY categoria.nome ASC, classifica.posClassifica ASC, punteggio DESC, utente.data_nascita ASC;";
+        $selectQuery = "SELECT *, utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome FROM classifica, utente, categoria, societa, gara WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND classifica.id_gara = gara.ID AND gara.ID = " . $garID . " ORDER BY categoria.nome ASC, punteggio DESC, utente.data_nascita ASC;";
 
         $risultatoSelectQuery = $conn->query($selectQuery);
         $posizione = 1;
