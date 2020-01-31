@@ -3,7 +3,8 @@ require_once("DBconfig.php");
 
 if(isset($_GET["garaID"])) {
     $garaID = $_GET["garaID"];  //id gara selezionata
-?>
+
+    ?>
 
     <head>
         <title>Valligiano Web Application</title>
@@ -60,15 +61,6 @@ if(isset($_GET["garaID"])) {
                 }
             }
 
-            /**Per controllo inserimento pettorina gia inserita*/
-            function alreadyInserted(numeroPettorina, arrayPettorine) {
-                for (i in arrayPettorine) {
-                    if(arrayPettorine[i]==numeroPettorina)
-                        return true;
-                }
-                return false;
-            }
-
             /**Una serie di pop up in cui inserire i numeri di pettorina in ordine di arrivo poi passa in post e aggiorna pagina*/
             function inserimentoDati(garaSelezionata){
                 var rowCount = $('#TabellaRis tr').length;  //restituisce numero delle righe della tabella (compresa intestazione)... usata per numero di ripetizione iterazione
@@ -78,14 +70,13 @@ if(isset($_GET["garaID"])) {
                 var promptInput;    //dati inseriti prima in prompt input e poi scritti nell'array
                 var i = 0;
                 if(selectedCat!="zero"){    //nessuna categoria selezionata = "zero"
-
                     while(i<(rowCount-1) && promptInput!="F"){
                         if(i>0) //se è gia stato inserito almeno un valore stampa anche l'ultimo valore inserito
                             promptInput = prompt("Inserisca i numeri di pettorina degli atleti in ordine di arrivo.\nPer terminare l'inupt manualmente digiti [ F (fine)]\nSono stati inseriti "+i+" valori.\nUltimo valore inserito: "+arrayRisultati[i-1]+".");
                         else
                             promptInput = prompt("Inserisca i numeri di pettorina degli atleti in ordine di arrivo.\nPer terminare l'inupt manualmente digiti [ F (fine)]\nSono stati inseriti "+i+" valori.");
 
-                        if(promptInput!="F" && Number.isInteger(parseInt(promptInput)) && !alreadyInserted(promptInput, arrayRisultati)) {
+                        if(promptInput!="F" && Number.isInteger(parseInt(promptInput))) {
                             arrayRisultati.push(promptInput);
                             i++;
                         }else if(promptInput!="F"){
