@@ -134,7 +134,7 @@
 <body>
     <a href="index.php" style="text-decoration: none;"><button class="w3-button w3-margin w3-teal w3-display-topright" style="height: 8%;"><i style="margin-right: 30px;"><img src="homeGrande.png"></i>Torna alla home</button></a>
     <div class="w3-card w3-margin w3-round">
-        <h2 class="w3-margin w3-container" style="text-shadow:1px 1px 0 #444; height: 8%;">Pagina di modifica dati atleta</h2>
+        <h2 class="w3-margin w3-container" style="text-shadow:1px 1px 0 #444; height: 8%;">Pagina di modifica utente</h2>
     </div>
 
     <div style="margin-right: 10%; margin-top: 2%; width: 20%;" class="w3-margin-bottom">
@@ -156,7 +156,7 @@
         <button style="margin-right: 10%; margin-top: 2%; width: 20%;" class="w3-blue-gray w3-button w3-block w3-centered w3-margin w3-round-medium" onclick="raggruppa(1)" id="btnRaggruppamento" value="1">RAGGRUPPA PER SOCIETA</button>
 
     <hr style="margin:auto; margin-top: 2%; width: 95%;">
-    <a href="aggiungiUtente.php" class="w3-ripple w3-teal w3-button w3-block w3-centered" style="margin:auto; margin-top: 3%; width: 90%;" >AGGIUNGI ATLETA</a><br>
+    <a href="aggiungiUtente.php" class="w3-ripple w3-teal w3-button w3-block w3-centered" style="margin:auto; margin-top: 3%; width: 90%;" >AGGIUNGI UTENTE</a><br>
 
     <div id="outputJQ"><!--/Output JQUERY.../-->
 

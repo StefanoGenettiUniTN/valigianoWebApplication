@@ -17,7 +17,7 @@ include("function.php");
 <body>
     <a href="index.php" style="text-decoration: none;"><button class="w3-button w3-margin w3-teal w3-display-topright" style="height: 8%;"><i style="margin-right: 30px;"><img src="homeGrande.png"></i>Torna alla home</button></a>
     <div class="w3-card w3-margin w3-round">
-        <h2 class="w3-margin w3-container" style="text-shadow:1px 1px 0 #444; height: 8%;">Inserimento nuovo atleta</h2>
+        <h2 class="w3-margin w3-container" style="text-shadow:1px 1px 0 #444; height: 8%;">Inserimento nuovo utente</h2>
     </div>
 
     <div class="w3-card w3-margin w3-round">
@@ -66,7 +66,7 @@ include("function.php");
 
         <p style="margin-bottom: 2.5%;">
             <input style="float: left;" class="w3-button w3-section w3-teal w3-ripple" type="submit" name="submit" value="REGISTRA"></p>
-            <a style="float: right; margin-right: 10%;" href="modificaUtente.php" class="w3-margin-top">Torna alla lista atleti</a>
+            <a style="float: right; margin-right: 10%;" href="modificaUtente.php" class="w3-margin-top">Torna alla lista utenti</a>
             <div style="clear:both; font-size:1px;"></div>
     </form>
     </div>
@@ -106,7 +106,7 @@ if(isset($_POST["submit"])){
         }
     }
     else{
-        echo "<script>alert(\"Errore, atleta già presente nel DB\");</script>";
+        echo "<script>alert(\"Errore, utente già presente nel DB\");</script>";
     }
 }
 

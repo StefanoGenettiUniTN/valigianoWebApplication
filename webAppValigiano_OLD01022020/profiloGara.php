@@ -13,7 +13,6 @@ if(isset($_GET["garaID"])) {
         <link rel="stylesheet" href="w3.css">
         <link rel="icon" href="immagini/logo.png" type="image/gif" sizes="16x16">
         <script src="jquery-3.4.1.min.js"></script>
-        <script src="print.min.js"></script>
         <script src="sorttable.js"></script>
 
         <script>
@@ -92,7 +91,6 @@ if(isset($_GET["garaID"])) {
         </select>
     </div>
     <a href="aggiungiRisultati.php?garaID=<?php echo"$garaID";?>" class="w3-button w3-margin-top w3-margin-left w3-round-large w3-centered w3-deep-orange" style="width: 20%;" >INSERISCI RISULTATI</a><br>
-    <button class="w3-button w3-round-large w3-light-blue w3-margin-left w3-margin-top" style="width: 20%;" onclick="printJS({ printable: 'myTable', type: 'html', header: 'Iscritti <?php echo $outTitolo["luogo"];?>', headerStyle: 'font-size: 15;'});">STAMPA ISCRITTI</button><br>
     <hr style="margin:auto; margin-top: 2%; width: 95%;" class="w3-margin-bottom">
 
     <!--Rimosso 27 gennaio 2020 dopo aver scoperto che gli utenti sono da subito iscritti a tutte le gare-->

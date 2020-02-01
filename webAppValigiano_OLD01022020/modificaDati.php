@@ -46,7 +46,7 @@
             <div style = "height: 15%; width: 15%;" class="w3-center w3-display-container w3-margin-left w3-padding w3cardFiglio">
                 <img style = "height: 100%; width: 100%;" src = "immagini/computer-1331579_1280.png" alt = "modifica utente" >
             </div>
-            <h5 style="font-family: 'myFont'; font-size: x-large;" class="w3cardFiglio w3-margin-left">Modifica dati <i>atleta</i></h5>
+            <h5 style="font-family: 'myFont'; font-size: x-large;" class="w3cardFiglio w3-margin-left">Modifica dati <i>utente</i></h5>
         </div></a>
         <hr>
         <a href="modificaCategoria.php"><div class="w3-card w3-padding w3-margin w3-hover-shadow w3cardPadre">
