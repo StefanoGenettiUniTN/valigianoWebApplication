@@ -81,7 +81,7 @@ function inserisciIscritti($garaID){
     $resultGetUserQuery = $conn->query($getUserQuery);
     //Popolo classifica con id utenti
     while($outGetUserQuery = $resultGetUserQuery->fetch_assoc()){
-        $insertQuery  = "INSERT INTO classifica (id_utente, id_gara, punteggio) VALUES (".$outGetUserQuery["ID"].", ".$garaID.", 0);";
+        $insertQuery  = "INSERT IGNORE INTO classifica (id_utente, id_gara, punteggio) VALUES (".$outGetUserQuery["ID"].", ".$garaID.", 0);";
         if(!$risultato = $conn->query($insertQuery)){
             echo "<script>alert(\"Err\");</script>";
         }

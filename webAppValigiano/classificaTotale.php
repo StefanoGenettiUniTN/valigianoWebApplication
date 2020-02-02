@@ -1,5 +1,6 @@
 <?php
     require_once("DBconfig.php");
+    require_once("function.php");
 ?>
 
     <head>
@@ -81,9 +82,13 @@
             /**Vengono stampati solo gli atleti che hanno partecipato ad almeno 3 gare
 
              * garePartecipate conta le gare; prende in considerazione solo le gare alle quali l'atleta ha
-             * partecipato con classifica.punteggio>0. Infatti a una gara prendi sempre almeno 1 punto
+             * partecipato con classifica.punteggio>0. Infatti a una gara prendi sempre almeno 1 punto (da 01022020 almeno 2 punti)
+             *
+             *
+             * punteggioEsatto è quello che viene stampato. Tiene conto di 2 punti in più nel caso l'atleta abbia fatto tutte 5 le gare; non considera gara peggiore.
+             *
              */
-            $selectQuery  = "SELECT *, utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome, SUM(classifica.punteggio) AS punteggioTotale, COUNT(classifica.id_utente) AS garePartecipate FROM classifica, utente, categoria, societa WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND classifica.punteggio>0 GROUP BY utente.ID HAVING garePartecipate>=3 ORDER BY categoria.nome ASC, punteggioTotale DESC, utente.data_nascita ASC;";
+            $selectQuery  = "SELECT *,utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome, SUM(classifica.punteggio) AS punteggioTotale, MIN(classifica.punteggio) AS garaPeggiore, COUNT(classifica.id_utente) AS garePartecipate, AVG(classifica.posClassifica) mediaPosizione, IF((COUNT(classifica.id_utente))>=5, (SUM(classifica.punteggio))-(MIN(classifica.punteggio))+2, (SUM(classifica.punteggio))-(MIN(classifica.punteggio))) AS punteggioEsatto FROM classifica, utente, categoria, societa WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND classifica.punteggio>0 GROUP BY utente.ID HAVING garePartecipate>=3 ORDER BY categoria.nome ASC, punteggioEsatto DESC, mediaPosizione ASC, utente.data_nascita ASC;";
             $risultatoSelectQuery = $conn->query($selectQuery);
             $posizione = 1;
             $categoriaCorrente = "nessuna"; //tiene traccia della categoria che si sta stampando per stampare correttamente le posizioni (quando cambia categoria $posizione=1)
@@ -95,7 +100,7 @@
                     echo "
                     <tr class='cat" . $outUtenti["id_categoria"] . " record'>
                         <td class='riga' href='profiloUtente.php?userID=".$outUtenti["id_utente"]."' onclick='infoUser(".$outUtenti["id_utente"].");'>" . $posizione . "</td>
-                        <td class='riga' href='profiloUtente.php?userID=".$outUtenti["id_utente"]."' onclick='infoUser(".$outUtenti["id_utente"].");'>" . $outUtenti["punteggioTotale"] . "</td>
+                        <td class='riga' href='profiloUtente.php?userID=".$outUtenti["id_utente"]."' onclick='infoUser(".$outUtenti["id_utente"].");'>" . $outUtenti["punteggioEsatto"] . "</td>
                         <td class='riga' href='profiloUtente.php?userID=".$outUtenti["id_utente"]."' onclick='infoUser(".$outUtenti["id_utente"].");'>" . $outUtenti["utente_nome"] . "</td>
                         <td class='riga' href='profiloUtente.php?userID=".$outUtenti["id_utente"]."' onclick='infoUser(".$outUtenti["id_utente"].");'>" . $outUtenti["utente_cognome"] . "</td>
                         <td class='riga' href='profiloUtente.php?userID=".$outUtenti["id_utente"]."' onclick='infoUser(".$outUtenti["id_utente"].");'>" . $outUtenti["societa_nome"] . "</td>

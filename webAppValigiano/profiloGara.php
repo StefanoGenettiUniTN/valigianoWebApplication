@@ -1,5 +1,6 @@
 <?php
 require_once("DBconfig.php");
+require_once("function.php");
 
 if(isset($_GET["garaID"])) {
     $garaID = $_GET["garaID"];  //id gara selezionata
@@ -18,7 +19,7 @@ if(isset($_GET["garaID"])) {
 
         <script>
 
-            /**Elimina utente*/
+            /**Elimina utente (non usata dopo scopera tutti iscritti da subito)*/
             function rimuoviIscritto(nome, idGara, idUtente){
                 var categoriaSelezionata = $("#catFilter").val();
                 if(confirm("L'utente "+nome+" sta per essere rimosso dalla lista iscritti alla gara"))
@@ -60,6 +61,17 @@ if(isset($_GET["garaID"])) {
                 sorttable.makeSortable(newTableObject);
             }
 
+            /**Aggiorna iscritti gara*/
+            function updateSubscribers(idGara){
+                var categoriaSelezionata = $("#catFilter").val();
+                $.ajax({
+                    url: 'updateSubscribers.php?catID='+categoriaSelezionata+'&raceID='+idGara,
+                    success: function(data) {
+                        $("#outputJQ").html(data);
+                    }
+                });
+            }
+
         </script>
 
     </head>
@@ -91,8 +103,10 @@ if(isset($_GET["garaID"])) {
             ?>
         </select>
     </div>
-    <a href="aggiungiRisultati.php?garaID=<?php echo"$garaID";?>" class="w3-button w3-margin-top w3-margin-left w3-round-large w3-centered w3-deep-orange" style="width: 20%;" >INSERISCI RISULTATI</a><br>
-    <button class="w3-button w3-round-large w3-light-blue w3-margin-left w3-margin-top" style="width: 20%;" onclick="printJS({ printable: 'myTable', type: 'html', header: 'Iscritti <?php echo $outTitolo["luogo"];?>', headerStyle: 'font-size: 15;'});">STAMPA ISCRITTI</button><br>
+    <a href="aggiungiRisultati.php?garaID=<?php echo"$garaID";?>" class="w3-button w3-margin-top w3-margin-left w3-round-large w3-centered w3-deep-orange" style="width: 20%;" >INSERISCI RISULTATI <img style="width: 10%;" class="w3-margin-left" src="round_input_black_18dp.png"></a><br>
+    <button class="w3-button w3-round-large w3-light-blue w3-margin-left w3-margin-top" style="width: 20%;" onclick="printJS({ printable: 'myTable', type: 'html', header: 'Iscritti <?php echo $outTitolo["luogo"];?>', headerStyle: 'font-size: 15;'});">STAMPA ISCRITTI <img style="width: 10%;" class="w3-margin-left" src="round_print_black_18dp.png"></button><br>
+    <!--Aggiunta 02/02/2020 Nel caso un utente si iscriva al momento della gara deve essere possibile aggiornare gli iscritti run time-->
+    <button class="w3-button w3-round-large w3-pale-red w3-margin-left w3-margin-top" style="width: 20%;" onclick="updateSubscribers(<?php echo $garaID;?>);">AGGIORNA ISCRITTI <img style="width: 10%;" class="w3-margin-left" src="round_cached_black_18dp.png"></button><br>
     <hr style="margin:auto; margin-top: 2%; width: 95%;" class="w3-margin-bottom">
 
     <!--Rimosso 27 gennaio 2020 dopo aver scoperto che gli utenti sono da subito iscritti a tutte le gare-->
@@ -111,7 +125,7 @@ if(isset($_GET["garaID"])) {
                     <th>Punteggio</th>
                 </tr>
                 <?php
-                $query = "SELECT *, utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome FROM classifica, utente, categoria, societa WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND classifica.id_gara=".$garaID." ORDER BY categoria.nome ASC, punteggio DESC, utente.data_nascita ASC, utente.nome ASC, utente.cognome ASC;";
+                $query = "SELECT *, utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome FROM classifica, utente, categoria, societa WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND classifica.id_gara=".$garaID." ORDER BY categoria.nome ASC, punteggio DESC, classifica.posClassifica ASC, utente.data_nascita ASC, utente.nome ASC, utente.cognome ASC;";
                 $ris = $conn->query($query);
 
                 while($outIscritti = $ris->fetch_assoc()){
@@ -150,6 +164,6 @@ if(isset($_GET["garaID"])) {
 <?php
     }else{
         echo "<script>alert(')-: Errore. Contattare l\'amministratore di sistema.');</script>";  //#TODO Error page
-        header("location: errorPage.php");
+        //header("location: errorPage.php");
     }
 ?>

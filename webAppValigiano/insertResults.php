@@ -34,11 +34,12 @@ if(isset($_POST["catID"]) && isset($_POST["raceID"]) && isset($_POST["resultsArr
     $posInClassifica = 1;
 
     foreach ($arrayRisultati as $pettorina){
-        if(getCategoryName($catID)=="1-Minicuccioli-M" || getCategoryName($catID)=="2-Minicuccioli-F"){
+        if(getCategoryName($catID)=="01-Minicuccioli-M" || getCategoryName($catID)=="02-Minicuccioli-F"){
             $punteggio = 1;
         }else{
             $punteggio = (($totPartecipanti-$posInClassifica)/$totPartecipanti)*100+1;    //punteggio da assegnare secondo formula
         }
+
         /**Query di aggiornamento*/
         $updateQuery  = "UPDATE classifica INNER JOIN utente ON utente.ID = classifica.id_utente SET classifica.punteggio=".$punteggio.", classifica.posClassifica=".$posInClassifica." WHERE utente.n_pettorina=".$pettorina." AND classifica.id_gara=".$garaID.";";
         $risultato = $conn->query($updateQuery);
@@ -48,7 +49,7 @@ if(isset($_POST["catID"]) && isset($_POST["raceID"]) && isset($_POST["resultsArr
 
     /**Aggiorno pagina*/
     //Query
-    $selectQuery  = "SELECT *, utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome FROM classifica, utente, categoria, societa WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND classifica.id_gara=".$garaID." AND categoria.ID = ".$catID." ORDER BY classifica.posClassifica ASC, classifica.punteggio DESC, utente.nome ASC, utente.cognome ASC;";
+    $selectQuery  = "SELECT *, utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome FROM classifica, utente, categoria, societa WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND classifica.id_gara=".$garaID." AND categoria.ID = ".$catID." ORDER BY classifica.punteggio DESC, classifica.posClassifica ASC, utente.data_nascita ASC, utente.nome ASC, utente.cognome ASC;";
     $risultatoSelectQuery = $conn->query($selectQuery);
 
     echo "<div class=\"w3-responsive\"><!--Scroll bar se schermata troppo piccola-->
@@ -88,7 +89,7 @@ if(isset($_POST["catID"]) && isset($_POST["raceID"]) && isset($_POST["resultsArr
         $garaID = $_POST["raceID"];
 
         //Query
-        $selectQuery = "SELECT *, utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome FROM classifica, utente, categoria, societa WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND classifica.id_gara=" . $garaID . " AND categoria.ID = " . $catID . " ORDER BY classifica.posClassifica ASC, classifica.punteggio DESC, utente.nome ASC, utente.cognome ASC;";
+        $selectQuery = "SELECT *, utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome FROM classifica, utente, categoria, societa WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND classifica.id_gara=" . $garaID . " AND categoria.ID = " . $catID . " ORDER BY classifica.punteggio DESC, classifica.posClassifica ASC, utente.data_nascita ASC, utente.nome ASC, utente.cognome ASC;";
         $risultatoSelectQuery = $conn->query($selectQuery);
 
         echo "<div class=\"w3-responsive\"><!--Scroll bar se schermata troppo piccola-->

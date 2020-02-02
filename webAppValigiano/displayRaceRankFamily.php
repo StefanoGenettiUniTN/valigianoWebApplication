@@ -23,9 +23,9 @@ if(isset($_POST["garID"])){
 
     //Query
     if($garID=="zero")  //nessuna gara in particolare selezionata
-        $selectQuery  = "SELECT *,famiglia.nome AS famiglia_nome, SUM(punteggio) AS punteggioTotale FROM famiglia, classifica, relazioneFamigliare, utente WHERE relazioneFamigliare.id_utente = utente.ID AND relazioneFamigliare.id_famiglia=famiglia.ID AND classifica.id_utente=utente.ID AND utente.ID IN (SELECT utente.ID FROM utente,classifica WHERE utente.ID=classifica.id_utente AND classifica.punteggio>0 GROUP BY utente.ID HAVING COUNT(classifica.id_utente)>=3) GROUP BY famiglia.ID ORDER BY punteggioTotale DESC;";
+        $selectQuery  = "SELECT *,famiglia.nome AS famiglia_nome, SUM(punteggio) AS punteggioTotale FROM famiglia, classifica, relazioneFamigliare, utente WHERE relazioneFamigliare.id_utente = utente.ID AND relazioneFamigliare.id_famiglia=famiglia.ID AND classifica.id_utente=utente.ID GROUP BY famiglia.ID ORDER BY punteggioTotale DESC;";
     else
-        $selectQuery  = "SELECT *, famiglia.nome AS famiglia_nome, SUM(punteggio) AS punteggioTotale FROM utente, famiglia, relazioneFamigliare, classifica WHERE utente.ID=relazioneFamigliare.id_utente AND relazioneFamigliare.id_famiglia=famiglia.ID AND classifica.id_utente = utente.ID AND classifica.id_gara=".$garID." GROUP BY famiglia.ID ORDER BY punteggioTotale DESC;";
+        $selectQuery  = "SELECT *,famiglia.nome AS famiglia_nome, SUM(punteggio) AS punteggioTotale FROM famiglia, classifica, relazioneFamigliare, utente WHERE relazioneFamigliare.id_utente = utente.ID AND relazioneFamigliare.id_famiglia=famiglia.ID AND classifica.id_utente=utente.ID AND classifica.id_gara=".$garID." GROUP BY famiglia.ID ORDER BY punteggioTotale DESC;";
 
     $risultatoSelectQuery = $conn->query($selectQuery);
     $posizione = 1;

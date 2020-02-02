@@ -64,7 +64,8 @@ require_once("DBconfig.php");
             </tr>
             <?php
             //Query
-            $selectQuery = "SELECT *,famiglia.nome AS famiglia_nome, SUM(punteggio) AS punteggioTotale FROM famiglia, classifica, relazioneFamigliare, utente WHERE relazioneFamigliare.id_utente = utente.ID AND relazioneFamigliare.id_famiglia=famiglia.ID AND classifica.id_utente=utente.ID AND utente.ID IN (SELECT utente.ID FROM utente,classifica WHERE utente.ID=classifica.id_utente AND classifica.punteggio>0 GROUP BY utente.ID HAVING COUNT(classifica.id_utente)>=3) GROUP BY famiglia.ID ORDER BY punteggioTotale DESC;";
+            //$selectQuery = "SELECT *,famiglia.nome AS famiglia_nome, SUM(punteggio) AS punteggioTotale FROM famiglia, classifica, relazioneFamigliare, utente WHERE relazioneFamigliare.id_utente = utente.ID AND relazioneFamigliare.id_famiglia=famiglia.ID AND classifica.id_utente=utente.ID AND utente.ID IN (SELECT utente.ID FROM utente,classifica WHERE utente.ID=classifica.id_utente AND classifica.punteggio>0 GROUP BY utente.ID HAVING COUNT(classifica.id_utente)>=3) GROUP BY famiglia.ID ORDER BY punteggioTotale DESC;";
+            $selectQuery = "SELECT *,famiglia.nome AS famiglia_nome, SUM(punteggio) AS punteggioTotale FROM famiglia, classifica, relazioneFamigliare, utente WHERE relazioneFamigliare.id_utente = utente.ID AND relazioneFamigliare.id_famiglia=famiglia.ID AND classifica.id_utente=utente.ID GROUP BY famiglia.ID ORDER BY punteggioTotale DESC;";
             $risultatoSelectQuery = $conn->query($selectQuery);
             $posizione = 1;
             while($outFamiglia = $risultatoSelectQuery->fetch_assoc()){

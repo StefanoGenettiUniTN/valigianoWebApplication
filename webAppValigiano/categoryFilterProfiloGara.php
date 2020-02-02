@@ -8,7 +8,7 @@ require_once("DBconfig.php");
 
 
 <?php
-if(isset($_GET["catID"])){
+if(isset($_GET["catID"]) && isset($_GET["raceID"])){
     ?>
 
     <?php
@@ -29,9 +29,9 @@ if(isset($_GET["catID"])){
                 </tr>";
 
     if($catID=="all")   //nessuna categoria in particolare selezionata
-        $query = "SELECT *, utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome FROM classifica, utente, categoria, societa WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND classifica.id_gara=".$garaID." ORDER BY categoria.nome ASC, punteggio DESC, utente.data_nascita ASC, utente.nome ASC, utente.cognome ASC;";
+        $query = "SELECT *, utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome FROM classifica, utente, categoria, societa WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND classifica.id_gara=".$garaID." ORDER BY categoria.nome ASC, punteggio DESC, classifica.posClassifica ASC, utente.data_nascita ASC, utente.nome ASC, utente.cognome ASC;";
     else
-        $query = "SELECT *, utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome FROM classifica, utente, categoria, societa WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND classifica.id_gara=".$garaID." AND utente.id_categoria=".$catID." ORDER BY categoria.nome ASC, punteggio DESC, utente.data_nascita ASC, utente.nome ASC, utente.cognome ASC;";
+        $query = "SELECT *, utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome FROM classifica, utente, categoria, societa WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND classifica.id_gara=".$garaID." AND utente.id_categoria=".$catID." ORDER BY categoria.nome ASC, punteggio DESC, classifica.posClassifica ASC, utente.data_nascita ASC, utente.nome ASC, utente.cognome ASC;";
     $ris = $conn->query($query);
 
     while($outIscritti = $ris->fetch_assoc()){

@@ -67,7 +67,7 @@
 
     <?php
         $query = "SELECT utente.nome AS nome_utente, utente.cognome AS cognome_utente, utente.sesso AS sesso_utente, utente.data_nascita AS data_nascita_utente, utente.n_pettorina AS pettorina_utente, utente.ID, utente.id_categoria, categoria.nome AS nome_categoria, categoria.ID, classifica.id_utente, societa.nome AS nome_societa, societa.ID, SUM(classifica.punteggio) AS punteggio FROM societa, categoria, utente LEFT OUTER JOIN classifica ON utente.ID = classifica.id_utente WHERE utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND utente.ID=".$_GET["userID"]." GROUP BY utente.ID;";
-        $queryGare = "SELECT gara.ID, gara.luogo AS gara_luogo, gara.data AS gara_data, utente.ID, classifica.id_utente, classifica.id_gara, classifica.punteggio FROM utente, gara, classifica WHERE utente.ID = classifica.id_utente AND gara.ID = classifica.id_gara AND utente.ID=".$_GET["userID"].";";
+        $queryGare = "SELECT gara.ID, gara.luogo AS gara_luogo, gara.data AS gara_data, utente.ID, classifica.id_utente, classifica.id_gara, classifica.punteggio, classifica.posClassifica FROM utente, gara, classifica WHERE utente.ID = classifica.id_utente AND gara.ID = classifica.id_gara AND utente.ID=".$_GET["userID"].";";
         $ris = $conn->query($query);
 
         while($outUtente = $ris->fetch_assoc()) {
@@ -137,6 +137,7 @@
             <th></th>
             <th></th>
             <th>Punteggio</th>
+            <th>Posizione</th>
         </tr>
 
     <?php
@@ -151,6 +152,7 @@
                     <td>".$outGare["gara_luogo"]."</td>
                     <td>".$outGare["gara_data"]."</td>
                     <td>".$outGare["punteggio"]."</td>
+                    <td>".$outGare["posClassifica"]."</td>
                 </tr>
         ";
     }
