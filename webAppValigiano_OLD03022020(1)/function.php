@@ -115,15 +115,6 @@ function getPettorina($_userID){
         return $outSql["n_pettorina"];
 }
 
-/**Restituisce totale di partenza da ID categoria*/
-function getTotPartenza($_catID){
-    global $conn;
-    $sql = "SELECT tetto FROM categoria WHERE ID=".$_catID.";";
-    $resultSql = $conn->query($sql);
-    if($outSql = $resultSql->fetch_assoc())
-        return $outSql["tetto"];
-}
-
 /**Azzera i risultati ottenuti dalla categoria selezionata nella gara selezionata*/
 function azzeraRisultatiCategoria($_garID, $_catID){
     global $conn;

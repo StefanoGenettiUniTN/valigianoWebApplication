@@ -33,19 +33,11 @@ if(isset($_POST["catID"]) && isset($_POST["raceID"]) && isset($_POST["resultsArr
 
     $posInClassifica = 1;
 
-    $totDiPartenza = getTotPartenza($catID);    //Si parte da un punteggio di partenza salvato nella tabella categoria (es. 50) e lo si assegna a scalare ad ogni atleta (+2 punti per partecipazione)
-
     foreach ($arrayRisultati as $pettorina){
-        if(getCategoryName($catID)=="01-Minicuccioli-M" || getCategoryName($catID)=="02-Minicuccioli-F"){   //personalizzazione per categoria minicuccioli (sempre 1 punto)
+        if(getCategoryName($catID)=="01-Minicuccioli-M" || getCategoryName($catID)=="02-Minicuccioli-F"){
             $punteggio = 1;
         }else{
-            //$punteggio = (($totPartecipanti-$posInClassifica)/$totPartecipanti)*100+1;    //punteggio da assegnare secondo formula
-            if($totDiPartenza>=0){  //totDiPartenza ancora positivo allora no problem
-                $punteggio = $totDiPartenza+2;
-                $totDiPartenza--;
-            }else{  //se totDiPartenza diventa negativo --> $punteggio = 2
-                $punteggio = 2;
-            }
+            $punteggio = (($totPartecipanti-$posInClassifica)/$totPartecipanti)*100+1;    //punteggio da assegnare secondo formula
         }
 
         /**Query di aggiornamento*/
