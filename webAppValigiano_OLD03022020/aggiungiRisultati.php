@@ -111,19 +111,6 @@ if(isset($_GET["garaID"])) {
                 sorttable.makeSortable(newTableObject);
             }
 
-            /**Azzera i risultati della categoria selezionata. Altrimenti in caso di errore in fase di inserimento, situazione irrimediabile*/
-            function resultReset(garaSelezionata){
-                var selectedCat = $('#catFilter').val();    //categoria selezionata
-                if(selectedCat!="zero") {    //nessuna categoria selezionata = "zero"
-                    $.ajax({
-                        url: 'resetResults.php?raceID='+garaSelezionata+'&catID='+selectedCat,
-                        success: function(data) {
-                            $("#outputJQ").html(data);
-                        }
-                    });
-                }
-            }
-
         </script>
 
     </head>
@@ -156,7 +143,6 @@ if(isset($_GET["garaID"])) {
     </select>
 
     <button class="w3-button w3-margin-top w3-margin-left w3-round-large w3-centered w3-deep-orange" style="width: 20%;" onclick="inserimentoDati(<?php echo $garaID;?>);">COMPILA LA CLASSIFICA</button><br>
-    <button class="w3-button w3-margin-top w3-margin-left w3-round-large w3-centered w3-khaki" style="width: 20%;" onclick="resultReset(<?php echo $garaID;?>);">AZZERA RISULTATI</button><br>
 
     <hr style="margin:auto; margin-top: 2%; margin-bottom: 3%; width: 95%;">
 

@@ -114,10 +114,3 @@ function getPettorina($_userID){
     if($outSql = $resultSql->fetch_assoc())
         return $outSql["n_pettorina"];
 }
-
-/**Azzera i risultati ottenuti dalla categoria selezionata nella gara selezionata*/
-function azzeraRisultatiCategoria($_garID, $_catID){
-    global $conn;
-    $sql = "UPDATE classifica SET punteggio = 0, posClassifica = 0 WHERE id_utente IN (SELECT ID FROM utente WHERE id_categoria=".$_catID.") AND classifica.id_gara=".$_garID.";";
-    $resultSql = $conn->query($sql);
-}
