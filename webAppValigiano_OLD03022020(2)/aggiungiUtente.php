@@ -12,24 +12,6 @@ include("function.php");
     <link rel="stylesheet" href="w3.css">
     <link rel="icon" href="immagini/logo.png" type="image/gif" sizes="16x16">
     <script src="jquery-3.4.1.min.js"></script>
-
-    <script>
-        /**Quando viene inserita la data suggerisce la categoria opportuna*/
-        function showHint(data) {
-            var inputDate = new Date(data); //creo oggetto data a partire dalla data passata in input per prelevare anno con metodo getFullYear da passare all'XML request
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    var outputXmlHttpRequest = this.responseText;
-                    if(outputXmlHttpRequest!="null")
-                        document.getElementById("categoria").value = outputXmlHttpRequest;
-                }
-            };
-            xmlhttp.open("GET", "getCategoryHint.php?data=" + inputDate.getFullYear(), true);
-            xmlhttp.send();
-
-        }
-    </script>
 </head>
 
 <body>
@@ -47,7 +29,7 @@ include("function.php");
             <input class="w3-input w3-animate-input" type="text" name="cognome" style="width:90%" required>
             <label class="w3-text-teal"><b>Cognome</b></label></p>
         <p style="margin-bottom: 2.5%;">
-            <input class="w3-input w3-animate-input" type="date" name="data_nascita" style="width:90%" min="1900" max="2099" onchange="showHint(this.value);" required>
+            <input class="w3-input w3-animate-input" type="date" name="data_nascita" style="width:90%" required>
             <label class="w3-text-teal"><b>Data di nascita</b></label></p>
         <p>
             <label class="w3-margin-right w3-text-teal"><b>Sesso</b></label>
@@ -70,7 +52,7 @@ include("function.php");
             </select><br>
             <label class="w3-text-teal"><b>Societ&agrave</b></label></p>
 
-        <p style="margin-bottom: 2.5%;"><select id="categoria" class="w3-select w3-animate-input" name="categoria" style="width:90%" required>
+        <p style="margin-bottom: 2.5%;"><select class="w3-select w3-animate-input" name="categoria" style="width:90%" required>
                 <option value="" disabled selected>...nessuna categoria selezionata...</option>
                 <?php
                 $query = "SELECT id, nome FROM categoria;";

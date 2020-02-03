@@ -50,15 +50,13 @@ require_once("DBconfig.php");
 
 
     /*Riceve in input dati categoria e modifica record*/
-    function modificaCategoria(idCategoria, nome, tetto, minAnno, maxAnno){
-        if(idCategoria && nome && tetto && minAnno && maxAnno){
+    function modificaCategoria(idCategoria, nome, tetto){
+        if(idCategoria && nome && tetto){
             $.post("modifyCat.php",
                 {
                     id: idCategoria,
                     name: nome,
-                    tetto: tetto,
-                    minAnno: minAnno,
-                    maxAnno: maxAnno
+                    tetto: tetto
                 },
                 function(data, status){
                     $("#outputJQ").html(data);
@@ -80,12 +78,10 @@ require_once("DBconfig.php");
 <div id="outputJQ"><!--/Output JQUERY.../-->
 
 <div class="w3-responsive"><!--Scroll bar se schermata troppo piccola-->
-    <table style="width: 70%; margin-left: 5%;" class="w3-table w3-striped w3-centered w3-large w3-hoverable w3-border">
+    <table style="width: 60%; margin-left: 5%;" class="w3-table w3-striped w3-centered w3-large w3-hoverable w3-border">
         <tr class="w3-green">
             <th>Nome Categoria</th>
             <th>Punteggio di partenza</th>
-            <th>Anno minimo</th>
-            <th>Anno massimo</th>
         </tr>
 
         <?php
@@ -98,8 +94,6 @@ require_once("DBconfig.php");
                 <tr class='riga'>
                     <td>".$outCategoria["nome"]."</td>
                     <td>".$outCategoria["tetto"]."</td>
-                    <td>".$outCategoria["minAnno"]."</td>
-                    <td>".$outCategoria["maxAnno"]."</td>
             ";
 
             echo "
@@ -115,11 +109,9 @@ require_once("DBconfig.php");
                     <div method='post' action='modificaCategoria.php'>
                     <tr style='display: none;' id='".$outCategoria["ID"]."'>
                             <td><input id='".$outCategoria["ID"]."nome' class=\"w3-input w3-border w3-round\" type=\"text\" name=\"nome\"  value=\"".$outCategoria["nome"]."\"></td>
-                            <td><input id='".$outCategoria["ID"]."tetto' class=\"w3-input w3-border w3-round\" type=\"number\" name=\"tetto\"  value='".$outCategoria["tetto"]."'></td>
-                            <td><input id='".$outCategoria["ID"]."minAnno' class=\"w3-input w3-border w3-round\" type=\"number\" name=\"minAnno\"  value='".$outCategoria["minAnno"]."'></td>
-                            <td><input id='".$outCategoria["ID"]."maxAnno' class=\"w3-input w3-border w3-round\" type=\"number\" name=\"maxAnno\"  value='".$outCategoria["maxAnno"]."'></td>";
+                            <td><input id='".$outCategoria["ID"]."tetto' class=\"w3-input w3-border w3-round\" type=\"number\" name=\"tetto\"  value='".$outCategoria["tetto"]."'></td>";
             echo "
-                    <td><button class='w3-button w3-teal' onclick=\"modificaCategoria(".$outCategoria['ID'].", document.getElementById('".$outCategoria['ID']."nome').value, document.getElementById('".$outCategoria['ID']."tetto').value, document.getElementById('".$outCategoria['ID']."minAnno').value, document.getElementById('".$outCategoria['ID']."maxAnno').value);\">MODIFICA</button></td>
+                    <td><button class='w3-button w3-teal' onclick=\"modificaCategoria(".$outCategoria['ID'].", document.getElementById('".$outCategoria['ID']."nome').value, document.getElementById('".$outCategoria['ID']."tetto').value);\">MODIFICA</button></td>
                     </tr>        
                     </div>
                 ";

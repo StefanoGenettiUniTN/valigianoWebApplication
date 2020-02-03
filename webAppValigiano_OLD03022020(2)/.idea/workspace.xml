@@ -73,25 +73,49 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/aggiungiUtente.php">
+        <entry file="file://$PROJECT_DIR$/profiloGara.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="27" column="85" selection-start-line="27" selection-start-column="85" selection-end-line="27" selection-end-column="85" />
+            <state relative-caret-position="550">
+              <caret line="127" column="330" lean-forward="true" selection-start-line="127" selection-start-column="330" selection-end-line="127" selection-end-column="330" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aggiungiRisultati.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="698">
+              <caret line="173" column="2" lean-forward="true" selection-start-line="169" selection-end-line="173" selection-end-column="2" />
               <folding>
-                <element signature="e#3419#3436#0#HTML" expanded="true" />
+                <element signature="n#style#0;n#h2#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/getCategoryHint.php">
+        <entry file="file://$PROJECT_DIR$/insertResults.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" column="59" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
-              <folding>
-                <element signature="e#11#134#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="382">
+              <caret line="35" column="42" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aggiungiCategoria.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="602">
+              <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/function.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="434">
+              <caret line="118" column="23" selection-start-line="118" selection-start-column="23" selection-end-line="118" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -99,13 +123,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modificaCategoria.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1944">
-              <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
+            <state relative-caret-position="1232">
+              <caret line="113" column="234" lean-forward="true" selection-start-line="113" selection-start-column="171" selection-end-line="113" selection-end-column="234" />
               <folding>
                 <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#tr#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -114,8 +135,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/removeCategory.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="536">
-              <caret line="31" column="51" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="31" selection-end-column="51" />
+            <state relative-caret-position="976">
+              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
               <folding>
                 <element signature="n#style#0;n#table#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -124,22 +145,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aggiungiCategoria.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="31" column="107" selection-start-line="31" selection-start-column="86" selection-end-line="31" selection-end-column="107" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modifyCat.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="57" column="189" lean-forward="true" selection-start-line="56" selection-start-column="28" selection-end-line="57" selection-end-column="189" />
+            <state relative-caret-position="720">
+              <caret line="51" column="234" lean-forward="true" selection-start-line="51" selection-start-column="171" selection-end-line="51" selection-end-column="234" />
               <folding>
                 <element signature="n#style#0;n#table#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#tr#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -158,6 +169,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/modifySoc.php" />
         <option value="$PROJECT_DIR$/removeRace.php" />
         <option value="$PROJECT_DIR$/removeSociety.php" />
         <option value="$PROJECT_DIR$/removeSubscriber.php" />
@@ -187,6 +199,7 @@
         <option value="$PROJECT_DIR$/addFamilyMember.php" />
         <option value="$PROJECT_DIR$/modificaDati.php" />
         <option value="$PROJECT_DIR$/modificaUtente.php" />
+        <option value="$PROJECT_DIR$/aggiungiUtente.php" />
         <option value="$PROJECT_DIR$/viewCategoryResults.php" />
         <option value="$PROJECT_DIR$/profiloUtente.php" />
         <option value="$PROJECT_DIR$/classificaTotale.php" />
@@ -201,14 +214,12 @@
         <option value="$PROJECT_DIR$/updateSubscribers.php" />
         <option value="$PROJECT_DIR$/aggiungiRisultati.php" />
         <option value="$PROJECT_DIR$/resetResults.php" />
-        <option value="$PROJECT_DIR$/insertResults.php" />
-        <option value="$PROJECT_DIR$/function.php" />
+        <option value="$PROJECT_DIR$/aggiungiCategoria.php" />
         <option value="$PROJECT_DIR$/modificaCategoria.php" />
         <option value="$PROJECT_DIR$/modifyCat.php" />
         <option value="$PROJECT_DIR$/removeCategory.php" />
-        <option value="$PROJECT_DIR$/aggiungiCategoria.php" />
-        <option value="$PROJECT_DIR$/getCategoryHint.php" />
-        <option value="$PROJECT_DIR$/aggiungiUtente.php" />
+        <option value="$PROJECT_DIR$/insertResults.php" />
+        <option value="$PROJECT_DIR$/function.php" />
       </list>
     </option>
   </component>
@@ -329,12 +340,12 @@
       <workItem from="1580485562202" duration="5767000" />
       <workItem from="1580543462343" duration="3303000" />
       <workItem from="1580631755672" duration="11575000" />
-      <workItem from="1580713727710" duration="9302000" />
+      <workItem from="1580713727710" duration="4297000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176421000" />
+    <option name="totallyTimeSpent" value="171416000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1294" height="1047" extended-state="0" />
@@ -376,6 +387,13 @@
     <state x="376" y="175" key="run.anything.popup/59.27.1307.741@59.27.1307.741" timestamp="1575754538814" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/errorPage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="81" selection-start-line="8" selection-start-column="81" selection-end-line="8" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/footerLayout.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -527,6 +545,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/aggiungiUtente.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1496">
+          <caret line="68" column="127" selection-start-line="68" selection-start-column="127" selection-end-line="68" selection-end-column="127" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/classifica.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-776">
@@ -541,6 +566,13 @@
           <folding>
             <element signature="e#5737#5760#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classificaTotale.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="90" column="843" lean-forward="true" selection-start-line="90" selection-start-column="29" selection-end-line="90" selection-end-column="843" />
         </state>
       </provider>
     </entry>
@@ -635,12 +667,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/aggiungiCategoria.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="602">
+          <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/aggiungiRisultati.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="698">
           <caret line="173" column="2" lean-forward="true" selection-start-line="169" selection-end-line="173" selection-end-column="2" />
           <folding>
             <element signature="n#style#0;n#h2#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modifyCat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="51" column="234" lean-forward="true" selection-start-line="51" selection-start-column="171" selection-end-line="51" selection-end-column="234" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/removeCategory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="976">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modificaCategoria.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1232">
+          <caret line="113" column="234" lean-forward="true" selection-start-line="113" selection-start-column="171" selection-end-line="113" selection-end-column="234" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -659,78 +728,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classificaTotale.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="93" column="85" selection-start-line="93" selection-start-column="85" selection-end-line="93" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/profiloGara.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2794">
+        <state relative-caret-position="550">
           <caret line="127" column="330" lean-forward="true" selection-start-line="127" selection-start-column="330" selection-end-line="127" selection-end-column="330" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modificaCategoria.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1944">
-          <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#tr#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modifyCat.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="57" column="189" lean-forward="true" selection-start-line="56" selection-start-column="28" selection-end-line="57" selection-end-column="189" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#tr#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aggiungiCategoria.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="31" column="107" selection-start-line="31" selection-start-column="86" selection-end-line="31" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/removeCategory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="31" column="51" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="31" selection-end-column="51" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/getCategoryHint.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="59" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
-          <folding>
-            <element signature="e#11#134#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aggiungiUtente.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="27" column="85" selection-start-line="27" selection-start-column="85" selection-end-line="27" selection-end-column="85" />
-          <folding>
-            <element signature="e#3419#3436#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

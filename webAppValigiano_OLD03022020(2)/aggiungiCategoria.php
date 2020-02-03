@@ -29,12 +29,6 @@ include("function.php");
                 <input class="w3-input w3-animate-input" type="number" name="tetto" style="width:90%" required>
                 <label class="w3-text-teal"><b>Punteggio di partenza</b></label></p>
             <p style="margin-bottom: 2.5%;">
-                <input class="w3-input w3-animate-input" type="number" name="minAnno" min="1900" max="2099" style="width:90%" required>
-                <label class="w3-text-teal"><b>Anno di nascita minimo</b></label></p>
-            <p style="margin-bottom: 2.5%;">
-                <input class="w3-input w3-animate-input" type="number" name="maxAnno" min="1900" max="2099" style="width:90%" required>
-                <label class="w3-text-teal"><b>Anno di nascita massimo</b></label></p>
-            <p style="margin-bottom: 2.5%;">
                 <input style="float: left;" class="w3-button w3-section w3-teal w3-ripple" type="submit" name="submit" value="REGISTRA"></p>
             <a style="float: right; margin-right: 10%;" href="modificaCategoria.php" class="w3-margin-top">Torna alla lista delle categorie</a>
             <div style="clear:both; font-size:1px;"></div>
@@ -52,13 +46,11 @@ include("function.php");
 if(isset($_POST["submit"])){
     $nome = $_POST['nome'];
     $tetto = $_POST['tetto'];
-    $minAnno = $_POST['minAnno'];
-    $maxAnno = $_POST['maxAnno'];
 
     //Controlla se la categoria è gia presente #TODO invece che alert, scritta in rosso
     if(!categoriaExists($nome)){
         //Query
-        $insertQuery  = "INSERT INTO categoria (nome, tetto, minAnno, maxAnno) VALUES ( '".$nome."', ".$tetto.", ".$minAnno.", ".$maxAnno.");";
+        $insertQuery  = "INSERT INTO categoria (nome, tetto) VALUES ( '".$nome."', ".$tetto.");";
         if(!($ris = $conn->query($insertQuery))){
             echo "<script>alert(\"Errore in fase di inserimento dati.\");</script>";
         }

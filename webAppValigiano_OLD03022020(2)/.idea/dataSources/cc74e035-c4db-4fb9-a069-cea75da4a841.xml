@@ -1031,58 +1031,46 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="266" parent="256" name="minAnno">
-      <Position>4</Position>
-      <DataType>int(10)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="267" parent="256" name="maxAnno">
-      <Position>5</Position>
-      <DataType>int(10)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="268" parent="256" name="PRIMARY">
+    <key id="266" parent="256" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="269" parent="257" name="id_utente">
+    <column id="267" parent="257" name="id_utente">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="270" parent="257" name="id_gara">
+    <column id="268" parent="257" name="id_gara">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="271" parent="257" name="punteggio">
+    <column id="269" parent="257" name="punteggio">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="272" parent="257" name="posClassifica">
+    <column id="270" parent="257" name="posClassifica">
       <Position>4</Position>
       <DataType>int(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="273" parent="257" name="id_gara">
+    <index id="271" parent="257" name="id_gara">
       <ColNames>id_gara</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="274" parent="257" name="PRIMARY">
+    <key id="272" parent="257" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_utente
 id_gara</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="275" parent="257" name="classifica_ibfk_1">
+    <foreign-key id="273" parent="257" name="classifica_ibfk_1">
       <ColNames>id_utente</ColNames>
       <RefSchemaName>dbvaligiano</RefSchemaName>
       <RefTableName>utente</RefTableName>
@@ -1090,7 +1078,7 @@ id_gara</ColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="276" parent="257" name="classifica_ibfk_2">
+    <foreign-key id="274" parent="257" name="classifica_ibfk_2">
       <ColNames>id_gara</ColNames>
       <RefSchemaName>dbvaligiano</RefSchemaName>
       <RefTableName>gara</RefTableName>
@@ -1098,69 +1086,69 @@ id_gara</ColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="277" parent="258" name="ID">
+    <column id="275" parent="258" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="278" parent="258" name="nome">
+    <column id="276" parent="258" name="nome">
       <Position>2</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="279" parent="258" name="PRIMARY">
+    <key id="277" parent="258" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="280" parent="259" name="ID">
+    <column id="278" parent="259" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="281" parent="259" name="luogo">
+    <column id="279" parent="259" name="luogo">
       <Position>2</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="282" parent="259" name="data">
+    <column id="280" parent="259" name="data">
       <Position>3</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="283" parent="259" name="PRIMARY">
+    <key id="281" parent="259" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="284" parent="260" name="id_utente">
+    <column id="282" parent="260" name="id_utente">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="285" parent="260" name="id_famiglia">
+    <column id="283" parent="260" name="id_famiglia">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="286" parent="260" name="id_utente">
+    <index id="284" parent="260" name="id_utente">
       <ColNames>id_utente</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="287" parent="260" name="id_famiglia">
+    <index id="285" parent="260" name="id_famiglia">
       <ColNames>id_famiglia</ColNames>
       <Type>btree</Type>
     </index>
-    <foreign-key id="288" parent="260" name="relazionefamigliare_ibfk_1">
+    <foreign-key id="286" parent="260" name="relazionefamigliare_ibfk_1">
       <ColNames>id_utente</ColNames>
       <RefSchemaName>dbvaligiano</RefSchemaName>
       <RefTableName>utente</RefTableName>
@@ -1168,7 +1156,7 @@ id_gara</ColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="289" parent="260" name="relazionefamigliare_ibfk_2">
+    <foreign-key id="287" parent="260" name="relazionefamigliare_ibfk_2">
       <ColNames>id_famiglia</ColNames>
       <RefSchemaName>dbvaligiano</RefSchemaName>
       <RefTableName>famiglia</RefTableName>
@@ -1176,93 +1164,93 @@ id_gara</ColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="290" parent="261" name="ID">
+    <column id="288" parent="261" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="291" parent="261" name="nome">
+    <column id="289" parent="261" name="nome">
       <Position>2</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="292" parent="261" name="sede">
+    <column id="290" parent="261" name="sede">
       <Position>3</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="293" parent="261" name="PRIMARY">
+    <key id="291" parent="261" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="294" parent="262" name="ID">
+    <column id="292" parent="262" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="295" parent="262" name="nome">
+    <column id="293" parent="262" name="nome">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="296" parent="262" name="cognome">
+    <column id="294" parent="262" name="cognome">
       <Position>3</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="297" parent="262" name="data_nascita">
+    <column id="295" parent="262" name="data_nascita">
       <Position>4</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="298" parent="262" name="sesso">
+    <column id="296" parent="262" name="sesso">
       <Position>5</Position>
       <DataType>char(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="299" parent="262" name="n_pettorina">
+    <column id="297" parent="262" name="n_pettorina">
       <Position>6</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="300" parent="262" name="id_societa">
+    <column id="298" parent="262" name="id_societa">
       <Position>7</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="301" parent="262" name="id_categoria">
+    <column id="299" parent="262" name="id_categoria">
       <Position>8</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="302" parent="262" name="id_societa">
+    <index id="300" parent="262" name="id_societa">
       <ColNames>id_societa</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="303" parent="262" name="id_categoria">
+    <index id="301" parent="262" name="id_categoria">
       <ColNames>id_categoria</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="304" parent="262" name="PRIMARY">
+    <key id="302" parent="262" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="305" parent="262" name="utente_ibfk_1">
+    <foreign-key id="303" parent="262" name="utente_ibfk_1">
       <ColNames>id_societa</ColNames>
       <RefSchemaName>dbvaligiano</RefSchemaName>
       <RefTableName>societa</RefTableName>
@@ -1270,7 +1258,7 @@ id_gara</ColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="306" parent="262" name="utente_ibfk_2">
+    <foreign-key id="304" parent="262" name="utente_ibfk_2">
       <ColNames>id_categoria</ColNames>
       <RefSchemaName>dbvaligiano</RefSchemaName>
       <RefTableName>categoria</RefTableName>
