@@ -69,10 +69,27 @@ if(isset($_GET["garaID"])) {
                 return false;
             }
 
+            /**Per controllo inserimento di una pettorina non esistente in quella categoria*/
+            function isValid(numeroPettorina, arrayPettorineValide){
+                for (i in arrayPettorineValide) {
+                    if(arrayPettorineValide[i]==numeroPettorina)
+                        return true;
+                }
+                return false;
+            }
+
             /**Una serie di pop up in cui inserire i numeri di pettorina in ordine di arrivo poi passa in post e aggiorna pagina*/
             function inserimentoDati(garaSelezionata){
                 var rowCount = $('#TabellaRis tr').length;  //restituisce numero delle righe della tabella (compresa intestazione)... usata per numero di ripetizione iterazione
                 var selectedCat = $('#catFilter').val();    //categoria selezionata
+
+                /**Prelevo pettorine presenti nella tabella a schermo, ovvero quelle valide da inserire*/
+                var pettorineValide = []; //array in cui memorizzo le pettorine valide
+                $('#TabellaRis tr').each(function() {
+                    var pettorina = $(this).find(".pettorina").html();
+                    if(!isNaN(pettorina))
+                        pettorineValide.push(pettorina);
+                });
 
                 var arrayRisultati = []; //array popolato dei numeri di pettorina in ordine di arrivo
                 var promptInput;    //dati inseriti prima in prompt input e poi scritti nell'array
@@ -85,7 +102,7 @@ if(isset($_GET["garaID"])) {
                         else
                             promptInput = prompt("Inserisca i numeri di pettorina degli atleti in ordine di arrivo.\nPer terminare l'inupt manualmente digiti [ F (fine)]\nSono stati inseriti "+i+" valori.");
 
-                        if(promptInput!="F" && Number.isInteger(parseInt(promptInput)) && !alreadyInserted(promptInput, arrayRisultati)) {
+                        if(promptInput!="F" && Number.isInteger(parseInt(promptInput)) && !alreadyInserted(promptInput, arrayRisultati) && isValid(promptInput, pettorineValide)) {
                             arrayRisultati.push(promptInput);
                             i++;
                         }else if(promptInput!="F"){
@@ -142,7 +159,7 @@ if(isset($_GET["garaID"])) {
     </div>
 
 
-    <h5 class="w3-margin-left w3-padding">Specifichi la <b>cetegoria</b> per la quale vuole inserire i risultati degli atleti.</h5>
+    <h5 class="w3-margin-left w3-padding">Specifichi la <b>categoria</b> per la quale vuole inserire i risultati degli atleti.</h5>
     <select id="catFilter" class='w3-select w3-border w3-round w3-margin-left' name="filtroCategoria" style="width: 90%;" onchange='stampaRisultatiCategoria(<?php echo $garaID;?>, this.value);'>
         <option value="zero" selected>Nessuna categoria selezionata</option>
         <?php
