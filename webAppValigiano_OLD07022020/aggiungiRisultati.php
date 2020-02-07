@@ -146,13 +146,13 @@ if(isset($_GET["garaID"])) {
     </head>
 
     <body>
-    <a href="profiloGara.php?garaID=<?php echo"$garaID";?>" style="text-decoration: none;"><button class="w3-button w3-margin w3-teal w3-display-topright" style="height: 10%;"><i style="margin-right: 30px;"><img src="round_keyboard_backspace_black_18dp.png"></i>Torna alla lista iscritti</button></a>
+    <a href="profiloGara.php?garaID=<?php echo"$garaID";?>" style="text-decoration: none;"><button class="w3-button w3-margin w3-teal w3-display-topright" style="height: 8%;"><i style="margin-right: 30px;"><img src="round_keyboard_backspace_black_18dp.png"></i>Torna alla lista iscritti</button></a>
     <div class="w3-card w3-margin w3-round">
         <?php
         $queryTitolo = "SELECT * FROM gara WHERE ID=".$garaID.";";
         $risQueryTitolo = $conn->query($queryTitolo);
         if($outTitolo = $risQueryTitolo->fetch_assoc())
-            echo "<h2 class='w3-margin w3-container' style='height: 10%;'><b>EVENTO:</b> ".$outTitolo["luogo"]."  ".$outTitolo["data"]." - <u>Inserimento risultati</u></h2>";
+            echo "<h2 class='w3-margin w3-container' style='height: 8%;'><b>EVENTO:</b> ".$outTitolo["luogo"]."  ".$outTitolo["data"]." - <u>Inserimento risultati</u></h2>";
         else
             echo "<script>alert(')-: Errore. Contattare l\'amministratore di sistema.');</script>";  #TODO error page
         ?>

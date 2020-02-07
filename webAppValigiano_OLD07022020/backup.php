@@ -1,7 +1,7 @@
 <?php
 //ENTER THE RELEVANT INFO BELOW
-$mysqlUserName      = "root";
-$mysqlPassword      = "";
+$mysqlUserName      = "stefanogenetti";
+$mysqlPassword      = "password";
 $mysqlHostName      = "localhost";
 $DbName             = "dbvaligiano";
 $backup_name        = "backup.sql";

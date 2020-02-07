@@ -21,7 +21,6 @@ $catID = $_GET["catID"];
 if($type=="1"){ //RAGGRUPPA PER SOCIETA
 
     echo "<button style='margin-right: 10%; margin-top: 2%; width: 20%;' class='w3-blue-gray w3-button w3-block w3-centered w3-margin w3-round-medium' onclick=\"raggruppa('2')\" id='btnRaggruppamento' value='2'>RAGGRUPPA PER CATEGORIA</button>
-
     <hr style='margin:auto; margin-top: 2%; width: 95%;'>
     <a href='aggiungiUtente.php' class='w3-ripple w3-teal w3-button w3-block w3-centered' style='margin:auto; margin-top: 3%; width: 90%;' >AGGIUNGI UTENTE</a><br>
 
@@ -131,7 +130,6 @@ if($type=="1"){ //RAGGRUPPA PER SOCIETA
 }else{  //RAGGRUPPA PER CATEGORIA
     echo "
         <button style='margin-right: 10%; margin-top: 2%; width: 20%;' class='w3-blue-gray w3-button w3-block w3-centered w3-margin w3-round-medium' onclick=\"raggruppa('1')\" id='btnRaggruppamento' value='1'>RAGGRUPPA PER SOCIETA</button>
-        
     <hr style='margin:auto; margin-top: 2%; width: 95%;'>
     <a href='aggiungiUtente.php' class='w3-ripple w3-teal w3-button w3-block w3-centered' style='margin:auto; margin-top: 3%; width: 90%;' >AGGIUNGI UTENTE</a><br>
 

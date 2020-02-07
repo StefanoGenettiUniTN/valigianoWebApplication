@@ -19,6 +19,11 @@ if(isset($_GET["garaID"])) {
 
         <script>
 
+            /**Stampa numero totale iscritti quando il document è pronto*/
+            $(document).ready(function(){
+                $('#numIscritti').text('TOTALE ISCRITTI: '+($('#myTable tr').length-1));
+            });
+
             /**Elimina utente (non usata dopo scopera tutti iscritti da subito)*/
             function rimuoviIscritto(nome, idGara, idUtente){
                 var categoriaSelezionata = $("#catFilter").val();
@@ -51,6 +56,8 @@ if(isset($_GET["garaID"])) {
                     url: 'categoryFilterProfiloGara.php?catID='+valore+'&raceID='+idGara,  //catID=categoria selezionata
                     success: function(data) {
                         $("#outputJQ").html(data);
+                        /*Aggiorno numero iscritti*/
+                        $('#numIscritti').text('TOTALE ISCRITTI: '+($('#myTable tr').length-1));
                     }
                 });
             }
@@ -68,6 +75,8 @@ if(isset($_GET["garaID"])) {
                     url: 'updateSubscribers.php?catID='+categoriaSelezionata+'&raceID='+idGara,
                     success: function(data) {
                         $("#outputJQ").html(data);
+                        /*Aggiorno numero iscritti*/
+                        $('#numIscritti').text('TOTALE ISCRITTI: '+($('#myTable tr').length-1));
                     }
                 });
             }
@@ -107,6 +116,7 @@ if(isset($_GET["garaID"])) {
     <button class="w3-button w3-round-large w3-light-blue w3-margin-left w3-margin-top" style="width: 20%;" onclick="printJS({ printable: 'myTable', type: 'html', header: 'Iscritti <?php echo $outTitolo["luogo"];?>', headerStyle: 'font-size: 15;'});">STAMPA ISCRITTI <img style="width: 10%;" class="w3-margin-left" src="round_print_black_18dp.png"></button><br>
     <!--Aggiunta 02/02/2020 Nel caso un utente si iscriva al momento della gara deve essere possibile aggiornare gli iscritti run time-->
     <button class="w3-button w3-round-large w3-pale-red w3-margin-left w3-margin-top" style="width: 20%;" onclick="updateSubscribers(<?php echo $garaID;?>);">AGGIORNA ISCRITTI <img style="width: 10%;" class="w3-margin-left" src="round_cached_black_18dp.png"></button><br>
+    <p id="numIscritti" style="margin-left: 70%; font-weight: bold;">TOTALE ISCRITTI: 0</p>
     <hr style="margin:auto; margin-top: 2%; width: 95%;" class="w3-margin-bottom">
 
     <!--Rimosso 27 gennaio 2020 dopo aver scoperto che gli utenti sono da subito iscritti a tutte le gare-->

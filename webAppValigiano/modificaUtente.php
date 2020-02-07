@@ -14,11 +14,12 @@
         <script src="jquery-3.4.1.min.js"></script>
         <script src="sorttable.js"></script>    <!--#TODO NON usata per bug slowDown modifica, ma interessante--><!--Libreria per ordinamento tabella da colonna-->
         <script>
+
             /**Elimina utente*/
             function rimuoviUtente(nome, idUtente){
                 var raggruppamentoSelezionato = $('#btnRaggruppamento').val();  //SE 1 c'è scritto raggruppa per SOCIETA, SE 2 c'è scritto ragguppa per CATEGORIA
                 var categoriaSelezionata = $("#catFilter").val();   //categoria selezionata
-                if(confirm("L'utente "+nome+" sta per essere eliminato"))
+                if(confirm("L'atleta "+nome+" sta per essere eliminato"))
                     $.ajax({
                         url: 'removeUser.php?userID='+idUtente+"&type="+raggruppamentoSelezionato+"&catID="+categoriaSelezionata,  //idUtente contiene l'id dell'utente da rimuovere
                         success: function(data) {
@@ -154,7 +155,6 @@
 
     <div id="outputJQRaggruppamento"><!--/Output JQUERY Raggruppamento.../-->
         <button style="margin-right: 10%; margin-top: 2%; width: 20%;" class="w3-blue-gray w3-button w3-block w3-centered w3-margin w3-round-medium" onclick="raggruppa(1)" id="btnRaggruppamento" value="1">RAGGRUPPA PER SOCIETA</button>
-
     <hr style="margin:auto; margin-top: 2%; width: 95%;">
     <a href="aggiungiUtente.php" class="w3-ripple w3-teal w3-button w3-block w3-centered" style="margin:auto; margin-top: 3%; width: 90%;" >AGGIUNGI ATLETA</a><br>
 

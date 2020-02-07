@@ -76,13 +76,13 @@ if(isset($_GET["famID"])) {
     </head>
 
     <body>
-    <a href="profiloFamiglia.php?famID=<?php echo"$famID";?>" style="text-decoration: none;"><button class="w3-button w3-margin w3-teal w3-display-topright" style="height: 10%;"><i style="margin-right: 30px;"><img src="round_keyboard_backspace_black_18dp.png"></i>Torna alla famiglia</button></a>
+    <a href="profiloFamiglia.php?famID=<?php echo"$famID";?>" style="text-decoration: none;"><button class="w3-button w3-margin w3-teal w3-display-topright" style="height: 8%;"><i style="margin-right: 30px;"><img src="round_keyboard_backspace_black_18dp.png"></i>Torna alla famiglia</button></a>
     <div class="w3-card w3-margin w3-round">
         <?php
         $queryTitolo = "SELECT * FROM famiglia WHERE ID=".$famID.";";
         $risQueryTitolo = $conn->query($queryTitolo);
         if($outTitolo = $risQueryTitolo->fetch_assoc())
-            echo "<h2 class='w3-margin w3-container' style='height: 10%;'><b>FAMIGLIA:</b> ".$outTitolo["nome"]." - <u>Aggiunta famigliari</u></h2>";
+            echo "<h2 class='w3-margin w3-container' style='height: 8%;'><b>FAMIGLIA:</b> ".$outTitolo["nome"]." - <u>Aggiunta famigliari</u></h2>";
         else
             echo "<script>alert(')-: Errore. Contattare l\'amministratore di sistema.');</script>";  #TODO error page
         ?>

@@ -3,9 +3,9 @@
     /**Connessione al database SQL*/
 
     $nomeDB = "dbvaligiano";
-    $user = "root";
+    $user = "stefanogenetti";
     $host = "localhost";
-    $password = "";
+    $password = "password";
 
     // Create connection
     $conn = new mysqli($host, $user, $password, $nomeDB);

@@ -58,6 +58,7 @@ if(isset($_GET["garaID"])) {
                         $("#outputJQ").html("");
                     }
                 }
+                $('#numValInseriti').text('SONO STATI INSERITI 0 VALORI');
             }
 
             /**Per controllo inserimento pettorina gia inserita*/
@@ -119,6 +120,8 @@ if(isset($_GET["garaID"])) {
                         function(data, status){
                             $("#outputJQ").html(data);
                         });
+
+                    $('#numValInseriti').text('SONO STATI INSERITI '+i+' VALORI');
                 }
             }
 
@@ -174,6 +177,7 @@ if(isset($_GET["garaID"])) {
 
     <button class="w3-button w3-margin-top w3-margin-left w3-round-large w3-centered w3-deep-orange" style="width: 20%;" onclick="inserimentoDati(<?php echo $garaID;?>);">COMPILA LA CLASSIFICA</button><br>
     <button class="w3-button w3-margin-top w3-margin-left w3-round-large w3-centered w3-khaki" style="width: 20%;" onclick="resultReset(<?php echo $garaID;?>);">AZZERA RISULTATI</button><br>
+    <p id="numValInseriti" style="margin-left: 70%; font-weight: bold;">SONO STATI INSERITI 0 VALORI</p>
 
     <hr style="margin:auto; margin-top: 2%; margin-bottom: 3%; width: 95%;">
 
