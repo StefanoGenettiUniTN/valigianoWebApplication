@@ -12,6 +12,13 @@ require_once("DBconfig.php");
     <link rel="stylesheet" href="w3.css">
     <link rel="icon" href="immagini/logo.png" type="image/gif" sizes="16x16">
     <script src="jquery-3.4.1.min.js"></script>
+
+    <style>
+        .riga {
+            cursor: pointer;
+        }
+    </style>
+
     <script>
         /**Elimina gara*/
         function rimuoviGara(luogo, idGara){

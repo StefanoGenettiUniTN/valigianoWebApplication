@@ -27,7 +27,7 @@ if(isset($_POST["garID"])){
     echo "</select>";
 
     if($garID!="zero") { //è stata selezionata una gara, allora stampo
-        echo "<button class=\"w3-button w3-margin-top w3-margin-left w3-round-large w3-centered w3-deep-orange\" style=\"width: 20%;\" onclick=\"printJS({ printable: 'TabellaRis', type: 'html', header: 'Classifica gara: <b>".getRaceName($garID)."</b>', headerStyle: 'font-size: 15;'});\">STAMPA</button><br>";
+        echo "<button class=\"w3-button w3-margin-top w3-margin-left w3-round-large w3-centered w3-deep-orange\" style=\"width: 20%;\" onclick=\"printJS({ printable: 'TabellaRis', type: 'html', header: 'Classifica gara: <b>".getRaceName($garID)."</b>', headerStyle: 'font-size: 15;', style: 'table, th, td {border: 1px solid black;} table {border-collapse: collapse;} th, td {text-align: center;}'});\">STAMPA</button><br>";
         echo "<hr style=\"margin:auto; margin-top: 2%; margin-bottom: 3%; width: 95%;\">";
         /*............*/
 

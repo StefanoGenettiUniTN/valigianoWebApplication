@@ -15,6 +15,12 @@ if(isset($_GET["famID"])) {
         <script src="jquery-3.4.1.min.js"></script>
         <script src="sorttable.js"></script>
 
+        <style>
+            .riga {
+                cursor: pointer;
+            }
+        </style>
+
         <script>
 
             /**Elimina utente*/

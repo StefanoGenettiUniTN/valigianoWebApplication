@@ -49,7 +49,7 @@ require_once("DBconfig.php");
     ?>
 </select>
 
-<button class="w3-button w3-margin-top w3-margin-left w3-round-large w3-centered w3-deep-orange" style="width: 20%;" onclick="printJS({ printable: 'TabellaRis', type: 'html', header: 'Classifica società', headerStyle: 'font-size: 15;'});">STAMPA</button>
+<button class="w3-button w3-margin-top w3-margin-left w3-round-large w3-centered w3-deep-orange" style="width: 20%;" onclick="printJS({ printable: 'TabellaRis', type: 'html', header: 'Classifica società', headerStyle: 'font-size: 15;', style: 'table, th, td {border: 1px solid black;} table {border-collapse: collapse;} th, td {text-align: center;}'});">STAMPA</button>
 
 <hr style="margin:auto; margin-top: 2%; margin-bottom: 3%; width: 95%;">
 
