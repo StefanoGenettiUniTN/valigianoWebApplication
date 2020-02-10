@@ -13,6 +13,12 @@ require_once("DBconfig.php");
     <script src="print.min.js"></script>
     <link rel="stylesheet" type="text/css" href="print.min.css">
 
+    <style>
+        .riga {
+            cursor: pointer;
+        }
+    </style>
+
     <script>
 
         function infoUser(link) {

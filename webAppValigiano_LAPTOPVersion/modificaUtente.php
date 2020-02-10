@@ -13,6 +13,13 @@
         <link rel="icon" href="immagini/logo.png" type="image/gif" sizes="16x16">
         <script src="jquery-3.4.1.min.js"></script>
         <script src="sorttable.js"></script>    <!--#TODO NON usata per bug slowDown modifica, ma interessante--><!--Libreria per ordinamento tabella da colonna-->
+
+        <style>
+            .riga {
+                cursor: pointer;
+            }
+        </style>
+
         <script>
 
             /**Elimina utente*/

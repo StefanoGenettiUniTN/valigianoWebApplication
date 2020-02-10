@@ -42,28 +42,28 @@
     <h2 class="w3-margin w3-container" style="text-shadow:1px 1px 0 #444; height: 10%;">Classifica campionato Valigiano</h2>
 </div>
 
-<a href="classificaTotale.php"><div class="w3-card w3-padding w3-margin w3-hover-shadow w3cardPadre">
+<a style="cursor:pointer;" href="classificaTotale.php"><div class="w3-card w3-padding w3-margin w3-hover-shadow w3cardPadre">
         <div style = "height: 15%; width: 10%;" class="w3-center w3-display-container w3-margin-left w3-padding w3cardFiglio">
             <img style = "height: 100%; width: 100%;" src = "immagini/winner-1013979_1920.jpg" alt = "modifica utente" class="w3-round-large">
         </div>
         <h5 style="font-family: 'myFont'; font-size: x-large;" class="w3cardFiglio w3-margin-left">CLASSIFICA COMPLESSIVA</h5>
     </div></a>
 <hr>
-<a href="classificaSingolaGara.php"><div class="w3-card w3-padding w3-margin w3-hover-shadow w3cardPadre">
+<a style="cursor:pointer;" href="classificaSingolaGara.php"><div class="w3-card w3-padding w3-margin w3-hover-shadow w3cardPadre">
         <div style = "height: 15%; width: 10%;" class="w3-center w3-display-container w3-margin-left w3-padding w3cardFiglio">
             <img style = "height: 100%; width: 100%;" src = "immagini/stopwatch-259303_1920.jpg" alt = "modifica utente" class="w3-round-large">
         </div>
         <h5 style="font-family: 'myFont'; font-size: x-large;" class="w3cardFiglio w3-margin-left">CLASSIFICA SINGOLA GARA</h5>
     </div></a>
 <hr>
-<a href="classificaSocieta.php"><div class="w3-card w3-padding w3-margin w3-hover-shadow w3cardPadre">
+<a style="cursor:pointer;" href="classificaSocieta.php"><div class="w3-card w3-padding w3-margin w3-hover-shadow w3cardPadre">
         <div style = "height: 15%; width: 10%;" class="w3-center w3-display-container w3-margin-left w3-padding w3cardFiglio" >
             <img style = "height: 100%; width: 100%;" src = "immagini/paper-3213924_1920.jpg" alt = "modifica categoria" class="w3-round-large">
         </div >
         <h5 style="font-family: 'myFont'; font-size: x-large;" class="w3cardFiglio w3-margin-left">CLASSIFICA SOCIETA'</h5>
     </div></a>
 <hr>
-<a href="classificaFamiglia.php"><div class="w3-card w3-padding w3-margin w3-hover-shadow w3cardPadre">
+<a style="cursor:pointer;" href="classificaFamiglia.php"><div class="w3-card w3-padding w3-margin w3-hover-shadow w3cardPadre">
         <div style = "height: 15%; width: 10%;" class="w3-center w3-display-container w3-margin-left w3-padding w3cardFiglio" >
             <img style = "height: 100%; width: 100%;" src = "immagini/holding-hands-918990_1920.jpg" alt = "modifica categoria" class="w3-round-large">
         </div >
