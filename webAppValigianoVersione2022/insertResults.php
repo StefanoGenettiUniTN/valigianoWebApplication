@@ -97,7 +97,7 @@ if(isset($_POST["catID"]) && isset($_POST["raceID"]) && isset($_POST["resultsArr
                     <td class='riga'>" . $outUtenti["utente_cognome"] . "</td>
                     <td class='riga'>" . $outUtenti["societa_nome"] . "</td>
                     <td class='riga'>" . $outUtenti["categoria_nome"] . "</td>
-                    <td class='riga'>" . $outUtenti["n_pettorina"] . "</td>
+                    <td class='riga pettorina'>" . $outUtenti["n_pettorina"] . "</td>
                     ";
         echo "</tr>";
     }
