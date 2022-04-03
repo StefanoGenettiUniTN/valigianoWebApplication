@@ -21,11 +21,12 @@ if(isset($_POST["garID"])){
             <th>Nome Societa</th>
         </tr>";
 
+    /* La società "Esterni" NON deve comparire nella classifica società */
     //Query
     if($garID=="zero")  //nessuna gara in particolare selezionata
-        $selectQuery  = "SELECT *, SUM(classifica.punteggio) AS punteggioTotale, societa.nome AS societa_nome FROM utente, classifica, societa WHERE utente.id_societa=societa.ID AND classifica.id_utente=utente.ID GROUP BY societa.ID ORDER BY punteggioTotale DESC;";
+        $selectQuery  = "SELECT *, SUM(classifica.punteggio) AS punteggioTotale, societa.nome AS societa_nome FROM utente, classifica, societa WHERE utente.id_societa=societa.ID AND classifica.id_utente=utente.ID AND societa.nome<>'Esterni' GROUP BY societa.ID ORDER BY punteggioTotale DESC;";
     else
-        $selectQuery  = "SELECT *, SUM(classifica.punteggio) AS punteggioTotale, societa.nome AS societa_nome FROM utente, classifica, societa WHERE utente.id_societa=societa.ID AND classifica.id_utente=utente.ID AND classifica.id_gara=".$garID." GROUP BY societa.ID ORDER BY punteggioTotale DESC;";
+        $selectQuery  = "SELECT *, SUM(classifica.punteggio) AS punteggioTotale, societa.nome AS societa_nome FROM utente, classifica, societa WHERE utente.id_societa=societa.ID AND classifica.id_utente=utente.ID AND classifica.id_gara=".$garID." AND societa.nome<>'Esterni' GROUP BY societa.ID ORDER BY punteggioTotale DESC;";
 
     $risultatoSelectQuery = $conn->query($selectQuery);
     $posizione = 1;
