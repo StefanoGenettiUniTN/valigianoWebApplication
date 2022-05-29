@@ -6,19 +6,6 @@
     $_POST["raceID"])   --> gara selezionata
     $_POST["resultsArray"] --> array contenente i numeri di pettorina in ordine di arrivo
 
-
-    FORMULA USATA:
- In base al regolamento per la versione del campionato del 2022 si calcolano i punteggi come segue:
- * C'è un totale a scalare che dipende dal numero di partecipanti alla gara e INDIPENDENTE dalla categoria.
- * Da 1 a 10 partecipanti --> si parte da 15 punti (il primo prende 15, il secondo 14, ecc...)
- * Da 11 a 20 partecipanti --> si parte da 25 punti
- * Da 21 a 30 partecipanti --> si parte da 35 punti
- * Oltre i 30 partecipanti --> si parte da 45 punti
- *
- * Nota: si sceglie di lasciare nel DB l'informazione "tetto" per ogni categoria per non complicarmi troppo la vita.
- * Alla segreteria viene detto di assegnare al valore di tetto un valore a caso che tanto non viene considerato.
- * Una volta infatti ogni categoria aveva il suo punteggio di partenza dal quale scalare.
- *
  * Nota: come 2 anni fa i minicuccioli maschi e femmine prendono 1 punto tutti indipendentemente dalla posizione
  * in classifica
  */
@@ -40,19 +27,14 @@ if(isset($_POST["catID"]) && isset($_POST["raceID"]) && isset($_POST["resultsArr
 
     $posInClassifica = 1;
 
-    //Imposta il totale di partenza in base al numero di partecipanti
-    if($totPartecipanti>=1 && $totPartecipanti<=10){        //Da 1 a 10 partecipanti --> si parte da 15 punti
-        $totDiPartenza=15;
-    }elseif($totPartecipanti>=11 && $totPartecipanti<=20){  //Da 11 a 20 partecipanti --> si parte da 25 punti
-        $totDiPartenza=25;
-    }elseif($totPartecipanti>=21 && $totPartecipanti<=30){  //Da 21 a 30 partecipanti --> si parte da 35 punti
-        $totDiPartenza=35;
-    }elseif($totPartecipanti>30){                           //Oltre i 30 partecipanti --> si parte da 45 punti
-        $totDiPartenza=45;
-    }else{  //Non so se funziona, tanto non dovrebbe mai accadere
-        echo "<script>alert(')-: Errore. Contattare l\'amministratore di sistema.');</script>"; //TODO Error page
-        header("location: errorPage.php");
-    }
+    //Aggiornamento 29 maggio 2022:
+    /*
+     * Il totale di partenza all'inizio di questo campionato sembrava dipendere dal numero di partecipanti alla gara.
+     * Invece per calcolare il totale di partenza bisogna basarsi sul numero di iscritti alla prima gara.
+     * Per vedere versione precedente, vedi commit prima di questa data in Valligiano versione 2022.
+     * Per velocizzare l'aggiornamento uso di nuovo il buon vecchio getTotPartenza e inserisco a mano i valori dai quali scalare
+    */
+    $totDiPartenza = getTotPartenza($catID);    //Si parte da un punteggio di partenza salvato nella tabella categoria (es. 50) e lo si assegna a scalare ad ogni atleta
 
     foreach ($arrayRisultati as $pettorina){
         if(getCategoryName($catID)=="01-Minicuccioli-M" || getCategoryName($catID)=="02-Minicuccioli-F"){   //personalizzazione per categoria minicuccioli (sempre 1 punto)
