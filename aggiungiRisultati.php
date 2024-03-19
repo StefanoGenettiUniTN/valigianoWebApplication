@@ -107,8 +107,8 @@ if(isset($_GET["garaID"])) {
                             arrayRisultati.push(promptInput);
                             i++;
                         }else if(promptInput!="F"){
-                            alert("ATTENZIONE, ha inserito un valore non valido. Ripetere l'inserimento del valore.");
-                            promptInput=0;
+                            alert("ATTENZIONE, ha inserito un valore non valido ("+promptInput+"). Ripetere l'inserimento del valore.");
+                            promptInput="error";
                         }
                     }
 
@@ -135,8 +135,9 @@ if(isset($_GET["garaID"])) {
                 var pettorineValide = []; //array in cui memorizzo le pettorine valide
                 $('#TabellaRis tr').each(function() {
                     var pettorina = $(this).find(".pettorina").html();
-                    if(!isNaN(pettorina))
+                    if(!isNaN(pettorina)){
                         pettorineValide.push(pettorina);
+                    }
                 });
 
                 var arrayRisultati = []; //array popolato dei numeri di pettorina in ordine di inserimento
