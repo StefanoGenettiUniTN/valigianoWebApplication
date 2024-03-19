@@ -75,7 +75,7 @@
     <!--Bottone per Backup-->
     <a href="backup.php" class="w3-button  w3-round-large w3-centered w3-deep-orange w3-display-bottomright w3-margin" style="width: 20%;" target="_blank">ESPORTA BACKUP</a>
 
-    <h4 class="w3-display-bottomleft w3-margin w3-padding w3-text-white"><b>Versione 1.0</b></h4>
+    <h4 class="w3-display-bottomleft w3-margin w3-padding w3-text-white"><b>Versione 2.0</b></h4>
 
     <img src="immagini/logo.png" style="width: 13%;" class="w3-display-topright w3-margin">
 
