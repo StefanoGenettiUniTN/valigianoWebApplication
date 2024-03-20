@@ -37,7 +37,7 @@ if(isset($_POST["catID"])){
                             SUM(classifica.punteggio) AS punteggioEsatto,
                             IF(
                                 (COUNT(classifica.id_utente))=4,
-                                (SUM(classifica.punteggio)-MIN(classifica.punteggio)),
+                                (SUM(classifica.punteggio)-MIN(classifica.punteggio)+2),
                                 (SUM(classifica.punteggio))
                             ) AS punteggioDisplay
                             FROM classifica, utente, categoria, societa
@@ -59,7 +59,9 @@ if(isset($_POST["catID"])){
                                     WHEN categoria.nome='21-VeteraniA-M' THEN utente.data_nascita
                                     WHEN categoria.nome='22-VeteraniA-F' THEN utente.data_nascita
                                     WHEN categoria.nome='23-VeteraniB-M' THEN utente.data_nascita
-                                    WHEN categoria.nome='24-VeteraniB-F' THEN utente.data_nascita  
+                                    WHEN categoria.nome='24-VeteraniB-F' THEN utente.data_nascita
+                                    WHEN categoria.nome='25-Pionieri-M' THEN utente.data_nascita
+                                    WHEN categoria.nome='26-Pionieri-F' THEN utente.data_nascita  
                                     END ASC,
                                     CASE
                                     WHEN categoria.nome='01-Minicuccioli-M' THEN utente.data_nascita
@@ -89,7 +91,7 @@ if(isset($_POST["catID"])){
                         SUM(classifica.punteggio) AS punteggioEsatto,
                         IF(
                             (COUNT(classifica.id_utente))=4,
-                            (SUM(classifica.punteggio)-MIN(classifica.punteggio)),
+                            (SUM(classifica.punteggio)-MIN(classifica.punteggio)+2),
                             (SUM(classifica.punteggio))
                         ) AS punteggioDisplay
                         FROM classifica, utente, categoria, societa
@@ -112,7 +114,9 @@ if(isset($_POST["catID"])){
                                 WHEN categoria.nome='21-VeteraniA-M' THEN utente.data_nascita
                                 WHEN categoria.nome='22-VeteraniA-F' THEN utente.data_nascita
                                 WHEN categoria.nome='23-VeteraniB-M' THEN utente.data_nascita
-                                WHEN categoria.nome='24-VeteraniB-F' THEN utente.data_nascita  
+                                WHEN categoria.nome='24-VeteraniB-F' THEN utente.data_nascita
+                                WHEN categoria.nome='25-Pionieri-M' THEN utente.data_nascita
+                                WHEN categoria.nome='26-Pionieri-F' THEN utente.data_nascita  
                                 END ASC,
                                 CASE
                                 WHEN categoria.nome='01-Minicuccioli-M' THEN utente.data_nascita

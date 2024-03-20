@@ -85,13 +85,13 @@
                 <!--...-->
             <?php
             //Query
-            /**Vengono stampati solo gli atleti che hanno partecipato ad almeno 2 gare
+            /**Vengono stampati solo gli atleti che hanno partecipato ad almeno 3 gare
 
              * garePartecipate conta le gare; prende in considerazione solo le gare alle quali l'atleta ha
              * partecipato con classifica.punteggio>0.
              *
              *
-             * punteggioEsatto è quello che viene stampato. In questa versione NON vengono dati punti in più nel caso l'atleta abbia fatto tutte le gare.
+             * punteggioEsatto è quello che viene stampato. In questa versione vengono dati punti in più nel caso l'atleta abbia fatto tutte le gare.
              *
              */
             //$selectQuery  = "SELECT *,utente.nome AS utente_nome, utente.cognome AS utente_cognome, societa.nome AS societa_nome, categoria.nome AS categoria_nome, SUM(classifica.punteggio) AS punteggioTotale, MIN(classifica.punteggio) AS garaPeggiore, COUNT(classifica.id_utente) AS garePartecipate, AVG(classifica.posClassifica) mediaPosizione, IF((COUNT(classifica.id_utente))>=5, (SUM(classifica.punteggio))-(MIN(classifica.punteggio))+2, (SUM(classifica.punteggio))-(MIN(classifica.punteggio))) AS punteggioEsatto FROM classifica, utente, categoria, societa WHERE classifica.id_utente = utente.ID AND utente.id_categoria = categoria.ID AND utente.id_societa = societa.ID AND classifica.punteggio>0 GROUP BY utente.ID HAVING garePartecipate>=3 ORDER BY categoria.nome ASC, punteggioEsatto DESC, mediaPosizione ASC, utente.data_nascita ASC;";
@@ -107,7 +107,7 @@
                                 SUM(classifica.punteggio) AS punteggioEsatto,
                                 IF(
                                     (COUNT(classifica.id_utente))=4,
-                                    (SUM(classifica.punteggio)-MIN(classifica.punteggio)),
+                                    (SUM(classifica.punteggio)-MIN(classifica.punteggio)+2),
                                     (SUM(classifica.punteggio))
                                 ) AS punteggioDisplay
                                 FROM classifica, utente, categoria, societa
@@ -129,7 +129,9 @@
                                     WHEN categoria.nome='21-VeteraniA-M' THEN utente.data_nascita
                                     WHEN categoria.nome='22-VeteraniA-F' THEN utente.data_nascita
                                     WHEN categoria.nome='23-VeteraniB-M' THEN utente.data_nascita
-                                    WHEN categoria.nome='24-VeteraniB-F' THEN utente.data_nascita  
+                                    WHEN categoria.nome='24-VeteraniB-F' THEN utente.data_nascita
+                                    WHEN categoria.nome='25-Pionieri-M' THEN utente.data_nascita
+                                    WHEN categoria.nome='26-Pionieri-F' THEN utente.data_nascita  
                                     END ASC,
                                     CASE
                                     WHEN categoria.nome='01-Minicuccioli-M' THEN utente.data_nascita
